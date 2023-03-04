@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+	font-family: Raleway, sans-serif;
+    color: rgb(62, 62, 62);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+	background: linear-gradient(55deg, #f4dfc5, #e7793e);	
+    background-repeat: round;	
+    height: 100%;
+}
+
+#page {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#title-wrapper {
+    text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+#title {
+    font-size: 125px;
+}
+
+#form-card-wrapper {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#window{
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    background: white;	
+	position: relative;	
+	height: 500px;
+	width: 800px;	
+	box-shadow: 0px 0px 24px #9b644b;
+}
+
+.input {
+    border: none;
+	border-bottom: 2px solid #ee9229;
+	background: none;
+	padding: 10px;
+	font-weight: 700;
+}
+
+#username-wrapper {
+    position: relative;
+    padding: 20px 20px;
+}
+
+#password-wrapper{
+    position: relative;
+    padding: 20px 20px;
+}
+
+#button-wrapper{
+    position: relative;
+    text-align: center;
+}

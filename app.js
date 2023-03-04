@@ -9,7 +9,6 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/landingPage/landingPage.html")
 });
 
-
 const PORT = 8080;
 app.listen(PORT, (error) => {
     error ? console.log(error) : console.log("Server is running on port: ", PORT);
