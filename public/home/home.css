@@ -10,11 +10,6 @@ html,body {
     width: 100%;
 }
 
-p {
-    max-width: 300px;
-    max-height: 110px;
-}
-
 #administrator-panel-wrapper {
     display: flex;
     flex-direction: row-reverse;
@@ -66,16 +61,32 @@ p {
 
 .topic:hover {
     box-shadow: 0px 0px 24px #9b644b;
+    cursor: pointer;
 }
 
 #topic-info {
     position: relative;
-    top: 40px;
+    top: 30px;
     left: 25px;
+}
+
+textarea {
+    resize: none;
+    height: 110px;
+    width: 300px;
+    border-style: none; 
+    border-color: Transparent; 
+    overflow: auto; 
+    font-size: 18px;
 }
 
 .topic-info {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+    max-width: 300px;
+}
+
+#topic-info-title {
+    padding-bottom: 3px;
 }
