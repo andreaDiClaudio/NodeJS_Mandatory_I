@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!</title>
-    <link rel="stylesheet" href="./landingPage/landingPage.css">
+    <link rel="stylesheet" href="/landingPage/landingPage.css">
 </head>
 <body>
 <div id="page">
     <div id="form-card-wrapper">
         <div id="login-window">
             <div id="title-wrapper">
-                <h1 id="title">Welcome</h1>
+                <h1 id="title">Sign up!</h1>
                 <div id="paragraph-wrapper">
-                    <p>Please log in to read the documentation.&nbsp</p>
-                    <form action="/signup" method="get">
-                        <button type="submit" id="signup-button">Don't you have an account?</button>
+                    <p>Please create an account to read the documentation.&nbsp</p>
+                    <form action="/" method="get">
+                        <button type="submit" id="signup-button">Already have an account?</button>
                     </form>
                 </div>
             </div>
-            <form id="login-form" action="/" method="post">
+            <form id="login-form" action="/signup" method="post">
                 <div id="username-wrapper" name="username">
-                    <input id="username-input" class="input" type="text" name="username" placeholder="Username" required>
+                    <input id="username-input" class="input" type="text" name="username" placeholder="Username">
                 </div>
                 <div id="password-wrapper">
-                    <input id="password-input" class="input" type="password" name="password" placeholder="Password" required>
+                    <input id="password-input" class="input" type="password" name="password" placeholder="Password">
                 </div>
                 <div id="button-wrapper">
-                    <button id="submit-form-button" type="submit">Log in</button>
+                    <button id="submit-form-button" type="submit">Create Account</button>
                 </div>
             </form>
         </div>

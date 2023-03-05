@@ -17,8 +17,8 @@ body {
 
 #page {
     align-items: center;
-    display: flex;
     justify-content: center;
+    display: flex;
     height: 100%;
     width: 100%;
 }
@@ -31,6 +31,19 @@ body {
 
 #title {
     font-size: 125px;
+}
+#paragraph-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+#signup-button, #signup-button:hover {
+    border: none;
+    background-color: #ffffff;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #e7793e;
+    cursor: pointer;
 }
 
 #form-card-wrapper {
@@ -84,7 +97,7 @@ body {
     padding:0.6em 2em;
     border-radius: 8px;
     color:#fff;
-    background-color:#ee9229;
+    background-color:#e7793e;
     font-size:1.1em;
     border: solid white 1px;
     cursor:pointer;
