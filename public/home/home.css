@@ -40,7 +40,7 @@ html,body {
     margin:1em;
 }
 
-#topics-wrapper{
+#topics-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -73,7 +73,7 @@ html,body {
     left: 25px;
 }
 
-textarea {
+textarea, textarea:hover {
     resize: none;
     height: 110px;
     width: 300px;
@@ -81,6 +81,7 @@ textarea {
     border-color: Transparent; 
     overflow: auto; 
     font-size: 18px;
+    cursor: pointer;
 }
 
 .topic-info {
