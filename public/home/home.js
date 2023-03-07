@@ -25,7 +25,8 @@ function loadTopics() {
             topicDescription.readOnly = true;
             topicDescription.innerText = topic.description;
             topicInfoWrapper.appendChild(topicDescription); 
-            //If title > 17 characters, make the text area height to max 90px
+
+            //If title > 17 characters, make the text area height to max 90px. Needed for Textarea problems
             const titleCharArray = Array.from(topic.title);
             console.log(titleCharArray);
             if (titleCharArray.length > 17) {
@@ -35,7 +36,7 @@ function loadTopics() {
                 console.log("110px");
                 topicDescription.style.height = "115px";
             }
-
+            //Event listener that redirectes to route that gives back the html file for that topic
             topicWrapper.addEventListener('click', () => {
                 location.href = topic.href;
             });

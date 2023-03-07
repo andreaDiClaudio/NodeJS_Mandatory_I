@@ -43,42 +43,62 @@ app.get("/api/topicsPreview", (req, res) => {
    res.sendFile(__dirname + "/public/topic/topic" + req.params.id + ".html");
  });
 
+ //HTTP
+ //LandingPage
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/landingPage/landingPage.html")
 });
 
+//Signup
 app.get("/signup", (req, res) => {
     res.sendFile(__dirname + "/public/signup/signup.html")
 });
 
+//Home
 app.get("/home", (req, res) => {
     res.sendFile(__dirname + "/public/home/home.html")
 });
 
-app.get("/signup/error", (req, res) => {
-    res.sendFile(__dirname + "/public/signup/error.html")
-})
-
-app.get("/login/error", (req, res) => {
-    res.sendFile(__dirname + "/public/landingPage/error.html")
-});
-
-app.get("/topicPreview/:id", (req, res) => {
-    res.sendFile(__dirname + "/public/topic/topic.html");
-});
-
+//logs in
 app.post("/", (req, res) => {
     const user = users.find(user => user.username === req.body.username && user.password === req.body.password);
 
-    if (!user) return res.redirect("/login/error");
+    const errorScript = `
+    <style>
+    body {
+        background: linear-gradient(55deg, #f4dfc5, #e7793e);	
+        background-repeat: round;	
+        height: 100%;
+    }
+    </style>
+    <script>
+    setTimeout(function() { alert('Ops, wrong credentials, please try again'); }, 2); window.location.href = "/";
+    </script>
+    `;
+
+    if (!user) return res.send(errorScript);
 
     res.redirect("/home");
 });
 
-app.post("/signup", (req, res) => {
+//Create a new user
+app.post("/users", (req, res) => {
     const user = users.find(user => user.username === req.body.username && user.password === req.body.password);
 
-    if(user) return res.redirect("/signup/error");
+    const errorScript = `
+    <style>
+    body {
+        background: linear-gradient(55deg, #f4dfc5, #e7793e);	
+        background-repeat: round;	
+        height: 100%;
+    }
+    </style>
+    <script>
+    setTimeout(function() { alert('Ops, credentials already taken, please try again'); }, 1); window.location.href = "/signup";
+    </script>
+    `;
+
+    if(user) return res.send(errorScript);
 
     const newUser = {
         id: userIdCounter,
