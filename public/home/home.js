@@ -2,11 +2,10 @@
 
 const topicsWrapper = document.getElementById("topics-wrapper");
 
-
 window.onload = loadTopics();
 
 function loadTopics() {
-    fetch("/api/topics").then(response => response.json()).then(result => {
+    fetch("/api/topicsPreview").then(response => response.json()).then(result => {
         result.data.forEach(topic => {
             const topicWrapper = document.createElement("div");
             topicWrapper.className = "topic";
@@ -23,13 +22,22 @@ function loadTopics() {
 
             const topicDescription = document.createElement("textarea");
             topicDescription.className = "topic-info";
-            topicDescription.id = "topic-info-description";
             topicDescription.readOnly = true;
             topicDescription.innerText = topic.description;
-            topicInfoWrapper.appendChild(topicDescription);
+            topicInfoWrapper.appendChild(topicDescription); 
+            //If title > 17 characters, make the text area height to max 90px
+            const titleCharArray = Array.from(topic.title);
+            console.log(titleCharArray);
+            if (titleCharArray.length > 17) {
+                console.log("90px");
+                topicDescription.style.height = "78px";
+            } else {
+                console.log("110px");
+                topicDescription.style.height = "115px";
+            }
 
             topicWrapper.addEventListener('click', () => {
-                location.href = `/topic/${topic.id}`;
+                location.href = topic.href;
             });
         })
     })

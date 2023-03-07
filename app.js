@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const topicsArray = require("./public/home/topics.js")
+const topicsPreviewArray = require("./public/home/topicsPreview.js")
 
 let userIdCounter = 1;
 
@@ -21,6 +21,27 @@ const admin = {
     password: "admin"
 }
 users.push(admin);
+
+/*API*/
+app.get("/api/topicsPreview", (req, res) => {
+    res.send({data: topicsPreviewArray});
+ });
+ 
+ app.get("/api/topicPreview/:id", (req, res) => {
+    const requestedTopicPreview = topicsPreviewArray.find(topic => topic.id === Number(req.params.id));
+ 
+   if (!requestedTopicPreview) return res.sendStatus(404);
+ 
+   res.send({data: requestedTopicPreview});
+ });
+
+ app.get("/api/topic/:id", (req,res) => {
+    const requestedTopic = topicsPreviewArray.find(topic => topic.id === Number(req.params.id));
+ 
+   if (!requestedTopic) return res.sendStatus(404);
+ 
+   res.sendFile(__dirname + "/public/topic/topic" + req.params.id + ".html");
+ });
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/landingPage/landingPage.html")
@@ -42,17 +63,8 @@ app.get("/login/error", (req, res) => {
     res.sendFile(__dirname + "/public/landingPage/error.html")
 });
 
-app.get("/topic/:id", (req, res) => {
-    const topicIndex = topicsArray.findIndex(topic => topic.id === Number(req.body.id));
-
-    if (!topicIndex) return res.sendStatus(404);
-
-    res.sendFile(__dirname + "/public/topic/topic.html")
-});
-
-/*API*/
-app.get("/api/topics", (req, res) => {
-   res.send({data: topicsArray});
+app.get("/topicPreview/:id", (req, res) => {
+    res.sendFile(__dirname + "/public/topic/topic.html");
 });
 
 app.post("/", (req, res) => {
@@ -78,9 +90,7 @@ app.post("/signup", (req, res) => {
     userIdCounter++
     res.redirect("/")
 });
-
-
-
+ 
 const PORT = 8080;
 app.listen(PORT, (error) => {
     error ? console.log(error) : console.log("Server is running on port: ", PORT);

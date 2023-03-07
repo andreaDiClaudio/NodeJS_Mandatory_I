@@ -75,7 +75,6 @@ html,body {
 
 textarea, textarea:hover {
     resize: none;
-    height: 110px;
     width: 300px;
     border-style: none; 
     border-color: Transparent; 
