@@ -1,2 +1,2 @@
 # NodeJS Mandatory I
-Documentation of topics covered during the first weeks of the elective NodeJs
+Website for documenting all topics covered during weeks 7 to 9 of the 'NodeJS' elective
