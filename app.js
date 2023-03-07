@@ -49,9 +49,18 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/landingPage/landingPage.html")
 });
 
+//landingPage error
+app.get("/login/error", (req,res) => {
+    res.sendFile(__dirname + "/public/landingPage/error.html");
+});
+
 //Signup
 app.get("/signup", (req, res) => {
     res.sendFile(__dirname + "/public/signup/signup.html")
+});
+
+app.get("/signup/error", (req,res) => {
+    res.sendFile(__dirname + "/public/signup/error.html");
 });
 
 //Home
@@ -63,20 +72,7 @@ app.get("/home", (req, res) => {
 app.post("/", (req, res) => {
     const user = users.find(user => user.username === req.body.username && user.password === req.body.password);
 
-    const errorScript = `
-    <style>
-    body {
-        background: linear-gradient(55deg, #f4dfc5, #e7793e);	
-        background-repeat: round;	
-        height: 100%;
-    }
-    </style>
-    <script>
-    setTimeout(function() { alert('Ops, wrong credentials, please try again'); }, 2); window.location.href = "/";
-    </script>
-    `;
-
-    if (!user) return res.send(errorScript);
+    if (!user) return res.redirect("/login/error");
 
     res.redirect("/home");
 });
@@ -85,20 +81,7 @@ app.post("/", (req, res) => {
 app.post("/users", (req, res) => {
     const user = users.find(user => user.username === req.body.username && user.password === req.body.password);
 
-    const errorScript = `
-    <style>
-    body {
-        background: linear-gradient(55deg, #f4dfc5, #e7793e);	
-        background-repeat: round;	
-        height: 100%;
-    }
-    </style>
-    <script>
-    setTimeout(function() { alert('Ops, credentials already taken, please try again'); }, 1); window.location.href = "/signup";
-    </script>
-    `;
-
-    if(user) return res.send(errorScript);
+    if(user) return res.redirect("/signup/error");
 
     const newUser = {
         id: userIdCounter,
