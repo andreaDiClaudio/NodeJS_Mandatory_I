@@ -39,8 +39,33 @@ app.get("/api/topicsPreview", (req, res) => {
     const requestedTopic = topicsPreviewArray.find(topic => topic.id === Number(req.params.id));
  
    if (!requestedTopic) return res.sendStatus(404);
- 
-   res.sendFile(__dirname + "/public/topic/topic" + req.params.id + ".html");
+
+   switch (Number(req.params.id)) {
+    case 0:
+        res.sendFile(__dirname + "/public/topic/nodeJs.html");
+        break;
+    case 1:
+        res.sendFile(__dirname + "/public/topic/restApi.html");
+        break;   
+    case 2:
+        res.sendFile(__dirname + "/public/topic/packageManager&Dependencies.html");
+        break;    
+    case 3:
+        res.sendFile(__dirname + "/public/topic/express.html");
+        break;
+    case 4:
+        res.sendFile(__dirname + "/public/topic/loops.html");
+        break;
+    case 5:
+        res.sendFile(__dirname + "/public/topic/servingHTMLFiles.html");
+        break;
+    case 6:
+        res.sendFile(__dirname + "/public/topic/CRUDableApi.html");
+        break;
+    default:
+        res.redirect("/home");
+        break; 
+   }
  });
 
  //HTTP
