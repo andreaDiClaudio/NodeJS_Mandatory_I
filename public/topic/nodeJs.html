@@ -11,8 +11,8 @@
     <div class="index-menu-wrapper">
         <button class="home-button" onclick="window.location.href = '/home'">Home</button>
         <div class="index-topic-wrapper">
-            <a class="index-topic">1. Introduction</a>
-            <a class="index-topic">2. Some other section</a>
+            <a class="index-topic">1. NodeJs</a>
+            <a class="index-topic">2. Data Types in JS</a>
             <a class="index-topic">3. Some other section</a>
             <a class="index-topic">4. Some other section</a>
         </div>
@@ -22,30 +22,105 @@
             <p class="title">NodeJs</p>
         </div>
         <div class="heading-wrapper">
-            <p class="heading">Inroduction to NodeJS, data types in Javascript, and the design of an API.</p>
+            <p class="heading1">Inroduction to NodeJS, data types in Javascript, and the design of an API.</p>
         </div>
         <hr>
+        <div class="heading2">
+            <p>1. NodeJs</p>
+        </div>
         <div class="paragraph-wrapper">
             <p class="paragraph">
                 Node.js is a JavaScript runtime environment for developing server-side applications. It uses Google's V8 JavaScript engine, which compiles and executes JavaScript code. Node.js allows developers to write network applications using JavaScript, which is easier than using other languages like C++ or Java.
                 <br><br>Node.js was created by Ryan Dahl in 2009 when he was working on a web application that required real-time communication between the browser and the server. He needed to create an efficient method of communicating between these two parts of the application, so he created Node.js and released it as open source software under the MIT license on GitHub. The popularity of Node.js grew quickly because of its low resource requirements, its ease of use and its ability to handle multiple concurrent connections efficiently (especially compared to other languages).
                 <br><br>
-                To run a file with Node.js, you need to use the node command line tool.<br> The node command line tool is part of the Node.js installation package, which you can download from the official website of <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">Node.js</a>.<br><br>The syntax for running files with node is
+                To run a file with Node.js, you need to use the 'node' command line tool.<br> The node command line tool is part of the Node.js installation package, which you can <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">download</a> from the official website of Node.js.<br><br>To run files with Node.js, simply open a terminal window on your computer or IDE and type in:
             </p>
         </div>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">
-                node [filename].js</code>
+                <code class="code">node [filename].js</code>
             </pre>
+        </div>
+        <div class="heading2">
+            <p>2. Data Types in JavaScript</p>
         </div>
         <div class="paragraph-wrapper">
             <p class="paragraph">
-                Node.js is a JavaScript runtime environment for developing server-side applications. It uses Google's V8 JavaScript engine, which compiles and executes JavaScript code. Node.js allows developers to write network applications using JavaScript, which is easier than using other languages like C++ or Java.
-                <br><br>Node.js was created by Ryan Dahl in 2009 when he was working on a web application that required real-time communication between the browser and the server. He needed to create an efficient method of communicating between these two parts of the application, so he created Node.js and released it as open source software under the MIT license on GitHub. The popularity of Node.js grew quickly because of its low resource requirements, its ease of use and its ability to handle multiple concurrent connections efficiently (especially compared to other languages).
-                <br><br>
-                To run a file with Node.js, you need to use the node command line tool.<br> The node command line tool is part of the Node.js installation package, which you can download from the official website of <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">Node.js</a>.<br><br>The syntax for running files with node is
+                JavaScript is a dynamic language with dynamic types. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types. <br><br>
+                In Javascript, datatypes are divided into two categories: primitive and object.<br>Primitive datatypes are built-in to the language and include include numbers, strings, booleans, null and undefined. <br>Objects are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).<br><br>Primitive Datatypes in JavaScript
             </p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Return Value</th>
+                            <th>Object Wrapper</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Null</td>
+                            <td>They're used to indicate that the value of an expression is not known</td>
+                            <td>"null"</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Undefined</td>
+                            <td>Undefined values in Javascript are values that have not been assigned a value</td>
+                            <td>"undefined"</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Boolean</td>
+                            <td>The Boolean type represents a logical entity and is inhabited by two values: true and false</td>
+                            <td>"boolean"</td>
+                            <td>Boolean</td>
+                        </tr>
+                        <tr>
+                            <td>Number</td>
+                            <td>JavaScript number values are either integer or floating point numbers. Integers can be positive or negative, and they can also be zero; floating-point numbers can contain a decimal point</td>
+                            <td>"number"</td>
+                            <td>Number</td>
+                        </tr>
+                        <tr>
+                            <td>BigInt</td>
+                            <td>You can use the 'BigInt' data type to represent very large integer values up to 18 digits long</td>
+                            <td>"bigint"</td>
+                            <td>BigInt</td>
+                        </tr>
+                        <tr>
+                            <td>String</td>
+                            <td>strings are a sequence of characters enclosed by double quotes</td>
+                            <td>"string"</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>Symbol</td>
+                            <td>Symbol values are used in JavaScript to create unique strings that can be used as keys for object property lookup</td>
+                            <td>"symbol"</td>
+                            <td>Symbol</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="paragraph-wrapper">
+            <p class="paragraph">
+                The 'typeof' operator returns a string describing the type of value or object in a variable, so you can check what type of data you're dealing with before attempting to perform operations on it.<br><br>
+            </p>
+        </div>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">typeof false //boolean</code><br>
+                <code class="code">typeOf 0.05 //Number</code><br>
+                <code class="code">typeof function () {} //function</code><br>
+                <code class="code">typeof ‘string’ //string</code><br>
+                <code class="code">typeof {} //objects</code><br>
+                <code class="code">typeOf 0.05 //Number</code><br>
+                <code class="code">typeof [ ] //object - in js arrays are objects</code><br>
+            </pre>
         </div>
     </div>
 </body>

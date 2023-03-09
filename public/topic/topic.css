@@ -77,10 +77,16 @@ html,body {
     font-weight: 600;
 }
 
-.heading {
+.heading1 {
     font-size: 40px;
     font-weight: 500;
     padding-bottom: 20px;
+}
+
+.heading2 {
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 35px;
 }
 
 .paragraph-wrapper {
@@ -109,9 +115,35 @@ html,body {
     width: 50%;
     margin: auto;
     min-width: 600px;
+    padding-top: 18px;
 }
 
 .code {
     color: white;
     font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table{
+    border-spacing: 0;
+    padding-bottom: 30px;
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+table th {
+    border: solid white 1px;
+    vertical-align: middle;
+    padding: 10px;
+    border: solid #444444 1px;
+}
+
+td {
+    border: solid #444444 1px;
+    padding: 10px;
+    width: 200px;
 }
