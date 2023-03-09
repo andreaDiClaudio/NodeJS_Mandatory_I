@@ -20,6 +20,7 @@ html,body {
     border-bottom: none;
     display: flex;
     flex-direction: column;
+    width: 275px;
 }
 
 .home-button {
@@ -30,6 +31,18 @@ html,body {
     background-color:#e7793e;
     font-size:1.1em;
     border: solid white 1px;
+    cursor:pointer;
+    margin:1em;
+}
+
+.home-button:hover {
+    padding:0.6em 2em;
+    border-radius: 8px;
+    color:#e7793e;
+    background-color:#ffffff;
+    box-shadow: 0px 0px 20px #9b644b;
+    font-size:1.1em;
+    border: solid #e7793e 1px;
     cursor:pointer;
     margin:1em;
 }
@@ -47,18 +60,33 @@ html,body {
 }
 
 .documentation-section-wrapper {
-    padding-left: 30px;
+    padding-left: 50px;
     padding-top: 30px;
+    width: 1200px;
 }
 
 .title {
-    font-size: 100px;
+    font-size: 150px;
     font-weight: 600;
 }
 
 .heading {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.paragraph-wrapper {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 90%;
+    padding-top: 20px;
+}
+
+.paragraph {
+    font-size: 22px;
+    font-weight: 100;
 }
 
 .code-snippet-wrapper {
@@ -72,6 +100,7 @@ html,body {
     box-shadow: 0px 0px 10px #9a8074;
     width: 50%;
     margin: auto;
+    min-width: 600px;
 }
 
 .code {
