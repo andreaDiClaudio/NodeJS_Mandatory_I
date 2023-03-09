@@ -15,6 +15,9 @@ html,body {
 }
 
 .index-menu-wrapper {
+    position: fixed;
+    z-index: 1;
+    background: #ffffffee;
     padding: 10px;
     border-top: none;
     border-bottom: none;
@@ -61,6 +64,7 @@ html,body {
 }
 
 .documentation-section-wrapper {
+    margin-left: 275px;
     border: solid rgb(66, 66, 66) 2px;
     border-top: none;
     border-bottom: none;
@@ -103,6 +107,8 @@ html,body {
 }
 
 .code-snippet-wrapper {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     padding-top: 30px;
     padding-bottom: 10px;
 }
@@ -112,13 +118,13 @@ html,body {
     border-radius: 8px;
     border: solid #e7793e 1px;
     box-shadow: 0px 0px 10px #9a8074;
-    width: 50%;
+    width: 80%;
     margin: auto;
     min-width: 600px;
     padding-top: 18px;
 }
 
-.code {
+code {
     color: white;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;

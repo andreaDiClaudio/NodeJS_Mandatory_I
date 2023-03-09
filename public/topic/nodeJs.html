@@ -13,8 +13,9 @@
         <div class="index-topic-wrapper">
             <a class="index-topic">1. NodeJs</a>
             <a class="index-topic">2. Data Types in JS</a>
-            <a class="index-topic">3. Some other section</a>
-            <a class="index-topic">4. Some other section</a>
+            <a class="index-topic">3. Type Coercion</a>
+            <a class="index-topic">4. Loose vs. Strict Equality Operator</a>
+            <a class="index-topic">5. REST API</a>
         </div>
     </div>
     <div class="documentation-section-wrapper">
@@ -113,14 +114,144 @@
         </div>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">typeof false //boolean</code><br>
-                <code class="code">typeOf 0.05 //Number</code><br>
-                <code class="code">typeof function () {} //function</code><br>
-                <code class="code">typeof ‘string’ //string</code><br>
-                <code class="code">typeof {} //objects</code><br>
-                <code class="code">typeOf 0.05 //Number</code><br>
-                <code class="code">typeof [ ] //object - in js arrays are objects</code><br>
+    <code class="code">typeof false //boolean</code><br>
+    <code class="code">typeOf 0.05 //Number</code><br>
+    <code class="code">typeof function () {} //function</code><br>
+    <code class="code">typeof ‘string’ //string</code><br>
+    <code class="code">typeof {} //objects</code><br>
+    <code class="code">typeOf 0.05 //Number</code><br>
+    <code class="code">typeof [ ] //object - in js arrays are objects</code>
             </pre>
+        </div>
+        <div class="heading2">
+            <p>3.Type Coercion</p>
+        </div>
+
+        <div class="paragraph-wrapper">
+            <p class="paragraph">
+                Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.<br><br>
+                There are some downsides to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
+            </p>
+        </div>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+    <code class="code">const sum = 35 + "hello"</code>
+    <code class="code">console.log(sum)// 35hello</code>
+    <code class="code">console.log(typeof sum)// string</code><br>
+    <code class="code">const times = 35 * "hello"</code>
+    <code class="code">console.log(times)// NaN</code><br>
+    <code class="code">const string = "";</code>
+    <code class="code">const number = 40;</code>
+    <code class="code">const boolean = true;</code>
+
+    <code class="code">console.log(!string)</code>
+    <code>//true - string is coerced to boolean `false`, then the NOT operator negates it</code>
+
+    <code class="code">console.log(boolean + string)</code>
+    <code class="code">//"true" - boolean is coerced to string "true", and concatenated with the empty string</code>
+    
+    <code class="code">console.log(40 + true)</code>
+    <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
+            </pre>
+        </div>
+
+        <div class="heading2">
+            <p>4. Loose vs. Strict Equality Operator</p>
+        </div>
+        <div class="paragraph-wrapper">
+            <p class="paragraph">
+                In JavaScript, there's both the double equality operator (== which is called the loose equality operator) and the triple equality operator (=== which is called the strict equality operator). You use both operators to compare values' equality.
+                <br><br>
+                The loose equality operator does a loose check. It checks if values are equal. The types are not a focus for this operator - only the values are the major factor.
+            </p>
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
+        <code class="code">const variable1 = 20;</code>
+        <code class="code">const variable2 = "20";</code><br>
+        <code class="code">console.log(variable1 == variable2);// true</code>
+                </pre>
+            </div>
+        </div>
+        <p class="paragraph" style="padding-top: 20px;">
+            When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.
+
+            In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.  
+            <br><br>
+            The strict equality operator does a strict check – that is, it strictly checks the values compared, as well as the types. Type coercion does not occur here, so there are no unexpected answers.
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+    <code class="code">const variable1 = 20;</code>
+    <code class="code">const variable2 = "20";</code><br>
+    <code class="code">console.log(variable1 === variable2);// false</code>
+            </pre>
+        </div>
+        <div class="heading2">
+            <p>5.REST API</p>
+        </div>
+
+        <div class="paragraph-wrapper">
+            <p class="paragraph">
+                REST API is an application programming interface that does not store the state of the client. It is used to interact with a web service. A REST API uses HTTP verbs (GET, POST, PUT, DELETE) to communicate with the server and perform actions like creating, updating and deleting resources. It is a communication that follows the client-server model: the user sends a request, the server sends a response. 
+                <br><br>
+                Conventions:
+                <br><br>
+                <pre class="paragraph">
+                • Accept And Respond With JSON
+                  JSON is the standard for transferring data. Almost every networked technology can use it
+                  
+                • Order of Endpoints
+                   Very important for the next person who is going to work on it.
+                   For good documentation.
+                
+                • Naming of Endpoints
+                   The name of the endpoint should represent the collection.
+                </pre>
+            </p>
+            <p class="paragraph">Following an example of desing of an API that follows the conventions. </p>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>HTTP Method</th>
+                        <th>Endpoint</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>/songs</td>
+                        <td>Fetch all songs</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/songs/{id}</td>
+                        <td>Fetch a specific song</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/songs</td>
+                        <td>Creates a new song</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>/songs/{id}</td>
+                        <td>"Edit an existing song by id, changing all properties of the object"</td>
+                    </tr>
+                    <tr>
+                        <td>PATCH</td>
+                        <td>/songs/{id}</td>
+                        <td>Edit an existing song by id, changing only the requested proprties of the object</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>songs/{id}</td>
+                        <td>Deletes the object</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
