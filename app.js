@@ -45,13 +45,13 @@ app.get("/api/topicsPreview", (req, res) => {
         res.sendFile(__dirname + "/public/topic/nodeJs.html");
         break;
     case 1:
-        res.sendFile(__dirname + "/public/topic/restApi.html");
+        res.sendFile(__dirname + "/public/topic/packageManager&Dependecies.html");
         break;   
     case 2:
-        res.sendFile(__dirname + "/public/topic/packageManager&Dependencies.html");
+        res.sendFile(__dirname + "/public/topic/express.html");
         break;    
     case 3:
-        res.sendFile(__dirname + "/public/topic/express.html");
+        res.sendFile(__dirname + "/public/topic/restApi.html");
         break;
     case 4:
         res.sendFile(__dirname + "/public/topic/loops.html");

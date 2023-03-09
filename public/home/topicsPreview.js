@@ -8,21 +8,21 @@ const topicsPreview = [
     },
     {
         id: 1,
-        title: "REST API",
-        description: "Definition and conventions.",
-        href: topicUrl +1
-    },
-    {
-        id: 2,
         title: "Package Manager & Dependencies",
         description: "Maven vs. npm. How to define and install dependencies.",
         href: topicUrl + 2
     },
     {
-        id: 3,
+        id: 2,
         title: "Express",
         description: "What is it? How do we use it?",
         href: topicUrl + 3
+    },
+    {
+        id: 3,
+        title: "REST API",
+        description: "Definition and conventions.",
+        href: topicUrl +1
     },
     {
         id: 4,

@@ -8,19 +8,20 @@
 html,body {
     height: 100%;
     width: 100%;
-    background: linear-gradient(55deg, #ebebeb, #ffffff);	
+    background-color: #ffffffee;	
     display: flex;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
 }
 
 .index-menu-wrapper {
     padding: 10px;
-    border: solid rgb(66, 66, 66) 2px;
-    width: 250px;
     border-top: none;
     border-bottom: none;
     display: flex;
     flex-direction: column;
     width: 275px;
+    height:100%;
 }
 
 .home-button {
@@ -60,8 +61,14 @@ html,body {
 }
 
 .documentation-section-wrapper {
+    border: solid rgb(66, 66, 66) 2px;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    height: fit-content;
     padding-left: 50px;
     padding-top: 30px;
+    padding-bottom: 250px;
     width: 1200px;
 }
 
@@ -80,7 +87,7 @@ html,body {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
-    max-width: 90%;
+    max-width: 95%;
     padding-top: 20px;
 }
 
@@ -90,11 +97,12 @@ html,body {
 }
 
 .code-snippet-wrapper {
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
 .code-snippet-tab {
-    background-color: #3a3a3a;
+    background-color: #2a2a3f;
     border-radius: 8px;
     border: solid #e7793e 1px;
     box-shadow: 0px 0px 10px #9a8074;
@@ -105,4 +113,5 @@ html,body {
 
 .code {
     color: white;
+    font-size: large;
 }
