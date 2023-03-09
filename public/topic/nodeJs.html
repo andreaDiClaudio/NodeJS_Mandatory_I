@@ -36,12 +36,13 @@
                 <br><br>
                 To run a file with Node.js, you need to use the 'node' command line tool.<br> The node command line tool is part of the Node.js installation package, which you can <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">download</a> from the official website of Node.js.<br><br>To run files with Node.js, simply open a terminal window on your computer or IDE and type in:
             </p>
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
+                    <code class="code">node [filename].js</code>
+                </pre>
+            </div>
         </div>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-                <code class="code">node [filename].js</code>
-            </pre>
-        </div>
+
         <div class="heading2">
             <p>2. Data Types in JavaScript</p>
         </div>
@@ -111,20 +112,20 @@
             <p class="paragraph">
                 The 'typeof' operator returns a string describing the type of value or object in a variable, so you can check what type of data you're dealing with before attempting to perform operations on it.<br><br>
             </p>
-        </div>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-    <code class="code">typeof false //boolean</code><br>
-    <code class="code">typeOf 0.05 //Number</code><br>
-    <code class="code">typeof function () {} //function</code><br>
-    <code class="code">typeof ‘string’ //string</code><br>
-    <code class="code">typeof {} //objects</code><br>
-    <code class="code">typeOf 0.05 //Number</code><br>
-    <code class="code">typeof [ ] //object - in js arrays are objects</code>
-            </pre>
-        </div>
-        <div class="heading2">
-            <p>3.Type Coercion</p>
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
+        <code class="code">typeof false //boolean</code><br>
+        <code class="code">typeOf 0.05 //Number</code><br>
+        <code class="code">typeof function () {} //function</code><br>
+        <code class="code">typeof ‘string’ //string</code><br>
+        <code class="code">typeof {} //objects</code><br>
+        <code class="code">typeOf 0.05 //Number</code><br>
+        <code class="code">typeof [ ] //object - in js arrays are objects</code>
+                </pre>
+            </div>
+            <div class="heading2">
+                <p>3.Type Coercion</p>
+            </div>
         </div>
 
         <div class="paragraph-wrapper">
@@ -132,9 +133,8 @@
                 Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.<br><br>
                 There are some downsides to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
             </p>
-        </div>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
     <code class="code">const sum = 35 + "hello"</code>
     <code class="code">console.log(sum)// 35hello</code>
     <code class="code">console.log(typeof sum)// string</code><br>
@@ -152,7 +152,8 @@
     
     <code class="code">console.log(40 + true)</code>
     <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
-            </pre>
+                </pre>
+            </div>
         </div>
 
         <div class="heading2">

@@ -18,7 +18,6 @@ html,body {
     position: fixed;
     z-index: 1;
     background: #ffffffee;
-    padding: 10px;
     border-top: none;
     border-bottom: none;
     display: flex;
@@ -153,3 +152,49 @@ td {
     padding: 10px;
     width: 200px;
 }
+
+@media screen and (max-width: 1285px) {
+
+    .documentation-section-wrapper {
+        margin-left: 0;
+        padding-top: 165px;
+        background-color: #ffffff;
+        border-left: none;
+    }
+    
+    .index-menu-wrapper {
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+        position: fixed;
+
+        z-index: 1;
+        background: #ffffffee;
+        border-top: none;
+        height: 160px; 
+        width: 100%;
+        border-bottom: solid #2a2a3f 2px;
+    }
+
+  }
+
+  @media screen and (max-width: 981px) {
+
+    .paragraph-wrapper {
+        max-width: 73%;
+    }
+
+    .heading1 {
+        max-width: 73%;
+    }
+  }
+
+  @media screen and (max-width: 770px) {
+    .paragraph-wrapper {
+        max-width: 60%;
+    }
+
+    .heading1 {
+        max-width: 60%;
+    }
+  }
