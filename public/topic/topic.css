@@ -26,6 +26,7 @@ html,body {
     height:100%;
 }
 
+
 .home-button {
     position: relative;
     padding:0.6em 2em;
@@ -36,6 +37,7 @@ html,body {
     border: solid white 1px;
     cursor:pointer;
     margin:1em;
+    width: 235px;
 }
 
 .home-button:hover {
@@ -198,3 +200,17 @@ td {
         max-width: 60%;
     }
   }
+
+  @media screen and (max-width: 574px) {
+    .index-menu-wrapper {
+        height: 170px; 
+    }
+    .paragraph-wrapper {
+        max-width: 50%;
+    }
+
+    .heading1 {
+        max-width: 50%;
+    }
+  }
+

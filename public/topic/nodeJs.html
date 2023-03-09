@@ -9,7 +9,9 @@
 </head>
 <body>
     <div class="index-menu-wrapper">
-        <button class="home-button" onclick="window.location.href = '/home'">Home</button>
+        <div class="home-button-wrapper">
+            <button class="home-button" onclick="window.location.href = '/home'">Home</button>
+        </div>
         <div class="index-topic-wrapper">
             <a class="index-topic">1. NodeJs</a>
             <a class="index-topic">2. Data Types in JS</a>
@@ -172,21 +174,21 @@
         <code class="code">console.log(variable1 == variable2);// true</code>
                 </pre>
             </div>
-        </div>
-        <p class="paragraph" style="padding-top: 20px;">
-            When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.
-
-            In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.  
-            <br><br>
-            The strict equality operator does a strict check – that is, it strictly checks the values compared, as well as the types. Type coercion does not occur here, so there are no unexpected answers.
-        </p>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-    <code class="code">const variable1 = 20;</code>
-    <code class="code">const variable2 = "20";</code><br>
-    <code class="code">console.log(variable1 === variable2);// false</code>
-            </pre>
-        </div>
+            <p class="paragraph" style="padding-top: 20px;">
+                When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.
+    
+                In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.  
+                <br><br>
+                The strict equality operator does a strict check – that is, it strictly checks the values compared, as well as the types. Type coercion does not occur here, so there are no unexpected answers.
+            </p>
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
+        <code class="code">const variable1 = 20;</code>
+        <code class="code">const variable2 = "20";</code><br>
+        <code class="code">console.log(variable1 === variable2);// false</code>
+                </pre>
+            </div>
+        </div>    
         <div class="heading2">
             <p>5.REST API</p>
         </div>
@@ -210,49 +212,49 @@
                 </pre>
             </p>
             <p class="paragraph">Following an example of desing of an API that follows the conventions. </p>
-        </div>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>HTTP Method</th>
-                        <th>Endpoint</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>GET</td>
-                        <td>/songs</td>
-                        <td>Fetch all songs</td>
-                    </tr>
-                    <tr>
-                        <td>GET</td>
-                        <td>/songs/{id}</td>
-                        <td>Fetch a specific song</td>
-                    </tr>
-                    <tr>
-                        <td>POST</td>
-                        <td>/songs</td>
-                        <td>Creates a new song</td>
-                    </tr>
-                    <tr>
-                        <td>PUT</td>
-                        <td>/songs/{id}</td>
-                        <td>"Edit an existing song by id, changing all properties of the object"</td>
-                    </tr>
-                    <tr>
-                        <td>PATCH</td>
-                        <td>/songs/{id}</td>
-                        <td>Edit an existing song by id, changing only the requested proprties of the object</td>
-                    </tr>
-                    <tr>
-                        <td>DELETE</td>
-                        <td>songs/{id}</td>
-                        <td>Deletes the object</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>HTTP Method</th>
+                            <th>Endpoint</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>/songs</td>
+                            <td>Fetch all songs</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/songs/{id}</td>
+                            <td>Fetch a specific song</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/songs</td>
+                            <td>Creates a new song</td>
+                        </tr>
+                        <tr>
+                            <td>PUT</td>
+                            <td>/songs/{id}</td>
+                            <td>"Edit an existing song by id, changing all properties of the object"</td>
+                        </tr>
+                        <tr>
+                            <td>PATCH</td>
+                            <td>/songs/{id}</td>
+                            <td>Edit an existing song by id, changing only the requested proprties of the object</td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>songs/{id}</td>
+                            <td>Deletes the object</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </body>
