@@ -9,26 +9,31 @@
 </head>
 <body>
     <div class="index-menu-wrapper">
-        <div class="home-button-wrapper">
-            <button class="home-button" onclick="window.location.href = '/home'">Home</button>
+        <div class="button-wrapper">
+            <a href='/home'><button class="button">Home</button></a>
         </div>
         <div class="index-topic-wrapper">
-            <a class="index-topic">1. NodeJs</a>
-            <a class="index-topic">2. Data Types in JS</a>
-            <a class="index-topic">3. Type Coercion</a>
-            <a class="index-topic">4. Loose vs. Strict Equality Operator</a>
-            <a class="index-topic">5. REST API</a>
+            <div class="index-button-wrapper">
+                <button class="index">Index ↓</button>
+            </div>
+            <div class="index-content">
+                <a href="#1" class="index-topic">1. NodeJs</a>
+                <a href="#2" class="index-topic">2. Data Types in JS</a>
+                <a href="#3"class="index-topic">3. Type Coercion</a>
+                <a href="#4"class="index-topic">4. Loose vs. Strict Equality Operator</a>
+            <a href="#5" class="index-topic">5. REST API</a>
         </div>
-    </div>
+        </div>
+    </div>                                                              
     <div class="documentation-section-wrapper">
         <div class="title-wrapper">
-            <p class="title">NodeJs</p>
+            <p class="title" id="title">NodeJs</p>
         </div>
         <div class="heading-wrapper">
             <p class="heading1">Inroduction to NodeJS, data types in Javascript, and the design of an API.</p>
         </div>
         <hr>
-        <div class="heading2">
+        <div class="heading2" id="1">
             <p>1. NodeJs</p>
         </div>
         <div class="paragraph-wrapper">
@@ -45,7 +50,7 @@
             </div>
         </div>
 
-        <div class="heading2">
+        <div class="heading2" id="2">
             <p>2. Data Types in JavaScript</p>
         </div>
         <div class="paragraph-wrapper">
@@ -125,7 +130,7 @@
         <code class="code">typeof [ ] //object - in js arrays are objects</code>
                 </pre>
             </div>
-            <div class="heading2">
+            <div class="heading2" id="3">
                 <p>3.Type Coercion</p>
             </div>
         </div>
@@ -147,10 +152,12 @@
     <code class="code">const boolean = true;</code>
 
     <code class="code">console.log(!string)</code>
-    <code>//true - string is coerced to boolean `false`, then the NOT operator negates it</code>
+    <code>//true - string is coerced to boolean `false`, 
+  //then the NOT operator negates it</code>
 
     <code class="code">console.log(boolean + string)</code>
-    <code class="code">//"true" - boolean is coerced to string "true", and concatenated with the empty string</code>
+    <code class="code">//"true" - boolean is coerced to string "true", and 
+  //concatenated with the empty string</code>
     
     <code class="code">console.log(40 + true)</code>
     <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
@@ -158,7 +165,7 @@
             </div>
         </div>
 
-        <div class="heading2">
+        <div class="heading2" id="4">
             <p>4. Loose vs. Strict Equality Operator</p>
         </div>
         <div class="paragraph-wrapper">
@@ -189,7 +196,7 @@
                 </pre>
             </div>
         </div>    
-        <div class="heading2">
+        <div class="heading2" id="5">
             <p>5.REST API</p>
         </div>
 
