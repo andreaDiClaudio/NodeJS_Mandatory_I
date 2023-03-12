@@ -97,6 +97,10 @@
     font-size: 9.375em;
     font-weight: 600;
   }
+
+  hr {
+    max-width: 77vw;
+  }
   
   .heading1 {
     font-size: 2.5em;
@@ -170,8 +174,33 @@
     padding: 0.625em;
     width: 12.5em;
   }
+
+@media screen and (max-width: 1500px) {
+  .heading-wrapper {
+    max-width: 70em;
+  }
+
+  hr {
+    max-width: 75vw;
+  }
+
+}
   
-@media screen and (max-width: 1285px) {
+@media screen and (max-width: 1500px) {
+  .paragraph-wrapper {
+    max-width: 60em;
+  }
+
+  hr {
+    max-width: 75vw;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+
+  hr {
+    max-width: 93vw;
+  }
 
     .documentation-section-wrapper {
         margin-left: 0;
@@ -224,6 +253,10 @@
     .button-wrapper {
       max-height: 0;
       padding-top: 1.5em;
+    }
+
+    .heading-wrapper {
+      max-width: 55vw;
     }
   }
 

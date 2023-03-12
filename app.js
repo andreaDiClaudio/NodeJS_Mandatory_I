@@ -42,7 +42,7 @@ app.get("/api/topicsPreview", (req, res) => {
 
    switch (Number(req.params.id)) {
     case 0:
-        res.sendFile(__dirname + "/public/pages/topic/nodeJs.html");
+        res.redirect("/nodeJs")
         break;
     case 1:
         res.sendFile(__dirname + "/public/pages/topic/packageManager&Dependecies.html");
@@ -74,24 +74,6 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/pages/landingPage/landingPage.html")
 });
 
-//landingPage error
-app.get("/login/error", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/landingPage/error.html");
-});
-
-//Signup
-app.get("/signup", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/signup/signup.html")
-});
-
-app.get("/signup/error", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/signup/error.html");
-});
-
-//Home
-app.get("/home", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/home/home.html")
-});
 
 //logs in
 app.post("/", (req, res) => {
@@ -118,6 +100,31 @@ app.post("/users", (req, res) => {
     userIdCounter++
     res.redirect("/")
 });
+
+//landingPage error
+app.get("/login/error", (req,res) => {
+    res.sendFile(__dirname + "/public/pages/landingPage/error.html");
+});
+
+//Signup
+app.get("/signup", (req, res) => {
+    res.sendFile(__dirname + "/public/pages/signup/signup.html")
+});
+
+app.get("/signup/error", (req,res) => {
+    res.sendFile(__dirname + "/public/pages/signup/error.html");
+});
+
+//Home
+app.get("/home", (req, res) => {
+    res.sendFile(__dirname + "/public/pages/home/home.html")
+});
+
+//topics
+app.get("/nodeJs", (req,res) => {
+    res.sendFile(__dirname + "/public/pages/topic/nodeJs.html");
+});
+
  
 const PORT = 8080;
 app.listen(PORT, (error) => {

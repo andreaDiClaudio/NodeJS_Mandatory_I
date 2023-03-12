@@ -1,0 +1,22 @@
+--- HTML For the Navbar ---
+
+        <div class="index-menu-wrapper">
+            <div class="button-wrapper">
+              <a href='/home'><button class="button">Home</button></a>
+            </div>
+            <div class="index-topic-wrapper">
+              <div class="index-button-wrapper">
+                <button class="index">Index ↓</button>
+              </div>
+
+               <!--
+                <div class="index-content">
+                <a href="#1" class="index-topic">1. NodeJs</a>
+                <a href="#2" class="index-topic">2. Data Types in JS</a>
+                <a href="#3"class="index-topic">3. Type Coercion</a>
+                <a href="#4"class="index-topic">4. Loose vs. Strict Equality Operator</a>
+                <a href="#5" class="index-topic">5. REST API</a>
+              </div>
+            </div>
+
+-------------------------------------------------
