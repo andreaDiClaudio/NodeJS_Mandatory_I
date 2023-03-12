@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const topicsPreviewArray = require("./public/home/topicsPreview.js")
+const topicsPreviewArray = require("./public/pages/home/topicsPreview.js")
 
 let userIdCounter = 1;
 
@@ -42,25 +42,25 @@ app.get("/api/topicsPreview", (req, res) => {
 
    switch (Number(req.params.id)) {
     case 0:
-        res.sendFile(__dirname + "/public/topic/nodeJs.html");
+        res.sendFile(__dirname + "/public/pages/topic/nodeJs.html");
         break;
     case 1:
-        res.sendFile(__dirname + "/public/topic/packageManager&Dependecies.html");
+        res.sendFile(__dirname + "/public/pages/topic/packageManager&Dependecies.html");
         break;   
     case 2:
-        res.sendFile(__dirname + "/public/topic/express.html");
+        res.sendFile(__dirname + "/public/pages/topic/express.html");
         break;    
     case 3:
-        res.sendFile(__dirname + "/public/topic/restApi.html");
+        res.sendFile(__dirname + "/public/pages/topic/restApi.html");
         break;
     case 4:
-        res.sendFile(__dirname + "/public/topic/loops.html");
+        res.sendFile(__dirname + "/public/pages/topic/loops.html");
         break;
     case 5:
-        res.sendFile(__dirname + "/public/topic/servingHTMLFiles.html");
+        res.sendFile(__dirname + "/public/pages/topic/servingHTMLFiles.html");
         break;
     case 6:
-        res.sendFile(__dirname + "/public/topic/CRUDableApi.html");
+        res.sendFile(__dirname + "/public/pages/topic/CRUDableApi.html");
         break;
     default:
         res.redirect("/home");
@@ -71,26 +71,26 @@ app.get("/api/topicsPreview", (req, res) => {
  //HTTP
  //LandingPage
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/landingPage/landingPage.html")
+    res.sendFile(__dirname + "/public/pages/landingPage/landingPage.html")
 });
 
 //landingPage error
 app.get("/login/error", (req,res) => {
-    res.sendFile(__dirname + "/public/landingPage/error.html");
+    res.sendFile(__dirname + "/public/pages/landingPage/error.html");
 });
 
 //Signup
 app.get("/signup", (req, res) => {
-    res.sendFile(__dirname + "/public/signup/signup.html")
+    res.sendFile(__dirname + "/public/pages/signup/signup.html")
 });
 
 app.get("/signup/error", (req,res) => {
-    res.sendFile(__dirname + "/public/signup/error.html");
+    res.sendFile(__dirname + "/public/pages/signup/error.html");
 });
 
 //Home
 app.get("/home", (req, res) => {
-    res.sendFile(__dirname + "/public/home/home.html")
+    res.sendFile(__dirname + "/public/pages/home/home.html")
 });
 
 //logs in
