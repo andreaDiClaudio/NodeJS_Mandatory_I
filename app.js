@@ -45,22 +45,22 @@ app.get("/api/topicsPreview", (req, res) => {
         res.redirect("/nodeJs")
         break;
     case 1:
-        res.sendFile(__dirname + "/public/pages/topic/packageManager&Dependecies.html");
+        res.redirect("/restAPI");
         break;   
     case 2:
-        res.sendFile(__dirname + "/public/pages/topic/express.html");
+        res.redirect("/packageManager&Dependencies");
         break;    
     case 3:
-        res.sendFile(__dirname + "/public/pages/topic/restApi.html");
+        res.redirect("/express");
         break;
     case 4:
-        res.sendFile(__dirname + "/public/pages/topic/loops.html");
+        res.redirect("/loops");
         break;
     case 5:
-        res.sendFile(__dirname + "/public/pages/topic/servingHTMLFiles.html");
+        res.redirect("/servingHtmlFiles");
         break;
     case 6:
-        res.sendFile(__dirname + "/public/pages/topic/CRUDableApi.html");
+        res.redirect("/crudableAPI");
         break;
     default:
         res.redirect("/home");
@@ -120,12 +120,35 @@ app.get("/home", (req, res) => {
     res.sendFile(__dirname + "/public/pages/home/home.html")
 });
 
-//topics
+/*TOPICS*/
+//NodeJs
 app.get("/nodeJs", (req,res) => {
     res.sendFile(__dirname + "/public/pages/topic/nodeJs.html");
 });
+//Package Manager and Dependencies
+app.get("/packageManager&Dependencies", (req, res) => {
+    res.sendFile(__dirname + "/public/pages/topic/packageManager&Dependecies.html");
+});
+//restAPI
+app.get("/restAPI", (req,res) => {
+    res.sendFile(__dirname + "/public/pages/topic/restAPI.html");
+});
+//express
+app.get("/express", (req,res) => {
+    res.sendFile(__dirname + "/public/pages/topic/express.html");
+});
+app.get("/loops", (req, res) => {
+    res.sendFile(__dirname + "/public/pages/topic/loops.html");
+});
+//servingHtmlFiles
+app.get("/servingHtmlFiles", (req, res) => {
+    res.sendFile(__dirname + "/public/pages/topic/servingHTMLFiles.html");
+});
+app.get("/crudableAPI", (req,res) => {
+    res.sendFile(__dirname + "/public/pages/topic/CRUDableApi.html");
+});
 
- 
+
 const PORT = 8080;
 app.listen(PORT, (error) => {
     error ? console.log(error) : console.log("Server is running on port: ", PORT);
