@@ -278,9 +278,7 @@
         width: 100%;
         border-bottom: solid #2a2a3f 0.125em;
       }
-  }
-  
-  @media screen and (max-width: 981px) {
+
     .documentation-section-wrapper {
         padding-left: 1.13em;
     }
@@ -290,6 +288,10 @@
     }
     .heading1 {
       max-width: 90vw;
+    }
+
+    .button {
+      width: 80%;
     }
   }
   
