@@ -256,7 +256,11 @@
     }
 
     .heading-wrapper {
-      max-width: 55vw;
+      max-width: 90vw;
+    }
+
+    .paragraph-wrapper {
+      max-width: 90vw;
     }
   }
 
