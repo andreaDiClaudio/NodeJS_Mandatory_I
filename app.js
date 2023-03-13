@@ -26,47 +26,6 @@ users.push(admin);
 app.get("/api/topicsPreview", (req, res) => {
     res.send({data: topicsPreviewArray});
  });
- 
- app.get("/api/topicPreview/:id", (req, res) => {
-    const requestedTopicPreview = topicsPreviewArray.find(topic => topic.id === Number(req.params.id));
- 
-   if (!requestedTopicPreview) return res.sendStatus(404);
- 
-   res.send({data: requestedTopicPreview});
- });
-
- app.get("/api/topic/:id", (req,res) => {
-    const requestedTopic = topicsPreviewArray.find(topic => topic.id === Number(req.params.id));
- 
-   if (!requestedTopic) return res.sendStatus(404);
-
-   switch (Number(req.params.id)) {
-    case 0:
-        res.redirect("/nodeJs")
-        break;
-    case 1:
-        res.redirect("/restAPI");
-        break;   
-    case 2:
-        res.redirect("/packageManager&Dependencies");
-        break;    
-    case 3:
-        res.redirect("/express");
-        break;
-    case 4:
-        res.redirect("/loops");
-        break;
-    case 5:
-        res.redirect("/servingHtmlFiles");
-        break;
-    case 6:
-        res.redirect("/crudableAPI");
-        break;
-    default:
-        res.redirect("/home");
-        break; 
-   }
- });
 
  //HTTP
  //LandingPage
