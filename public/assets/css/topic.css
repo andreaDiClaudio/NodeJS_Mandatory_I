@@ -118,7 +118,7 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
-    max-width: 93.75%;
+    max-width: 90em;
     padding-top: 1.25em;
   }
   
@@ -175,7 +175,7 @@
     width: 12.5em;
   }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1523px) {
   .heading-wrapper {
     max-width: 70em;
   }
@@ -184,17 +184,12 @@
     max-width: 75vw;
   }
 
-}
-  
-@media screen and (max-width: 1500px) {
   .paragraph-wrapper {
-    max-width: 60em;
+    max-width: 70vw;
   }
 
-  hr {
-    max-width: 75vw;
-  }
 }
+  
 
 @media screen and (max-width: 1320px) {
 
@@ -291,19 +286,19 @@
     }
 
     .paragraph-wrapper {
-      max-width: 45.937em;
+      max-width: 90vw;
     }
     .heading1 {
-      max-width: 45.9375em;
+      max-width: 90vw;
     }
   }
   
   @media screen and (max-width: 770px) {
     .paragraph-wrapper {
-      max-width: 37.5em;
+      max-width: 90vw;
     }
     .heading1 {
-      max-width: 37.5em;
+      max-width: 90vw;
     }
   }
 
@@ -312,9 +307,9 @@
       height: 7em;
     }
     .paragraph-wrapper {
-      max-width: 31.25em;
+      max-width: 90vw;
     }
     .heading1 {
-      max-width: 31.25em;
+      max-width: 90vw;
     }
   }
