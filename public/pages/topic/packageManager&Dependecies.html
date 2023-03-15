@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/topic.css">
+    <link rel="stylesheet" href="/assets/css/topicResponsivness.css">
     <title>Maven vs. npm</title>
 </head>
 <body>
@@ -20,7 +21,79 @@
             </div>
             <hr>
             <div class="heading2" id="1">1. Maven</div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">
+                    Maven is an open-source project that was initially created by Jason van Zyl in 2002. It is built using the Java programming language and is widely used by developers to manage and build their Java-based projects.One of the key features of Maven is its use of a Project Object Model (POM). The POM is an XML file that describes the project's configuration and dependencies. It includes information such as the project's name, version, and dependencies. The POM also specifies the build process for the project, including the build phases and goals.<br><br>
+                    One of the main benefits of using Maven is its dependency management system. Maven automatically downloads and manages dependencies for a project, ensuring that the correct versions are used and that conflicts are avoided. This makes it easier for developers to manage their projects and reduces the risk of errors caused by incompatible dependencies.
+                </p>
+            </div>
+            <div class="heading2" id="2">2. npm</div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">
+                    npm stands for Node Package Manager. It is a package manager for Node.js packages, modules, and libraries. It is free and open-source, and it is used to manage the installation, updating, and removal of Node.js packages.<br><br>
+                    npm was created in 2009 as a part of the Node.js project. One of the key features of npm is its ability to manage dependencies between packages. npm automatically installs any package dependencies that are required by a package, ensuring that the correct versions are used and that conflicts are avoided. It also provides a mechanism for developers to specify the required version of a package, making it easy to ensure compatibility with existing code.
+                </p>
+                <p class="paragraph">To install npm, you will need to first <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">install Node.js</a>.</p>
+                <p class="paragraph">After, you can open the command line interface and type</p>
+                <div class="code-snippet-wrapper">
+                    <pre class="code-snippet-tab">
+        <code class="code">npm install</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="paragraph-wrapper">
+    
+            </div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">As Maven has a specific file where all the dependencies are declared, npm has the 'package.json' file. It is a JSON file that contains information about the project, such as its name, version, author, license, and dependencies. The package.json file is located in the root directory of the project and is created automatically when you run <a class="inline-code">npm init</a> command in the terminal. The package.json file can also be created manually by adding the required fields as per the project's needs.</p>
+            </div>
+            <div class="heading2" id="2">3. Maven vs. npm</div>
+            <div class="paragraph-wrapper">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maven</th>
+                                <th>npm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>File</th>
+                                <td>POM.xml</td>
+                                <td>package.json</td>
+                            </tr>
+                            <tr>
+                                <th>Contains</th>
+                                <td>Dependencies, Meta Information</td>
+                                <td>Dependencies, Meta Information</td>
+                            </tr>
+                            <tr>
+                                <th>Actions</th>
+                                <td>Lifecycle (pre hooks, post hooks)</td>
+                                <td>Scripts</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="heading2" id="3">4. How to install express (and packages)</div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">There are two options to install Express.<br><br> The first way to install express (and any other packages) is to run the following command in the commandaline</p>
+
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
+        <code class="code">npm install express</code>
+                </pre>
+            </div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">After running the command, we can see files and folders in the root folder that confirm the correct installation of Express. npm created a folder called 'node_modules' with inside the packages required by Express.</p>
+            </div>
+            </div>
         </div>
     </main>
+
+    <script src="/assets/js/navbar.js"></script>
 </body>
 </html>
