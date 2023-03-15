@@ -98,6 +98,10 @@
     font-weight: 600;
   }
 
+  #title {
+    font-size: 6em;
+  }
+
   hr {
     max-width: 77vw;
   }
