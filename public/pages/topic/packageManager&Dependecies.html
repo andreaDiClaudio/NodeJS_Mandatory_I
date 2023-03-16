@@ -47,7 +47,7 @@
             <div class="paragraph-wrapper">
                 <p class="paragraph">As Maven has a specific file where all the dependencies are declared, npm has the 'package.json' file. It is a JSON file that contains information about the project, such as its name, version, author, license, and dependencies. The package.json file is located in the root directory of the project and is created automatically when you run <a class="inline-code">npm init</a> command in the terminal. The package.json file can also be created manually by adding the required fields as per the project's needs.</p>
             </div>
-            <div class="heading2" id="2">3. Maven vs. npm</div>
+            <div class="heading2" id="3">3. Maven vs. npm</div>
             <div class="paragraph-wrapper">
                 <div class="table-wrapper">
                     <table>
@@ -78,22 +78,42 @@
                     </table>
                 </div>
             </div>
-            <div class="heading2" id="3">4. How to install express (and packages)</div>
+            <div class="heading2" id="4">4. How to install packages</div>
             <div class="paragraph-wrapper">
-                <p class="paragraph">There are two options to install Express.<br><br> The first way to install express (and any other packages) is to run the following command in the commandaline</p>
-
+                <p class="paragraph">There are two options to install packages. In this case we will install Express<br><br> The first way to install express is to run the following command in the commandaline</p>
             <div class="code-snippet-wrapper">
                 <pre class="code-snippet-tab">
         <code class="code">npm install express</code>
                 </pre>
             </div>
             <div class="paragraph-wrapper">
-                <p class="paragraph">After running the command, we can see files and folders in the root folder that confirm the correct installation of Express. npm created a folder called 'node_modules' with inside the packages required by Express.</p>
+                <p class="paragraph">After running the command, we can see files and folders in the root folder that confirm the correct installation of Express. npm generates a folder called 'node_modules' with inside the packages required by Express and two other json files: 'package.json' and 'package-lock.json'.<br><br>
+                    'package.json' is a file that is used in Node.js projects to manage dependencies. It is essentially a manifest file that lists all the dependencies that the project requires to run. These dependencies can include other libraries or packages that are needed by the project. In this file, you can specify the version of the dependency that you want to use as well as other important information like the author, license, and description of the project.<br><br>
+                    'package-lock.json', on the other hand, is a file that was introduced in npm version 5 and it ensures that the exact version of each dependency is installed. It also locks the version of each dependency so that it does not change unexpectedly. This is important because it ensures that the project will work consistently across different machines and environments.
+                </p>
             </div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">
+                    The second way to install Express is to declare manually the dependency in the 'package.json' file. <br><br>
+                    First, create the 'package.json' file in the root folder of the project and the declare the dependcy
+                </p>
+                <div class="code-snippet-wrapper">
+                    <pre class="code-snippet-tab">
+        <code class="code">{
+        "dependencies" : {
+            "express": "4.18.2"
+        }
+    }</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">After we can simply run <a class="inline-code">npm install</a> and see the same results and consequences achieved beofore.</p>
             </div>
         </div>
     </main>
 
     <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/indexContent/packageManager&Dependecies.js"></script>
 </body>
 </html>
