@@ -21,7 +21,7 @@ const topicsPreview = [
     {
         id: 3,
         title: "REST API",
-        description: "Definition and conventions.",
+        description: "Definition and CRUD.",
         href: "/restAPI"
     },
     {
@@ -36,11 +36,5 @@ const topicsPreview = [
         description: "How to serve an html file with express and the security behind serving static files.",
         href: "/servingHtmlFiles"
     },
-    {
-        id:6,
-        title: "CRUDable API",
-        description: "From GET to DELETE method with a little extra about 'Date' in js.",
-        href: "/crudableAPI"
-    }
 ];
 module.exports = topicsPreview;

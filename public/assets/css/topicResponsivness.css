@@ -1,6 +1,10 @@
 @media screen and (max-width: 1523px) {
   .heading-wrapper {
-    max-width: 70em;
+    max-width: 75vw;
+  }
+
+  .title-wrapper {
+    max-width: 75vw;
   }
 
   hr {
@@ -137,6 +141,10 @@
         max-width: 90vw;
       }
       .heading1 {
+        max-width: 90vw;
+      }
+
+      .documentation-section-wrapper {
         max-width: 90vw;
       }
     }

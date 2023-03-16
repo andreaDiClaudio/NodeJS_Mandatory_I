@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const topicsPreviewArray = require("./public/pages/home/topicsPreview.js")
+const topicsPreviewArray = require("./public/assets/js/topicsPreview.js")
 
 let userIdCounter = 1;
 

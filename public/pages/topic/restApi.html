@@ -5,10 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/topic.css">
-    <title>Topic: NodeJs</title>
+    <link rel="stylesheet" href="/assets/css/topicResponsivness.css">
+    <title>REST API</title>
 </head>
 <body>
-    <h1>REST API</h1>
-    <h2>Definition and conventions</h2>
+    <nav id="navbar"></nav>
+    <main>
+        <div class="documentation-section-wrapper">
+            <div class="title-wrapper">
+                <p class="title">REST API</p>
+            </div>
+            <div class="heading-wrapper">
+                <p class="heading1">Definition and CRUD</p>
+            </div>
+            <hr>
+                <p class="heading2" id="1">1. REST API</p>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">
+                    REST API is based on the REST architectural style, which is a set of principles and constraints for designing network-based software. <br>
+                    he main principles of the REST architectural style include:<br><br>
+                    
+                    • Client-server architecture<br>This principle separates the user interface concerns from the data storage concerns, allowing them to evolve independently.<br><br>
+                    • Statelessness<br>This principle ensures that each request from a client contains all the necessary information for the server to understand and process it. The server does not store any information about the client's state between requests.<br><br>
+                    • Cacheability<br>This principle allows responses to be cached, improving performance and scalability.<br><br>• Uniform interface<br>
+                    This principle provides a consistent and standardized way for clients to interact with the server, using HTTP verbs like GET, POST, PUT, and DELETE.<br><br>
+                    REST APIs use HTTP as the underlying protocol for communication. They typically use JSON or XML as the data format for requests and responses. The best practice is to use JSON because
+                    it is a light-weight data format, which means that it can be transmitted quickly over the network,it is easy to read and write, it is not tied to any specific programming language or platform, which means that it can be used by any application that supports JSON parsing and generation. <br>These make it a popular choice for creating APIs that can be used across different programming languages and platforms.
+                </p>
+            </div>
+            <p class="heading2" id="2">2. CRUDable REST API</p>
+            <div class="paragraph-wrapper">
+                <p class="paragraph">
+                    CRUDable REST API is a type of REST API that supports Create, Read, Update and Delete (CRUD) operations for resources. In a typical CRUDable REST API, each resource is identified by a unique URL, and clients can send HTTP requests to create, read, update, or delete the resource. Here's a brief overview of each operation.<br><br>
+                    Create (POST) is the operation used to create a new resource. The client sends a POST request to the source's URL with the data for the new resource in the request body.<br><br>
+                    In order to perform POST operation over a resource, we need a package called 'body-parser'. It is a Node.js body parsing middleware that parses incoming request bodies before they are handled by the handlers. It is available under the req.body property and allows for automatic inflation of gzip and deflate encodings. It provides four express middleware for parsing JSON, Text, URL-encoded, and raw data sets over an HTTP request body.<br>Install the package by running the command <a class="inline-code">npm install body-parser</a>. After, at the beginning of the app.js file, you have to write
+                </p>
+            </div>
+            
+            <div class="code-snippet-wrapper">
+                <pre class="code-snippet-tab">
+                    <code class="code">
+    const bodyParser = require('body-parser');
+    app.use(bodyParser.json());
+    
+    //Parses all the urlencoded bodies
+    app.use(bodyParser.urlencoded({extended: true}))
+                    </code>
+                </pre>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/indexContent/express.js"></script>
 </body>
 </html>
