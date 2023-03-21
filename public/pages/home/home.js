@@ -19,6 +19,7 @@ function loadTopics() {
             topicWrapper.appendChild(topicInfoWrapper);
 
             const topicTitle = document.createElement("h1");
+            topicTitle.className = "title-topic-info"
             topicTitle.innerText = topic.title;
             topicInfoWrapper.appendChild(topicTitle);
 

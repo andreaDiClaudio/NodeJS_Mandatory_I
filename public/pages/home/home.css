@@ -19,7 +19,7 @@ html,body {
     padding: 20px;
 }
 
-#administrator-panel-button {
+.administrator-panel-button {
     padding:0.6em 2em;
     border-radius: 8px;
     color:#fff;
@@ -30,7 +30,7 @@ html,body {
     margin:1em;
 }
 
-#administrator-panel-button:hover {
+.administrator-panel-button:hover {
     padding:0.6em 2em;
     border-radius: 8px;
     color:#e7793e;
@@ -61,7 +61,7 @@ html,body {
     height: 200px;
     border: solid #ee9229 1px;
     border-radius: 25px;
-    background-color: #f7f7f7;
+    background-color: #2a2a3f;
 }
 
 .topic:hover {
@@ -76,9 +76,15 @@ html,body {
     left: 25px;
     max-height: 10em;
     max-width: 19em;
+    color: #f7f7f7;
+}
+
+.title-topic-info {
+    color: #f7f7f7;
 }
 
 textarea, textarea:hover {
+    color: #f7f7f7;
     resize: none;
     width: 300px;
     border-style: none; 
@@ -86,7 +92,7 @@ textarea, textarea:hover {
     overflow: auto; 
     font-size: 18px;
     cursor: pointer;
-    background-color: #f7f7f7;
+    background-color: #2a2a3f;
 }
 
 .topic-info {

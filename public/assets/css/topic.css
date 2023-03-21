@@ -25,6 +25,7 @@
     flex-direction: column;
     width: 17.1875em;
     height: 100%;
+    background-color: #f7f7f7;
   }
 
   .index-content {
@@ -92,6 +93,7 @@
     padding-top: 1.875em;
     padding-bottom: 15.625em;
     width: 75em;
+    background-color: #f7f7f7;
   }
   
   .title {
