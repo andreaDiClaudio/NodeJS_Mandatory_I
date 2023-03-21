@@ -5,8 +5,10 @@ const topicsWrapper = document.getElementById("topics-wrapper");
 window.onload = loadTopics();
 
 function loadTopics() {
-    fetch("/api/topicsPreview").then(response => response.json()).then(result => {
-        result.data.forEach(topic => {
+    fetch("/api/topicsPreview")
+    .then(response => response.json())
+    .then(result => {
+        result.data.topicsPreview.forEach(topic => {
             const topicWrapper = document.createElement("div");
             topicWrapper.className = "topic";
             topicWrapper.id = topic.id;

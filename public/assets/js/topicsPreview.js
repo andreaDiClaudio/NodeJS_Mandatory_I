@@ -37,4 +37,7 @@ const topicsPreview = [
         href: "/servingHtmlFiles"
     },
 ];
-module.exports = topicsPreview;
+
+export default {
+    topicsPreview
+}

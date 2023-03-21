@@ -1,19 +1,18 @@
 "use strict";
+import path from "path";
+import express from "express";
+import bodyParser from "body-parser"
+import templateEngine from './util/templateEngine.js';
+import topicsPreviewArray from "./public/assets/js/topicsPreview.js"
 
-const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
-
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const topicsPreviewArray = require("./public/assets/js/topicsPreview.js")
-
-let userIdCounter = 1;
-
 /*Sign up & Log in*/
+let userIdCounter = 1;
 const users = [];
 const admin = {
     id: 0,
@@ -22,19 +21,71 @@ const admin = {
 }
 users.push(admin);
 
-/*API*/
-app.get("/api/topicsPreview", (req, res) => {
-    res.send({data: topicsPreviewArray});
- });
-
- //HTTP
- //LandingPage
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/landingPage/landingPage.html")
+/*Pages*/
+const landingpage = templateEngine.readPage("./public/pages/landingpage/landingpage.html");
+const landingpagePage = templateEngine.renderPage(landingpage, {
+    tabtitle: "Mandatory I | Login",
+    cssPath: "/pages/landingpage/landingpage.css"
 });
 
+const landingpageError = templateEngine.readPage("./public/pages/landingpage/error.html");
+const landingpageErrorPage = templateEngine.renderPage(landingpageError);
 
-//logs in
+const signup = templateEngine.readPage("./public/pages/signup/signup.html");
+const signupPage = templateEngine.renderPage(signup, {
+    tabtitle: "Mandatory I | Signup",
+    cssPath: "/pages/landingpage/landingpage.css"
+});
+
+const signupError = templateEngine.readPage("./public/pages/signup/error.html");
+const signupErrorPage = templateEngine.renderPage(signupError, {
+    tabtitle: "Mandatory I | Error"
+});
+
+const home = templateEngine.readPage("./public/pages/home/home.html");
+const homePage = templateEngine.renderPage(home, {
+    tabtitle: "Mandatory I | Home",
+    cssPath: "pages/home/home.css"
+});
+
+const nodeJs = templateEngine.readPage("./public/pages/topic/nodeJs.html");
+const nodeJsPage = templateEngine.renderTopicPage(nodeJs,  {
+    tabtitle: "Mandatory I | NodeJs",
+    indexContent: "nodeJs"
+});
+
+const packageManagerAndDependencies = templateEngine.readPage("./public/pages/topic/packageManager&Dependecies.html");
+const packageManagerAndDependenciesPage = templateEngine.renderTopicPage(packageManagerAndDependencies, {
+    tabtitle: "Mandatory I | Packages&Dependencies",
+    indexContent: "packageManager&Dependecies"
+})
+
+const expresspage = templateEngine.readPage("./public/pages/topic/express.html")
+const expresspagePage = templateEngine.renderTopicPage(expresspage, {
+    tabtitle: "Mandatory I | Express",
+    indexContent: "express"
+});
+
+const restAPI = templateEngine.readPage("./public/pages/topic/restAPI.html");
+const restAPIPage = templateEngine.renderTopicPage(restAPI, {
+    tabtitle: "Mandatory I | Rest API",
+    indexContent : "restAPI"
+});
+
+const loops = templateEngine.readPage("./public/pages/topic/loops.html");
+const loopsPage = templateEngine.renderTopicPage(loops);
+
+const servingHTMLFiles = templateEngine.readPage("./public/pages/topic/servingHTMLFiles.html");
+const servingHtmlFilesPage = templateEngine.renderTopicPage(servingHTMLFiles);
+
+const CRUDableAPI = templateEngine.readPage("./public/pages/topic/CRUDableAPI.html");
+const CRUDableAPIPage = templateEngine.renderTopicPage(CRUDableAPI);
+
+/*HTTP*/
+app.get("/", (req, res) => {
+    res.send(landingpagePage);
+});
+
 app.post("/", (req, res) => {
     const user = users.find(user => user.username === req.body.username && user.password === req.body.password);
 
@@ -43,10 +94,8 @@ app.post("/", (req, res) => {
     res.redirect("/home");
 });
 
-//Create a new user
 app.post("/users", (req, res) => {
     const user = users.find(user => user.username === req.body.username && user.password === req.body.password);
-
     if(user) return res.redirect("/signup/error");
 
     const newUser = {
@@ -60,54 +109,57 @@ app.post("/users", (req, res) => {
     res.redirect("/")
 });
 
-//landingPage error
 app.get("/login/error", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/landingPage/error.html");
+    res.send(landingpageErrorPage);
 });
 
-//Signup
 app.get("/signup", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/signup/signup.html")
+    res.send(signupPage);
 });
 
 app.get("/signup/error", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/signup/error.html");
+    res.send(signupErrorPage);
 });
 
-//Home
 app.get("/home", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/home/home.html")
+    res.send(homePage);
 });
 
 /*TOPICS*/
-//NodeJs
 app.get("/nodeJs", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/topic/nodeJs.html");
+    res.send(nodeJsPage);
 });
-//Package Manager and Dependencies
+
 app.get("/packageManager&Dependencies", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/topic/packageManager&Dependecies.html");
+    res.send(packageManagerAndDependenciesPage);
 });
-//restAPI
+
 app.get("/restAPI", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/topic/restAPI.html");
+    res.send(restAPIPage);
 });
-//express
+
 app.get("/express", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/topic/express.html");
+    res.send(expresspagePage);
 });
+
 app.get("/loops", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/topic/loops.html");
+    res.send(loopsPage);
 });
-//servingHtmlFiles
+
 app.get("/servingHtmlFiles", (req, res) => {
-    res.sendFile(__dirname + "/public/pages/topic/servingHTMLFiles.html");
+    res.send(servingHtmlFilesPage);
 });
+
 app.get("/crudableAPI", (req,res) => {
-    res.sendFile(__dirname + "/public/pages/topic/CRUDableApi.html");
+    res.send(CRUDableAPIPage);
 });
 
+/*API*/
+app.get("/api/topicsPreview", (req, res) => {
+    res.send({data: topicsPreviewArray});
+ });
 
+ //PORT
 const PORT = 8080;
 app.listen(PORT, (error) => {
     error ? console.log(error) : console.log("Server is running on port: ", PORT);
