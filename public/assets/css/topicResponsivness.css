@@ -64,6 +64,7 @@
       .index-topic-wrapper:hover .index-content {
         visibility: visible;
         cursor: pointer;
+        background-color: #f7f7f7;
       }
   
       .button-wrapper {
