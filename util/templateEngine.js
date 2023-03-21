@@ -1,5 +1,9 @@
 import fs from 'fs';
 
+function readPage(pagePath) {
+    return fs.readFileSync(pagePath).toString();
+}
+
 function renderTopicPage(page, config={}) {
     const navbar = fs.readFileSync("./public/components/topic/navbar/navbar.html").toString()
         .replace("$TAB_TITLE", config.tabTitle || "NodeJs Mandatory")
@@ -23,10 +27,6 @@ function renderPage(page, config={}) {
         .replace("$HOME_SCRIPT", `<script src="/pages/home/home.js"></script>` || "");
 
     return start + page + end;
-}
-
-function readPage(pagePath) {
-    return fs.readFileSync(pagePath).toString();
 }
 
 export default {
