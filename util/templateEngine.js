@@ -10,12 +10,16 @@ function renderTopicPage(page, config={}) {
         .replace("$CSS_LINK", `<link rel="stylesheet" href="/assets/css/topic.css">`)
         .replace("$RESPONSIVNESS_LINK", `<link rel="stylesheet" href="/assets/css/topicResponsivness.css">`);
 
+    const title = fs.readFileSync("./public/components/topic/title/title.html").toString()
+        .replace("$TOPIC_TITLE", config.topicTitle)
+        .replace("$TOPIC_DESCRIPTION", config.topicDescription);
+
     const footer = fs.readFileSync("./public/components/topic/footer/footer.html").toString()
         .replace("$FOOTER_YEAR", `© / ${new Date().getFullYear()} / Andrea Di Claudio`)
         .replace("$INDEX_CONTENT_LINK", `<script src="/assets/js/indexContent/${config.indexContent}.js"></script>`)
         .replace("$NAVBAR_LINK", `<script src="/assets/js/navbar.js"></script>`);
 
-    return navbar + page + footer;
+    return navbar + title +  page + footer;
 }
 
 function renderPage(page, config={}) {

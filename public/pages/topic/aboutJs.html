@@ -1,0 +1,343 @@
+<div class="heading2" id="1">
+    <p>1. JavaScript</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        JavaScript is a high-level, dynamic, interpreted programming language that is used to create interactive web pages and web applications. It was created in 1995 by Brendan Eich while he was working for Netscape Communications Corporation. JavaScript is a client-side scripting language, which means it runs on the user's computer rather than on the server hosting the website.
+        <br>
+        <br>
+        JavaScript is used in a variety of ways, from simple webpage animations to complex web applications like Gmail and Google Maps. It is also used for server-side programming with platforms like Node.js. JavaScript is supported by all major web browsers, including Chrome, Firefox, Safari, and Internet Explorer.
+    </p>
+</div>
+<div class="heading2" id="2">
+    <p>2. Variables and Data Types</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        JavaScript is a dynamic language with dynamic types. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.
+        <br>
+        <br>
+        In Javascript, datatypes are divided into two categories: primitive and object.
+        <br>
+        Primitive datatypes are built-in to the language and include include numbers, strings, booleans, null and undefined.
+        <br>
+        Objects are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).
+        <br>
+        <br>
+        Primitive Datatypes in JavaScript
+    </p>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Return Value</th>
+                    <th>Object Wrapper</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Null</td>
+                    <td>They're used to indicate that the value of an expression is not known</td>
+                    <td>"null"</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Undefined</td>
+                    <td>Undefined values in Javascript are values that have not been assigned a value</td>
+                    <td>"undefined"</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Boolean</td>
+                    <td>The Boolean type represents a logical entity and is inhabited by two values: true and false</td>
+                    <td>"boolean"</td>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <td>Number</td>
+                    <td>JavaScript number values are either integer or floating point numbers. Integers can be positive or negative, and they can also be zero; floating-point numbers can contain a decimal point</td>
+                    <td>"number"</td>
+                    <td>Number</td>
+                </tr>
+                <tr>
+                    <td>BigInt</td>
+                    <td>You can use the 'BigInt' data type to represent very large integer values up to 18 digits long</td>
+                    <td>"bigint"</td>
+                    <td>BigInt</td>
+                </tr>
+                <tr>
+                    <td>String</td>
+                    <td>strings are a sequence of characters enclosed by double quotes</td>
+                    <td>"string"</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>Symbol</td>
+                    <td>Symbol values are used in JavaScript to create unique strings that can be used as keys for object property lookup</td>
+                    <td>"symbol"</td>
+                    <td>Symbol</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        The 'typeof' operator returns a string describing the type of value or object in a variable, so you can check what type of data you're dealing with before attempting to perform operations on it.
+        <br>
+        <br>
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">typeof false //boolean</code>
+            <br>
+            <code class="code">typeOf 0.05 //Number</code>
+            <br>
+            <code class="code">typeof function () {} //function</code>
+            <br>
+            <code class="code">typeof ‘string’ //string</code>
+            <br>
+            <code class="code">typeof {} //objects</code>
+            <br>
+            <code class="code">typeOf 0.05 //Number</code>
+            <br>
+            <code class="code">typeof [ ] //object - in js arrays are objects</code>
+        </pre>
+    </div>
+    <div class="heading2" id="3">
+        <p>3.Type Coercion</p>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.
+        <br>
+        <br>
+        There are some downsides to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">const sum = 35 + "hello"</code>
+            <code class="code">console.log(sum)// 35hello</code>
+            <code class="code">console.log(typeof sum)// string</code>
+            <br>
+            <code class="code">const times = 35 * "hello"</code>
+            <code class="code">console.log(times)// NaN</code>
+            <br>
+            <code class="code">const string = "";</code>
+            <code class="code">const number = 40;</code>
+            <code class="code">const boolean = true;</code>
+            <code class="code">console.log(!string)</code>
+            <code>
+                //true - string is coerced to boolean `false`, 
+  //then the NOT operator negates it
+            </code>
+            <code class="code">console.log(boolean + string)</code>
+            <code class="code">
+                //"true" - boolean is coerced to string "true", and 
+  //concatenated with the empty string
+            </code>
+            <code class="code">console.log(40 + true)</code>
+            <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
+        </pre>
+    </div>
+</div>
+<div class="heading2" id="4">
+    <p>4. Loose vs. Strict Equality Operator</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        In JavaScript, there's both the double equality operator (== which is called the loose equality operator) and the triple equality operator (=== which is called the strict equality operator). You use both operators to compare values' equality.
+        <br>
+        <br>
+        The loose equality operator does a loose check. It checks if values are equal. The types are not a focus for this operator - only the values are the major factor.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">const variable1 = 20;</code>
+            <code class="code">const variable2 = "20";</code>
+            <br>
+            <code class="code">console.log(variable1 == variable2);// true</code>
+        </pre>
+    </div>
+    <p class="paragraph" style="padding-top: 20px;">
+        When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.
+    
+                In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.
+        <br>
+        <br>
+        The strict equality operator does a strict check – that is, it strictly checks the values compared, as well as the types. Type coercion does not occur here, so there are no unexpected answers.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">const variable1 = 20;</code>
+            <code class="code">const variable2 = "20";</code>
+            <br>
+            <code class="code">console.log(variable1 === variable2);// false</code>
+        </pre>
+    </div>
+</div>
+<div class="heading2" id="5">
+    <p>5. Strict Mode</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Strict mode is a feature in JavaScript that allows developers to opt-in to a stricter version of the language, which makes it easier to write secure and optimized code. According to
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" style="color: #e7793e;">MDN Web Docs</a>, strict mode makes several changes to normal JavaScript semantics: it eliminates some JavaScript silent errors by changing them to throw errors, and it fixes mistakes that make it difficult for JavaScript engines to perform optimizations. This means that strict mode code can sometimes be made to run faster than identical code that's not in strict mode.
+        <br>
+        <br>To enable strict mode, you can add the string
+        <a class="inline-code">"use strict"</a>
+        ; at the beginning of a script or a function. If declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode).
+    </p>
+</div>
+<div class="heading2">
+    <p>6. Functions</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Functions in JavaScript are treated as first-class objects, which means they can be passed around like any other value. They can be assigned to variables, passed as arguments to other functions, and returned as values from functions. In JavaScript, functions can be declared using the function keyword followed by the function name, or they can be expressed as anonymous functions.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">//Function Syntax
+    function greet(name) {
+        console.log("Hello, " + name + "!");
+    }
+              
+    greet("John"); // Output: Hello, John!</code>
+        </pre>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            In the example above, we declare a function called <a class="inline-code">greet</a> that accepts a parameter called <a class="inline-code">name</a>. Inside the function body, we log a greeting message to the console using the provided name. We then call the function and pass in the argument "John".
+        </p>
+    </div>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">//Anonymous Function Syntax
+    var sum = function(a, b) {
+        return a + b;
+    }
+                  
+    console.log(sum(2, 3)); // Output: 5</code>
+        </pre>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            In the example above, we declare an anonymous function and assign it to a variable called <a class="inline-code">sum</a>. The function takes two parameters <a class="inline-code">a</a> and <a class="inline-code">b</a> and returns their sum. We then call the function and pass in the arguments 2 and 3 to get the sum 5
+        </p>
+    </div>
+</div>
+<div class="heading2">
+    <p>7.Callback Functions</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        In JavaScript, a callback function is a function that is passed as an argument to another function and is executed inside that function.<br><br>
+        One common use case for callback functions is handling asynchronous operations, such as making an API call or fetching data from a database. Instead of waiting for the operation to complete before moving on to the next line of code, we can pass a callback function to the asynchronous function which will be executed once the operation has completed.<br><br>Here's an example of a callback function being used with an asynchronous operation:
+    </p>
+    
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">function greeting(name, callback) {
+    console.log("Hello, " + name + "!");
+    callback();
+    }
+              
+    function sayGoodbye() {
+        console.log("Goodbye!");
+    }
+              
+    greeting("John", sayGoodbye);</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">In this example, we have two functions greeting and sayGoodbye. greeting takes two parameters: name and callback. It logs a greeting message to the console using the provided name and then calls the callback function.<br><br>sayGoodbye is the callback function, it logs a goodbye message to the console.<br><br>We call greeting and pass in the arguments "John" and sayGoodbye. When greeting is called, it logs "Hello, John!" to the console and then calls the callback function, which in this case is sayGoodbye.<br><br>The output of this code will be:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">Hello, John!</code>
+            <code>Goodbye!</code>
+        </pre>
+    </div>
+</div>
+<div class="heading2">
+    <p>7.Loops</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        A loop is a programming construct that allows you to execute a block of code repeatedly until a certain condition is met. The most common types of loops in JavaScript are for loops, while loops, and do-while loops.<br><br>
+        A for loop is used when you know how many times you want to execute the loop. Here is an example:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">for (let i = 0; i < 5; i++) {
+        console.log("Hello, world!");
+    }</code>
+        </pre>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            A while loop is used when you want to execute a block of code while a certain condition is true. Here is an example:
+        </p>
+    </div>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">let i = 0;
+    while (i < 5) {
+        console.log("Hello, world!");
+    }</code>
+        </pre>
+    </div>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            Now, in addition to these basic loops, JavaScript also has a number of loop methods that can be used with arrays. These methods include forEach(), map(), and filter().<br><br>• forEach()<br>This method is used to loop through the elements of an array and execute a function for each element
+        </p>
+    </div>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">let numbers = [1, 2, 3, 4, 5];
+
+    numbers.forEach(number => {
+        console.log(number * 2);
+    });</code>
+        </pre>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            • map()<br> This method is used to create a new array with the results of calling a provided function on every element in the calling array
+        </p>
+    </div>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">let numbers = [1, 2, 3, 4, 5];
+
+    let doubledNumbers = numbers.map(function(number)   {
+        return number * 2;
+    });
+                
+    console.log(doubledNumbers);</code>
+        </pre>
+    </div>
+
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            • filter()<br> The filter() method creates a new array with all elements that pass the test implemented by the provided function
+        </p>
+    </div>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">let numbers = [1, 2, 3, 4, 5];
+
+    let evenNumbers = numbers.filter(function(number) {
+        return number % 2 === 0;
+    });
+                
+    console.log(evenNumbers);</code>
+        </pre>
+    </div>
+</div>

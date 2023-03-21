@@ -33,19 +33,27 @@ const landingpageErrorPage = templateEngine.renderPage(landingpageError);
 
 const signup = templateEngine.readPage("./public/pages/signup/signup.html");
 const signupPage = templateEngine.renderPage(signup, {
-    tabtitle: "Mandatory I | Signup",
+    tabtitle: "Sign up | Mandatory I",
     cssPath: "/pages/landingpage/landingpage.css"
 });
 
 const signupError = templateEngine.readPage("./public/pages/signup/error.html");
 const signupErrorPage = templateEngine.renderPage(signupError, {
-    tabtitle: "Mandatory I | Error"
+    tabtitle: "Error | Mandatory I"
 });
 
 const home = templateEngine.readPage("./public/pages/home/home.html");
 const homePage = templateEngine.renderPage(home, {
-    tabtitle: "Mandatory I | Home",
+    tabtitle: "Home | Mandatory I",
     cssPath: "pages/home/home.css"
+});
+
+const aboutJs = templateEngine.readPage("./public/pages/topic/aboutJs.html");
+const aboutJsPage = templateEngine.renderTopicPage(aboutJs, {
+    tabtitle: "About Js | Mandatory I",
+    indexContent: "aboutJs",
+    topicTitle: "About JavaScript",
+    topicDescription: "From data types to callback function and fetch."
 });
 
 const nodeJs = templateEngine.readPage("./public/pages/topic/nodeJs.html");
@@ -54,32 +62,20 @@ const nodeJsPage = templateEngine.renderTopicPage(nodeJs,  {
     indexContent: "nodeJs"
 });
 
-const packageManagerAndDependencies = templateEngine.readPage("./public/pages/topic/packageManager&Dependecies.html");
-const packageManagerAndDependenciesPage = templateEngine.renderTopicPage(packageManagerAndDependencies, {
-    tabtitle: "Mandatory I | Packages&Dependencies",
-    indexContent: "packageManager&Dependecies"
-})
-
-const expresspage = templateEngine.readPage("./public/pages/topic/express.html")
-const expresspagePage = templateEngine.renderTopicPage(expresspage, {
-    tabtitle: "Mandatory I | Express",
-    indexContent: "express"
-});
-
 const restAPI = templateEngine.readPage("./public/pages/topic/restAPI.html");
 const restAPIPage = templateEngine.renderTopicPage(restAPI, {
     tabtitle: "Mandatory I | Rest API",
     indexContent : "restAPI"
 });
 
-const loops = templateEngine.readPage("./public/pages/topic/loops.html");
-const loopsPage = templateEngine.renderTopicPage(loops);
+const exportAndImport = templateEngine.readPage("./public/pages/topic/exportAndImport.html")
+const exportAndImportPage = templateEngine.renderTopicPage(exportAndImport, {
+    tabtitle: "Mandatory I | Export / Import",
+    indexContent: "exportAndImport"
+});
 
-const servingHTMLFiles = templateEngine.readPage("./public/pages/topic/servingHTMLFiles.html");
-const servingHtmlFilesPage = templateEngine.renderTopicPage(servingHTMLFiles);
-
-const CRUDableAPI = templateEngine.readPage("./public/pages/topic/CRUDableAPI.html");
-const CRUDableAPIPage = templateEngine.renderTopicPage(CRUDableAPI);
+const clientAndServerRendering = templateEngine.readPage("./public/pages/topic/clientAndServerRendering.html");
+const clientAndServerRenderingPage = templateEngine.renderTopicPage(clientAndServerRendering);
 
 /*HTTP*/
 app.get("/", (req, res) => {
@@ -126,31 +122,23 @@ app.get("/home", (req, res) => {
 });
 
 /*TOPICS*/
-app.get("/nodeJs", (req,res) => {
-    res.send(nodeJsPage);
+app.get("/aboutJs", (req, res) => {
+    res.send(aboutJsPage);
 });
 
-app.get("/packageManager&Dependencies", (req, res) => {
-    res.send(packageManagerAndDependenciesPage);
+app.get("/nodeJs", (req,res) => {
+    res.send(nodeJsPage);
 });
 
 app.get("/restAPI", (req,res) => {
     res.send(restAPIPage);
 });
 
-app.get("/express", (req,res) => {
-    res.send(expresspagePage);
+app.get("/exportAndImport", (req, res) => {
+    res.send(exportAndImportPage);
 });
 
-app.get("/loops", (req, res) => {
-    res.send(loopsPage);
-});
-
-app.get("/servingHtmlFiles", (req, res) => {
-    res.send(servingHtmlFilesPage);
-});
-
-app.get("/crudableAPI", (req,res) => {
+app.get("/clientAndServerRendering", (req,res) => {
     res.send(CRUDableAPIPage);
 });
 
