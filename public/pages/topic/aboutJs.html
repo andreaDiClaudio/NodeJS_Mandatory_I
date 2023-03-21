@@ -297,8 +297,7 @@
         <p class="paragraph">
             Now, in addition to these basic loops, JavaScript also has a number of loop methods that can be used with arrays. These methods include forEach(), map(), and filter().<br><br>• forEach()<br>This method is used to loop through the elements of an array and execute a function for each element
         </p>
-    </div>
-    <div class="code-snippet-wrapper">
+        <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
             <code class="code">let numbers = [1, 2, 3, 4, 5];
 
@@ -307,12 +306,12 @@
     });</code>
         </pre>
     </div>
+    </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
             • map()<br> This method is used to create a new array with the results of calling a provided function on every element in the calling array
         </p>
-    </div>
-    <div class="code-snippet-wrapper">
+        <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
             <code class="code">let numbers = [1, 2, 3, 4, 5];
 
@@ -323,13 +322,12 @@
     console.log(doubledNumbers);</code>
         </pre>
     </div>
-
+    </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
             • filter()<br> The filter() method creates a new array with all elements that pass the test implemented by the provided function
         </p>
-    </div>
-    <div class="code-snippet-wrapper">
+        <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
             <code class="code">let numbers = [1, 2, 3, 4, 5];
 
@@ -339,5 +337,99 @@
                 
     console.log(evenNumbers);</code>
         </pre>
+    </div>
+    </div>
+    <div class="heading2">
+        <p>8. Date and Time</p>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            In JavaScript, the Date() function is a built-in object that allows you to work with dates and times. According to Mozilla Developer Network, "A JavaScript date is fundamentally specified as the number of milliseconds that have elapsed since the ECMAScript epoch, which is defined as the midnight at the beginning of January 1, 1970, UTC (equivalent to the UNIX epoch)".<br><br>In simpler terms, the Date() function allows you to create a JavaScript object that represents a specific date and time, which you can then manipulate or format as needed. The Date() function has several methods that allow you to get or set specific parts of a date (such as the year, month, day, hour, minute, second, and millisecond).<br><br>
+            • To get the current date and time, create a new Date() object with no arguments:
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">let currentDate = new Date();</code>
+                <code>console.log(currentDate);</code>
+
+                <code>//ouptut</code>
+                <code>Wed Oct 06 2021 18:25:42 GMT-0400 (Eastern Daylight Time)</code>
+            </pre>
+        </div>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            • To get the current year, use the getFullYear() method:
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">let currentYear = new Date().getFullYear();</code>
+                <code>console.log(currentYear);</code>
+
+                <code>//ouptut</code>
+                <code>2021</code>
+            </pre>
+        </div>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            • To get the current month (as a number from 0-11), use the getMonth() method:
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">let currentMonth = new Date().getMonth();</code>
+                <code>console.log(currentMonth);</code>
+
+                <code>//ouptut</code>
+                <code>9</code>
+            </pre>
+        </div>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            • To get the current day of the month (as a number from 1-31), use the getDate() method:
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">let currentDay = new Date().getDate();</code>
+                <code>console.log(currentDay);</code>
+
+                <code>//ouptut</code>
+                <code>6</code>
+            </pre>
+        </div>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            • To get the current day of the week (as a number from 0-6, where 0 is Sunday and 6 is Saturday), use the getDay() method:
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">let currentDayOfWeek = new Date().getDay();</code>
+                <code>console.log(currentDayOfWeek);</code>
+
+                <code>//ouptut</code>
+                <code>3</code>
+            </pre>
+        </div>
+    </div>
+    <div class="heading2">
+        <p>9. fetch()</p>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph"><a class="inline-code">fetch()</a> is a built-in function in JavaScript that allows you to make network requests to retrieve resources from the server.<br><br>
+        Here's an example of how to use <a class="inline-code">fetch()</a>:
+        </p>
+        <div class="code-snippet-wrapper">
+            <pre class="code-snippet-tab">
+                <code class="code">fetch('https://anyUrl')
+            .then(response => response.json())
+            .then(data => console.log(data));</code>
+            </pre>
+        </div>
+    </div>
+    <div class="paragraph-wrapper">
+        <p class="paragraph">
+            The 'fetch()' function returns a Promise, which we can then use to retrieve the response data.<br><br>The first 'then()' method is used to convert the response object to JSON format. The second 'then()' method logs the JSON data to the console.<br><br>You can also use 'fetch()' to make requests with different options, such as adding headers or sending a POST request with data.
     </div>
 </div>
