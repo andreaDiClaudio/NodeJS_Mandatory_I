@@ -57,9 +57,11 @@ const aboutJsPage = templateEngine.renderTopicPage(aboutJs, {
 });
 
 const nodeJs = templateEngine.readPage("./public/pages/topic/nodeJs.html");
-const nodeJsPage = templateEngine.renderTopicPage(nodeJs,  {
-    tabtitle: "Mandatory I | NodeJs",
-    indexContent: "nodeJs"
+const nodeJsPage = templateEngine.renderTopicPage(nodeJs, {
+    tabtitle: "NodeJs | Mandatory I",
+    indexContent: "NodeJs",
+    topicTitle: "NodeJs",
+    topicDescription: "What is it? How do we use Express?"
 });
 
 const restAPI = templateEngine.readPage("./public/pages/topic/restAPI.html");

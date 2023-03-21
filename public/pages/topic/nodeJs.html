@@ -1,275 +1,183 @@
-<div class="documentation-section-wrapper">
-    <div class="title-wrapper">
-        <p class="title">NodeJs</p>
-    </div>
-    <div class="heading-wrapper">
-        <p class="heading1">Inroduction to NodeJS, data types in Javascript, and the design of an API.</p>
-    </div>
-    <hr>
-    <div class="heading2" id="1">
-        <p>1. NodeJs</p>
-    </div>
-    <div class="paragraph-wrapper">
-        <p class="paragraph">
-            Node.js is a JavaScript runtime environment for developing server-side applications. It uses Google's V8 JavaScript engine, which compiles and executes JavaScript code. Node.js allows developers to write network applications using JavaScript, which is easier than using other languages like C++ or Java.
-            <br>
-            <br>
-            Node.js was created by Ryan Dahl in 2009 when he was working on a web application that required real-time communication between the browser and the server. He needed to create an efficient method of communicating between these two parts of the application, so he created Node.js and released it as open source software under the MIT license on GitHub. The popularity of Node.js grew quickly because of its low resource requirements, its ease of use and its ability to handle multiple concurrent connections efficiently (especially compared to other languages).
-            <br>
-            <br>
-            To run a file with Node.js, you need to use the 'node' command line tool.
-            <br> The node command line tool is part of the Node.js installation package, which you can
-            <a href="https://nodejs.org/" target="_blank" style="color: #e7793e;">download</a> from the official website of Node.js.
-            <br>
-            <br>
-            To run files with Node.js, simply open a terminal window on your computer or IDE and type in:
-        </p>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-                <code class="code">node [filename].js</code>
-            </pre>
-        </div>
-    </div>
-    <div class="heading2" id="2">
-        <p>2. Data Types in JavaScript</p>
-    </div>
-    <div class="paragraph-wrapper">
-        <p class="paragraph">
-            JavaScript is a dynamic language with dynamic types. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.
-            <br>
-            <br>
-            In Javascript, datatypes are divided into two categories: primitive and object.
-            <br>Primitive datatypes are built-in to the language and include include numbers, strings, booleans, null and undefined.
-            <br>Objects are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).
-            <br>
-            <br>
-            Primitive Datatypes in JavaScript
-        </p>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Return Value</th>
-                        <th>Object Wrapper</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Null</td>
-                        <td>They're used to indicate that the value of an expression is not known</td>
-                        <td>"null"</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr>
-                        <td>Undefined</td>
-                        <td>Undefined values in Javascript are values that have not been assigned a value</td>
-                        <td>"undefined"</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr>
-                        <td>Boolean</td>
-                        <td>The Boolean type represents a logical entity and is inhabited by two values: true and false</td>
-                        <td>"boolean"</td>
-                        <td>Boolean</td>
-                    </tr>
-                    <tr>
-                        <td>Number</td>
-                        <td>JavaScript number values are either integer or floating point numbers. Integers can be positive or negative, and they can also be zero; floating-point numbers can contain a decimal point</td>
-                        <td>"number"</td>
-                        <td>Number</td>
-                    </tr>
-                    <tr>
-                        <td>BigInt</td>
-                        <td>You can use the 'BigInt' data type to represent very large integer values up to 18 digits long</td>
-                        <td>"bigint"</td>
-                        <td>BigInt</td>
-                    </tr>
-                    <tr>
-                        <td>String</td>
-                        <td>strings are a sequence of characters enclosed by double quotes</td>
-                        <td>"string"</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>Symbol</td>
-                        <td>Symbol values are used in JavaScript to create unique strings that can be used as keys for object property lookup</td>
-                        <td>"symbol"</td>
-                        <td>Symbol</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="paragraph-wrapper">
-        <p class="paragraph">
-            The 'typeof' operator returns a string describing the type of value or object in a variable, so you can check what type of data you're dealing with before attempting to perform operations on it.
-            <br>
-            <br>
-        </p>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-                <code class="code">typeof false //boolean</code>
-                <br>
-                <code class="code">typeOf 0.05 //Number</code>
-                <br>
-                <code class="code">typeof function () {} //function</code>
-                <br>
-                <code class="code">typeof ‘string’ //string</code>
-                <br>
-                <code class="code">typeof {} //objects</code>
-                <br>
-                <code class="code">typeOf 0.05 //Number</code>
-                <br>
-                <code class="code">typeof [ ] //object - in js arrays are objects</code>
-            </pre>
-        </div>
-        <div class="heading2" id="3">
-            <p>3.Type Coercion</p>
-        </div>
-    </div>
-    <div class="paragraph-wrapper">
-        <p class="paragraph">
-            Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.
-            <br>
-            <br>
-            There are some downsides to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
-        </p>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-                <code class="code">const sum = 35 + "hello"</code>
-                <code class="code">console.log(sum)// 35hello</code>
-                <code class="code">console.log(typeof sum)// string</code>
-                <br>
-                <code class="code">const times = 35 * "hello"</code>
-                <code class="code">console.log(times)// NaN</code>
-                <br>
-                <code class="code">const string = "";</code>
-                <code class="code">const number = 40;</code>
-                <code class="code">const boolean = true;</code>
-                <code class="code">console.log(!string)</code>
-                <code>
-                    //true - string is coerced to boolean `false`, 
-  //then the NOT operator negates it
-                </code>
-                <code class="code">console.log(boolean + string)</code>
-                <code class="code">
-                    //"true" - boolean is coerced to string "true", and 
-  //concatenated with the empty string
-                </code>
-                <code class="code">console.log(40 + true)</code>
-                <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
-            </pre>
-        </div>
-    </div>
-    <div class="heading2" id="4">
-        <p>4. Loose vs. Strict Equality Operator</p>
-    </div>
-    <div class="paragraph-wrapper">
-        <p class="paragraph">
-            In JavaScript, there's both the double equality operator (== which is called the loose equality operator) and the triple equality operator (=== which is called the strict equality operator). You use both operators to compare values' equality.
-            <br>
-            <br>
-            The loose equality operator does a loose check. It checks if values are equal. The types are not a focus for this operator - only the values are the major factor.
-        </p>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-                <code class="code">const variable1 = 20;</code>
-                <code class="code">const variable2 = "20";</code>
-                <br>
-                <code class="code">console.log(variable1 == variable2);// true</code>
-            </pre>
-        </div>
-        <p class="paragraph" style="padding-top: 20px;">
-            When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.
-    
-                In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.
-            <br>
-            <br>
-            The strict equality operator does a strict check – that is, it strictly checks the values compared, as well as the types. Type coercion does not occur here, so there are no unexpected answers.
-        </p>
-        <div class="code-snippet-wrapper">
-            <pre class="code-snippet-tab">
-                <code class="code">const variable1 = 20;</code>
-                <code class="code">const variable2 = "20";</code>
-                <br>
-                <code class="code">console.log(variable1 === variable2);// false</code>
-            </pre>
-        </div>
-    </div>
-    <div class="heading2" id="5">
-        <p>5.REST API</p>
-    </div>
-    <div class="paragraph-wrapper">
-        <p class="paragraph">
-            REST API is an application programming interface that does not store the state of the client. It is used to interact with a web service. A REST API uses HTTP verbs (GET, POST, PUT, DELETE) to communicate with the server and perform actions like creating, updating and deleting resources. It is a communication that follows the client-server model: the user sends a request, the server sends a response.
-            <br>
-            <br>
-            Conventions:
-            <br>
-            <br>
-            <p class="paragraph">
-                • Accept And Respond With JSON
-                <br>
-                JSON is the standard for transferring data. Almost every networked technology
-                <br>                  can use it
-                <br>
-                <br>
-                • Order of Endpoints
-                <br>
-                Very important for the next person who is going to work on it.
-                   For good documentation.
-                <br>
-                <br>
-                • Naming of Endpoints
-                <br>
-                The name of the endpoint should represent the collection.
-            </p>
-        </p>
-        <p class="paragraph">Following an example of desing of an API that follows the conventions.</p>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>HTTP Method</th>
-                        <th>Endpoint</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>GET</td>
-                        <td>/songs</td>
-                        <td>Fetch all songs</td>
-                    </tr>
-                    <tr>
-                        <td>GET</td>
-                        <td>/songs/{id}</td>
-                        <td>Fetch a specific song</td>
-                    </tr>
-                    <tr>
-                        <td>POST</td>
-                        <td>/songs</td>
-                        <td>Creates a new song</td>
-                    </tr>
-                    <tr>
-                        <td>PUT</td>
-                        <td>/songs/{id}</td>
-                        <td>"Edit an existing song by id, changing all properties of the object"</td>
-                    </tr>
-                    <tr>
-                        <td>PATCH</td>
-                        <td>/songs/{id}</td>
-                        <td>Edit an existing song by id, changing only the requested proprties of the object</td>
-                    </tr>
-                    <tr>
-                        <td>DELETE</td>
-                        <td>songs/{id}</td>
-                        <td>Deletes the object</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="heading2" id="1">
+    <p>1. NodeJs</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Node.js is a JavaScript runtime environment for developing server-side applications. It uses Google's V8 JavaScript engine, which compiles and executes JavaScript code. Node.js allows developers to write network applications using JavaScript, which is easier than using other languages like C++ or Java.
+        <br>
+        <br>
+        Node.js was created by Ryan Dahl in 2009 when he was working on a web application that required real-time communication between the browser and the server. He needed to create an efficient method of communicating between these two parts of the application, so he created Node.js and released it as open source software under the MIT license on GitHub. The popularity of Node.js grew quickly because of its low resource requirements, its ease of use and its ability to handle multiple concurrent connections efficiently (especially compared to other languages).
+        <br>
+        <br>
+        To run a file with Node.js, you need to use the 'node' command line tool.
+        <br>
+        The node command line tool is part of the Node.js installation package, which you can
+        <a href="https://nodejs.org/" target="_blank" style="color: #e7793e;">download</a>
+        from the official website of Node.js.
+        <br>
+        <br>
+        To run files with Node.js, simply open a terminal window on your computer or IDE and type in:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">node [filename].js</code>
+        </pre>
     </div>
 </div>
+
+<div class="heading2" id="2">2. Package Manager and Dependecies</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        npm stands for Node Package Manager. It is a package manager for Node.js packages, modules, and libraries. It is free and open-source, and it is used to manage the installation, updating, and removal of Node.js packages.<br><br>
+        npm was created in 2009 as a part of the Node.js project. One of the key features of npm is its ability to manage dependencies between packages. npm automatically installs any package dependencies that are required by a package, ensuring that the correct versions are used and that conflicts are avoided. It also provides a mechanism for developers to specify the required version of a package, making it easy to ensure compatibility with existing code.
+    </p>
+    <p class="paragraph">To install npm, you will need to first <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">install Node.js</a>.</p>
+    <p class="paragraph">After, you can open the command line interface and type</p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+<code class="code">npm install</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">npm has the 'package.json' file that is a JSON file that contains information about the project, such as its name, version, author, license, and dependencies. The package.json file is located in the root directory of the project and is created automatically when you run <a class="inline-code">npm init</a> command in the terminal. The package.json file can also be created manually by adding the required fields as per the project's needs.</p>
+</div>
+<div class="paragraph-wrapper">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Maven</th>
+                    <th>npm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>File</th>
+                    <td>POM.xml</td>
+                    <td>package.json</td>
+                </tr>
+                <tr>
+                    <th>Contains</th>
+                    <td>Dependencies, Meta Information</td>
+                    <td>Dependencies, Meta Information</td>
+                </tr>
+                <tr>
+                    <th>Actions</th>
+                    <td>Lifecycle (pre hooks, post hooks)</td>
+                    <td>Scripts</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="heading2" id="3">3. How to install packages</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">There are two options to install packages. In this case we will install Express<br><br> The first way to install express is to run the following command in the commandaline</p>
+<div class="code-snippet-wrapper">
+    <pre class="code-snippet-tab">
+<code class="code">npm install express</code>
+    </pre>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">After running the command, we can see files and folders in the root folder that confirm the correct installation of Express. npm generates a folder called 'node_modules' with inside the packages required by Express and two other json files: 'package.json' and 'package-lock.json'.<br><br>
+        'package.json' is a file that is used in Node.js projects to manage dependencies. It is essentially a manifest file that lists all the dependencies that the project requires to run. These dependencies can include other libraries or packages that are needed by the project. In this file, you can specify the version of the dependency that you want to use as well as other important information like the author, license, and description of the project.<br><br>
+        'package-lock.json', on the other hand, is a file that was introduced in npm version 5 and it ensures that the exact version of each dependency is installed. It also locks the version of each dependency so that it does not change unexpectedly. This is important because it ensures that the project will work consistently across different machines and environments.
+    </p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        The second way to install Express is to declare manually the dependency in the 'package.json' file. <br><br>
+        First, create the 'package.json' file in the root folder of the project and the declare the dependcy
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+<code class="code">{
+"dependencies" : {
+"express": "4.18.2"
+}
+}</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">After we can simply run <a class="inline-code">npm install</a> and see the same results and consequences achieved beofore.</p>
+</div>
+</div>
+<div class="heading2" id="2">
+    <p>4. Express</p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Express is a popular and widely used web framework for Node.js. It provides a set of tools and features for building robust and scalable web applications. Express is lightweight, flexible, and easy to use, making it a popular choice for developers who need to build web applications quickly.
+        <br>
+        <br>
+        Express is built on top of the core Node.js HTTP module, which means that it provides a higher-level API for handling HTTP requests and responses. It also provides a set of middleware functions that can be used to handle common tasks such as parsing request bodies, handling cookies, and handling sessions.
+        <br>
+        <br>
+        One of the key features of Express is its routing system. Express provides a powerful routing system that allows developers to define routes for different HTTP methods (GET, POST, PUT, DELETE, etc.) and URL patterns. This makes it easy to create RESTful APIs and other web services.
+    </p>
+</div>
+<div></div>
+<div class="heading2" id="5">5. How to set a server</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        The first step is to
+        <a href="#3" target="blank" style="color: #e7793e;">install the package</a> create the 'app.js' file in the root folder of the project. It is that it is the main file of the application. It contains the logic to initialize the application, including loading modules, setting up middleware, and defining routes. The app.js file is typically the first file that is executed when the application is started, and it is responsible for starting the server and listening for incoming requests. It is also responsible for handling errors and providing a response to the client. In short, the app.js file is the heart of the application, and it is where most of the application logic is defined.
+        <br>
+        <br>
+        After we can start using the package we previously isntalled by writing
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code class="code">const express = require("express");
+    const app = express();
+    app.use(express.json());
+
+    //at the end of the file
+    const PORT = 8080;
+    app.listen(PORT, (error) => {
+        error ? console.log(error) : console.log(
+            "Server is running on port: ", PORT
+        );
+    });</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        We use the 8080 port because by convention it is the http developer port. Port 8000 is for https.
+    </p>
+</div>
+<div class="heading2" id="6">6. How to send data in a GET request</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        • Query String Parameters
+        <br>
+        You can send data in a GET request by including it in the URL as query string parameters. For example, you can send data to a server by appending it to the URL in the following format: ?key1=value1&key2=value2. The server can then extract the data from the query string parameters.
+        <br>
+        <br>
+        • URL path parameters
+        <br>
+        You can also send data in a GET request by including it in the URL path. This is typically done when the data is used to identify a specific resource. For example, you can send data to a server by including it in the URL path in the following format: /resource/:id, where :id is a variable that represents the data being sent.
+    </p>
+</div>
+<div class="heading2" id="7">7. Anatomy of URL</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        https://localhost/kickdinosaur/:id?size=1200
+        <br>
+        <br>• 'https://' is the protocol
+        <br>
+        <br>•“localhost” is the domain
+        <br>
+        <br>• “/kickdinosour” is the endpoint
+        <br>
+        <br>• “:id” is the path variable, parameter (it is mandatory to reach the endpoint)
+        <br>
+        <br>
+        • “?size=1200” is the query string, query parameter (it is optional)
+    </p>
+</div>
+<div class="heading2" id="8">8. Serving HTML in Express</div>
