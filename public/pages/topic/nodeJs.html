@@ -3,28 +3,20 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Node.js is a JavaScript runtime environment for developing server-side applications. It uses Google's V8 JavaScript engine, which compiles and executes JavaScript code. Node.js allows developers to write network applications using JavaScript, which is easier than using other languages like C++ or Java.
-        <br>
-        <br>
+        Node.js is a JavaScript runtime environment for developing server-side applications. It uses Google's V8 JavaScript engine, which compiles and executes JavaScript code. Node.js allows developers to write network applications using JavaScript, which is easier than using other languages like C++ or Java.<br><br>
         Node.js was created by Ryan Dahl in 2009 when he was working on a web application that required real-time communication between the browser and the server. He needed to create an efficient method of communicating between these two parts of the application, so he created Node.js and released it as open source software under the MIT license on GitHub. The popularity of Node.js grew quickly because of its low resource requirements, its ease of use and its ability to handle multiple concurrent connections efficiently (especially compared to other languages).
-        <br>
-        <br>
-        To run a file with Node.js, you need to use the 'node' command line tool.
-        <br>
+        <br><br>To run a file with Node.js, you need to use the 'node' command line tool.<br>
         The node command line tool is part of the Node.js installation package, which you can
         <a href="https://nodejs.org/" target="_blank" style="color: #e7793e;">download</a>
-        from the official website of Node.js.
-        <br>
-        <br>
+        from the official website of Node.js.<br><br>
         To run files with Node.js, simply open a terminal window on your computer or IDE and type in:
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">node [filename].js</code>
+    <code class="code">node [filename].js</code>
         </pre>
     </div>
 </div>
-
 <div class="heading2" id="2">2. Package Manager and Dependecies</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
@@ -35,7 +27,7 @@
     <p class="paragraph">After, you can open the command line interface and type</p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-<code class="code">npm install</code>
+    <code class="code">npm install</code>
         </pre>
     </div>
 </div>
@@ -77,7 +69,7 @@
     <p class="paragraph">There are two options to install packages. In this case we will install Express<br><br> The first way to install express is to run the following command in the commandaline</p>
 <div class="code-snippet-wrapper">
     <pre class="code-snippet-tab">
-<code class="code">npm install express</code>
+    <code class="code">npm install express</code>
     </pre>
 </div>
 <div class="paragraph-wrapper">
@@ -93,11 +85,11 @@
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-<code class="code">{
-"dependencies" : {
-"express": "4.18.2"
-}
-}</code>
+    <code class="code">{
+    "dependencies" : {
+        "express": "4.18.2"
+    }
+  }</code>
         </pre>
     </div>
 </div>
@@ -110,12 +102,8 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Express is a popular and widely used web framework for Node.js. It provides a set of tools and features for building robust and scalable web applications. Express is lightweight, flexible, and easy to use, making it a popular choice for developers who need to build web applications quickly.
-        <br>
-        <br>
-        Express is built on top of the core Node.js HTTP module, which means that it provides a higher-level API for handling HTTP requests and responses. It also provides a set of middleware functions that can be used to handle common tasks such as parsing request bodies, handling cookies, and handling sessions.
-        <br>
-        <br>
+        Express is a popular and widely used web framework for Node.js. It provides a set of tools and features for building robust and scalable web applications. Express is lightweight, flexible, and easy to use, making it a popular choice for developers who need to build web applications quickly.<br><br>
+        Express is built on top of the core Node.js HTTP module, which means that it provides a higher-level API for handling HTTP requests and responses. It also provides a set of middleware functions that can be used to handle common tasks such as parsing request bodies, handling cookies, and handling sessions.<br><br>
         One of the key features of Express is its routing system. Express provides a powerful routing system that allows developers to define routes for different HTTP methods (GET, POST, PUT, DELETE, etc.) and URL patterns. This makes it easy to create RESTful APIs and other web services.
     </p>
 </div>
@@ -124,24 +112,21 @@
 <div class="paragraph-wrapper">
     <p class="paragraph">
         The first step is to
-        <a href="#3" target="blank" style="color: #e7793e;">install the package</a> create the 'app.js' file in the root folder of the project. It is that it is the main file of the application. It contains the logic to initialize the application, including loading modules, setting up middleware, and defining routes. The app.js file is typically the first file that is executed when the application is started, and it is responsible for starting the server and listening for incoming requests. It is also responsible for handling errors and providing a response to the client. In short, the app.js file is the heart of the application, and it is where most of the application logic is defined.
-        <br>
-        <br>
-        After we can start using the package we previously isntalled by writing
+        <a href="#3" target="blank" style="color: #e7793e;">install the package</a> create the 'app.js' file in the root folder of the project. It is that it is the main file of the application. It contains the logic to initialize the application, including loading modules, setting up middleware, and defining routes. The app.js file is typically the first file that is executed when the application is started, and it is responsible for starting the server and listening for incoming requests. It is also responsible for handling errors and providing a response to the client. In short, the app.js file is the heart of the application, and it is where most of the application logic is defined.<br><br>After we can start using the package we previously isntalled by writing
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">const express = require("express");
-    const app = express();
-    app.use(express.json());
+    <code class="code">const express = require("express");</code>
+    <code>const app = express();</code>
+    <code>app.use(express.json());</code>
 
-    //at the end of the file
-    const PORT = 8080;
-    app.listen(PORT, (error) => {
-        error ? console.log(error) : console.log(
-            "Server is running on port: ", PORT
-        );
-    });</code>
+    <code>//at the end of the file</code>
+    <code>const PORT = 8080;</code>
+    <code>app.listen(PORT, (error) => {</code>
+        <code>error ? console.log(error) : console.log(</code>
+        <code>"Server is running on port: ", PORT</code>
+        <code>);</code>
+    <code>});</code>
         </pre>
     </div>
 </div>
@@ -153,31 +138,14 @@
 <div class="heading2" id="6">6. How to send data in a GET request</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        • Query String Parameters
-        <br>
-        You can send data in a GET request by including it in the URL as query string parameters. For example, you can send data to a server by appending it to the URL in the following format: ?key1=value1&key2=value2. The server can then extract the data from the query string parameters.
-        <br>
-        <br>
-        • URL path parameters
-        <br>
+        • Query String Parameters<br>
+        You can send data in a GET request by including it in the URL as query string parameters. For example, you can send data to a server by appending it to the URL in the following format: ?key1=value1&key2=value2. The server can then extract the data from the query string parameters.<br><br>• URL path parameters<br>
         You can also send data in a GET request by including it in the URL path. This is typically done when the data is used to identify a specific resource. For example, you can send data to a server by including it in the URL path in the following format: /resource/:id, where :id is a variable that represents the data being sent.
     </p>
 </div>
 <div class="heading2" id="7">7. Anatomy of URL</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        https://localhost/kickdinosaur/:id?size=1200
-        <br>
-        <br>• 'https://' is the protocol
-        <br>
-        <br>•“localhost” is the domain
-        <br>
-        <br>• “/kickdinosour” is the endpoint
-        <br>
-        <br>• “:id” is the path variable, parameter (it is mandatory to reach the endpoint)
-        <br>
-        <br>
-        • “?size=1200” is the query string, query parameter (it is optional)
+        https://localhost/kickdinosaur/:id?size=1200<br><br>• 'https://' is the protocol<br><br>•“localhost” is the domain<br><br>• “/kickdinosour” is the endpoint<br><br>• “:id” is the path variable, parameter (it is mandatory to reach the endpoint)<br><br>• “?size=1200” is the query string, query parameter (it is optional)
     </p>
 </div>
-<div class="heading2" id="8">8. Serving HTML in Express</div>

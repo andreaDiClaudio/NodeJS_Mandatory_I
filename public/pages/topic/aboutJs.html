@@ -3,9 +3,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        JavaScript is a high-level, dynamic, interpreted programming language that is used to create interactive web pages and web applications. It was created in 1995 by Brendan Eich while he was working for Netscape Communications Corporation. JavaScript is a client-side scripting language, which means it runs on the user's computer rather than on the server hosting the website.
-        <br>
-        <br>
+        JavaScript is a high-level, dynamic, interpreted programming language that is used to create interactive web pages and web applications. It was created in 1995 by Brendan Eich while he was working for Netscape Communications Corporation. JavaScript is a client-side scripting language, which means it runs on the user's computer rather than on the server hosting the website.<br><br>
         JavaScript is used in a variety of ways, from simple webpage animations to complex web applications like Gmail and Google Maps. It is also used for server-side programming with platforms like Node.js. JavaScript is supported by all major web browsers, including Chrome, Firefox, Safari, and Internet Explorer.
     </p>
 </div>
@@ -14,16 +12,10 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        JavaScript is a dynamic language with dynamic types. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.
-        <br>
-        <br>
-        In Javascript, datatypes are divided into two categories: primitive and object.
-        <br>
-        Primitive datatypes are built-in to the language and include include numbers, strings, booleans, null and undefined.
-        <br>
-        Objects are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).
-        <br>
-        <br>
+        JavaScript is a dynamic language with dynamic types. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.<br><br>
+        In Javascript, datatypes are divided into two categories: primitive and object.<br>
+        Primitive datatypes are built-in to the language and include include numbers, strings, booleans, null and undefined.<br>
+        Objects are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).<br><br>
         Primitive Datatypes in JavaScript
     </p>
     <div class="table-wrapper">
@@ -85,25 +77,17 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        The 'typeof' operator returns a string describing the type of value or object in a variable, so you can check what type of data you're dealing with before attempting to perform operations on it.
-        <br>
-        <br>
+        The 'typeof' operator returns a string describing the type of value or object in a variable, so you can check what type of data you're dealing with before attempting to perform operations on it.<br><br>
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">typeof false //boolean</code>
-            <br>
-            <code class="code">typeOf 0.05 //Number</code>
-            <br>
-            <code class="code">typeof function () {} //function</code>
-            <br>
-            <code class="code">typeof ‘string’ //string</code>
-            <br>
-            <code class="code">typeof {} //objects</code>
-            <br>
-            <code class="code">typeOf 0.05 //Number</code>
-            <br>
-            <code class="code">typeof [ ] //object - in js arrays are objects</code>
+    <code class="code">typeof false //boolean</code>
+    <code class="code">typeOf 0.05 //Number</code>
+    <code class="code">typeof function () {} //function</code>
+    <code class="code">typeof ‘string’ //string</code>
+    <code class="code">typeof {} //objects</code>
+    <code class="code">typeOf 0.05 //Number</code>
+    <code class="code">typeof [ ] //object - in js arrays are objects</code>
         </pre>
     </div>
     <div class="heading2" id="3">
@@ -112,35 +96,30 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.
-        <br>
-        <br>
+        Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.<br><br>
         There are some downsides to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">const sum = 35 + "hello"</code>
-            <code class="code">console.log(sum)// 35hello</code>
-            <code class="code">console.log(typeof sum)// string</code>
-            <br>
-            <code class="code">const times = 35 * "hello"</code>
-            <code class="code">console.log(times)// NaN</code>
-            <br>
-            <code class="code">const string = "";</code>
-            <code class="code">const number = 40;</code>
-            <code class="code">const boolean = true;</code>
-            <code class="code">console.log(!string)</code>
-            <code>
-                //true - string is coerced to boolean `false`, 
-  //then the NOT operator negates it
-            </code>
-            <code class="code">console.log(boolean + string)</code>
-            <code class="code">
-                //"true" - boolean is coerced to string "true", and 
-  //concatenated with the empty string
-            </code>
-            <code class="code">console.log(40 + true)</code>
-            <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
+    <code class="code">const sum = 35 + "hello"</code>
+    <code class="code">console.log(sum)// 35hello</code>
+    <code class="code">console.log(typeof sum)// string</code>
+
+    <code class="code">const times = 35 * "hello"</code>
+    <code class="code">console.log(times)// NaN</code>
+
+    <code class="code">const string = "";</code>
+    <code class="code">const number = 40;</code>
+    <code class="code">const boolean = true;</code>
+    <code class="code">console.log(!string)</code>
+    <code>//true - string is coerced to boolean `false`,
+    <code>//then the NOT operator negates it</code>
+    <code class="code">console.log(boolean + string)</code>
+    <code class="code">
+    <code>//"true" - boolean is coerced to string "true", and </code>
+    <code>//concatenated with the empty string</code>
+    <code class="code">console.log(40 + true)</code>
+    <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
         </pre>
     </div>
 </div>
@@ -149,33 +128,28 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        In JavaScript, there's both the double equality operator (== which is called the loose equality operator) and the triple equality operator (=== which is called the strict equality operator). You use both operators to compare values' equality.
-        <br>
-        <br>
+        In JavaScript, there's both the double equality operator (== which is called the loose equality operator) and the triple equality operator (=== which is called the strict equality operator). You use both operators to compare values' equality.<br><br>
         The loose equality operator does a loose check. It checks if values are equal. The types are not a focus for this operator - only the values are the major factor.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">const variable1 = 20;</code>
-            <code class="code">const variable2 = "20";</code>
-            <br>
-            <code class="code">console.log(variable1 == variable2);// true</code>
+    <code class="code">const variable1 = 20;</code>
+    <code class="code">const variable2 = "20";</code>
+
+    <code class="code">console.log(variable1 == variable2);// true</code>
         </pre>
     </div>
     <p class="paragraph" style="padding-top: 20px;">
-        When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.
-    
-                In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.
-        <br>
-        <br>
+        When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.<br>
+        In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.<br><br>
         The strict equality operator does a strict check – that is, it strictly checks the values compared, as well as the types. Type coercion does not occur here, so there are no unexpected answers.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">const variable1 = 20;</code>
-            <code class="code">const variable2 = "20";</code>
-            <br>
-            <code class="code">console.log(variable1 === variable2);// false</code>
+    <code class="code">const variable1 = 20;</code>
+    <code class="code">const variable2 = "20";</code>
+            
+    <code class="code">console.log(variable1 === variable2);// false</code>
         </pre>
     </div>
 </div>
@@ -201,12 +175,12 @@
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">//Function Syntax
-    function greet(name) {
-        console.log("Hello, " + name + "!");
-    }
+    <code class="code">//Function Syntax</code>
+    <code>function greet(name) {</code>
+        <code>console.log("Hello, " + name + "!");</code>
+    <code>}</code>
               
-    greet("John"); // Output: Hello, John!</code>
+    <code>greet("John"); // Output: Hello, John!</code>
         </pre>
     </div>
     <div class="paragraph-wrapper">
@@ -216,12 +190,12 @@
     </div>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">//Anonymous Function Syntax
-    var sum = function(a, b) {
-        return a + b;
-    }
+    <code class="code">//Anonymous Function Syntax</code>
+    <code>var sum = function(a, b) {</code>
+        <code>return a + b;</code>
+    <code>}</code>
                   
-    console.log(sum(2, 3)); // Output: 5</code>
+    <code>console.log(sum(2, 3)); // Output: 5</code>
         </pre>
     </div>
     <div class="paragraph-wrapper">
@@ -241,16 +215,16 @@
     
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">function greeting(name, callback) {
-    console.log("Hello, " + name + "!");
-    callback();
-    }
+    <code class="code">function greeting(name, callback) {<code>
+        <code>console.log("Hello, " + name + "!");</code>
+        <code>callback();</code>
+    <code>}</code>
               
-    function sayGoodbye() {
-        console.log("Goodbye!");
-    }
+    <code>function sayGoodbye() {</code>
+        <code>console.log("Goodbye!");</code>
+    <code>}</code>
               
-    greeting("John", sayGoodbye);</code>
+    <code>greeting("John", sayGoodbye);</code>
         </pre>
     </div>
 </div>
@@ -274,9 +248,9 @@
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">for (let i = 0; i < 5; i++) {
-        console.log("Hello, world!");
-    }</code>
+    <code class="code">for (let i = 0; i < 5; i++) {</code>
+        <code>console.log("Hello, world!");</code>
+    <code>}</code>
         </pre>
     </div>
     <div class="paragraph-wrapper">
@@ -286,10 +260,10 @@
     </div>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">let i = 0;
-    while (i < 5) {
-        console.log("Hello, world!");
-    }</code>
+    <code class="code">let i = 0;</code>
+        <code>while (i < 5) {</code>
+        <code>console.log("Hello, world!");</code>
+    <code>}</code>
         </pre>
     </div>
     </div>
@@ -299,11 +273,11 @@
         </p>
         <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">let numbers = [1, 2, 3, 4, 5];
+    <code class="code">let numbers = [1, 2, 3, 4, 5];</code>
 
-    numbers.forEach(number => {
-        console.log(number * 2);
-    });</code>
+    <code>numbers.forEach(number => {</code>
+        <code>console.log(number * 2);<code>
+    <code>});</code>
         </pre>
     </div>
     </div>
@@ -313,29 +287,27 @@
         </p>
         <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">let numbers = [1, 2, 3, 4, 5];
+    <code class="code">let numbers = [1, 2, 3, 4, 5];</code>
 
-    let doubledNumbers = numbers.map(function(number)   {
-        return number * 2;
-    });
+    <code>let doubledNumbers = numbers.map(function(number)  {</code>
+        <code>return number * 2;</code>
+    <code>});</code>
                 
-    console.log(doubledNumbers);</code>
+    <code>console.log(doubledNumbers);</code>
         </pre>
-    </div>
-    </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
             • filter()<br> The filter() method creates a new array with all elements that pass the test implemented by the provided function
         </p>
         <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
-            <code class="code">let numbers = [1, 2, 3, 4, 5];
+    <code class="code">let numbers = [1, 2, 3, 4, 5];</code>
 
-    let evenNumbers = numbers.filter(function(number) {
-        return number % 2 === 0;
-    });
+    <code>let evenNumbers = numbers.filter(function(number) {</code>
+        <code>return number % 2 === 0;</code>
+    <code>});</code>
                 
-    console.log(evenNumbers);</code>
+    <code>console.log(evenNumbers);</code>
         </pre>
     </div>
     </div>
@@ -349,11 +321,11 @@
         </p>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">let currentDate = new Date();</code>
-                <code>console.log(currentDate);</code>
-
-                <code>//ouptut</code>
-                <code>Wed Oct 06 2021 18:25:42 GMT-0400 (Eastern Daylight Time)</code>
+    <code class="code">let currentDate = new Date();</code>
+    <code>console.log(currentDate);</code>
+    
+    <code>//ouptut</code>
+    <code>Wed Oct 06 2021 18:25:42 GMT-0400 (Eastern Daylight Time)</code>
             </pre>
         </div>
     </div>
@@ -363,11 +335,10 @@
         </p>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">let currentYear = new Date().getFullYear();</code>
-                <code>console.log(currentYear);</code>
-
-                <code>//ouptut</code>
-                <code>2021</code>
+    <code class="code">let currentYear = new Date().getFullYear();</code>
+    <code>console.log(currentYear);</code>
+    <code>//ouptut</code>
+    <code>2021</code>
             </pre>
         </div>
     </div>
@@ -377,11 +348,11 @@
         </p>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">let currentMonth = new Date().getMonth();</code>
-                <code>console.log(currentMonth);</code>
+    <code class="code">let currentMonth = new Date().getMonth();</code>
+    <code>console.log(currentMonth);</code>
 
-                <code>//ouptut</code>
-                <code>9</code>
+    <code>//ouptut</code>
+    <code>9</code>
             </pre>
         </div>
     </div>
@@ -391,11 +362,11 @@
         </p>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">let currentDay = new Date().getDate();</code>
-                <code>console.log(currentDay);</code>
+    <code class="code">let currentDay = new Date().getDate();</code>
+    <code>console.log(currentDay);</code>
 
-                <code>//ouptut</code>
-                <code>6</code>
+    <code>//ouptut</code>
+    <code>6</code>
             </pre>
         </div>
     </div>
@@ -405,11 +376,11 @@
         </p>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">let currentDayOfWeek = new Date().getDay();</code>
-                <code>console.log(currentDayOfWeek);</code>
+    <code class="code">let currentDayOfWeek = new Date().getDay();</code>
+    <code>console.log(currentDayOfWeek);</code>
 
-                <code>//ouptut</code>
-                <code>3</code>
+    <code>//ouptut</code>
+    <code>3</code>
             </pre>
         </div>
     </div>
@@ -422,9 +393,9 @@
         </p>
         <div class="code-snippet-wrapper">
             <pre class="code-snippet-tab">
-                <code class="code">fetch('https://anyUrl')
-            .then(response => response.json())
-            .then(data => console.log(data));</code>
+    <code class="code">fetch('https://anyUrl')</code>
+        <code>.then(response => response.json())</code>
+        <code>.then(data => console.log(data));</code>
             </pre>
         </div>
     </div>
