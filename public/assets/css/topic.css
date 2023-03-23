@@ -92,7 +92,7 @@
     padding-left: 3.125em;
     padding-top: 1.875em;
     padding-bottom: 10em;
-    width: 75em;
+    width: 75vw;
     background-color: #f7f7f7;
   }
   
@@ -146,9 +146,9 @@
     border-radius: 0.5em;
     border: solid #e7793e 0.0625em;
     box-shadow: 0px 0px 0.625em #9a8074;
-    width: 50em;
+    width: 60vw;
+    min-width: 489px;
     margin: auto;
-    min-width: 37.5em;
     padding-top: 1.125em;
   }
   
