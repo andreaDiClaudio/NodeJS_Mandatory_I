@@ -38,11 +38,5 @@ indexContent1.appendChild(a5);
 const a6 = document.createElement("a");
 a6.href = "#6";
 a6.className = "index-topic";
-a6.innerText = "6. How to send data in a GET request";
+a6.innerText = "6. Anatomy of URL";
 indexContent1.appendChild(a6);
-
-const a7 = document.createElement("a");
-a7.href = "#7";
-a7.className = "index-topic";
-a7.innerText = "7. Anatomy of URL";
-indexContent1.appendChild(a7);

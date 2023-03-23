@@ -1,5 +1,4 @@
 "use strict";
-import path from "path";
 import express from "express";
 import bodyParser from "body-parser"
 import templateEngine from './util/templateEngine.js';
@@ -67,7 +66,9 @@ const nodeJsPage = templateEngine.renderTopicPage(nodeJs, {
 const restAPI = templateEngine.readPage("./public/pages/topic/restAPI.html");
 const restAPIPage = templateEngine.renderTopicPage(restAPI, {
     tabtitle: "Mandatory I | Rest API",
-    indexContent : "restAPI"
+    indexContent : "restAPI",
+    topicTitle: "REST API",
+    topicDescription: "Definition and CRUD"
 });
 
 const exportAndImport = templateEngine.readPage("./public/pages/topic/exportAndImport.html")
