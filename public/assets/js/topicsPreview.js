@@ -28,7 +28,7 @@ const topicsPreview = [
     {
         id: 5,
         title: "Client vs. Server Rendering",
-        description: "TODO",
+        description: "The main differences between client side rendering and server side rendering",
         href: "/clientAndServerRendering"
     },
 ];

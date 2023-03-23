@@ -20,7 +20,7 @@ indexContent1.appendChild(a2);
 const a3 = document.createElement("a");
 a3.href = "#3";
 a3.className = "index-topic";
-a3.innerText = "3. Serving HTML Files";
+a3.innerText = "3. Path module and serving HTML";
 indexContent1.appendChild(a3);
 
 const a4 = document.createElement("a");

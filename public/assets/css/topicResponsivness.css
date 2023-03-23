@@ -14,6 +14,10 @@
   .paragraph-wrapper {  
     max-width: 70vw;
   }
+
+  #copyright-year {
+    padding-left: 40vw;
+  }
 }
 
 @media screen and (max-width: 1320px) {
@@ -78,6 +82,10 @@
   
       .paragraph-wrapper {
         max-width: 90vw;
+      }
+
+      #copyright-year {
+        padding-left: 35vw;
       }
     }
   

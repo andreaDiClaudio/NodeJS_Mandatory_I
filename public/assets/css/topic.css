@@ -91,7 +91,7 @@
     height: fit-content;
     padding-left: 3.125em;
     padding-top: 1.875em;
-    padding-bottom: 15.625em;
+    padding-bottom: 10em;
     width: 75em;
     background-color: #f7f7f7;
   }
@@ -188,4 +188,34 @@
     border: solid #444444 0.0625em;
     padding: 0.625em;
     width: 12.5em;
+  }
+
+  #copyright-year {
+    color: white;
+  }
+
+  .quick-menu-title {
+    font-size: 1.875em;
+    font-weight: 500;
+    padding-top: 1em;
+    color: white;
+  }
+
+  .quick-menu-wrapper {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border: solid #e7793e 1px;
+    background-color:  #2a2a3f;
+    margin-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .quick-menu-topic {
+    color: #e7793e;
   }

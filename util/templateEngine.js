@@ -15,7 +15,7 @@ function renderTopicPage(page, config={}) {
         .replace("$TOPIC_DESCRIPTION", config.topicDescription);
 
     const footer = fs.readFileSync("./public/components/topic/footer/footer.html").toString()
-        .replace("$FOOTER_YEAR", `© / ${new Date().getFullYear()} / Andrea Di Claudio`)
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio`)
         .replace("$INDEX_CONTENT_LINK", `<script src="/assets/js/indexContent/${config.indexContent}.js"></script>`)
         .replace("$NAVBAR_LINK", `<script src="/assets/js/navbar.js"></script>`);
 

@@ -51,7 +51,7 @@ const aboutJs = templateEngine.readPage("./public/pages/topic/aboutJs.html");
 const aboutJsPage = templateEngine.renderTopicPage(aboutJs, {
     tabtitle: "About Js | Mandatory I",
     indexContent: "aboutJs",
-    topicTitle: "About JavaScript",
+    topicTitle: "About JS",
     topicDescription: "From data types to callback function and fetch."
 });
 
@@ -80,7 +80,12 @@ const exportAndImportPage = templateEngine.renderTopicPage(exportAndImport, {
 });
 
 const clientAndServerRendering = templateEngine.readPage("./public/pages/topic/clientAndServerRendering.html");
-const clientAndServerRenderingPage = templateEngine.renderTopicPage(clientAndServerRendering);
+const clientAndServerRenderingPage = templateEngine.renderTopicPage(clientAndServerRendering, {
+    tabtitle: "Mandatory I | CSR vs SSR",
+    indexContent: "clientAndServerRendering",
+    topicTitle: "CSR vs SSR",
+    topicDescription: "The main differences between client side rendering and server side rendering"
+});
 
 /*HTTP*/
 app.get("/", (req, res) => {
@@ -144,7 +149,7 @@ app.get("/exportAndImport", (req, res) => {
 });
 
 app.get("/clientAndServerRendering", (req,res) => {
-    res.send(CRUDableAPIPage);
+    res.send(clientAndServerRenderingPage);
 });
 
 /*API*/

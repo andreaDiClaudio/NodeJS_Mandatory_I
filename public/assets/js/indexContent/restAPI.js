@@ -22,9 +22,3 @@ a3.href = "#3";
 a3.className = "index-topic";
 a3.innerText = "3. How to send data in a GET requests";
 indexContent1.appendChild(a3);
-
-const a4 = document.createElement("a");
-a4.href = "#4";
-a4.className = "index-topic";
-a4.innerText = "4. Serving HTML files";
-indexContent1.appendChild(a4);

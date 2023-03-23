@@ -1,14 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/topic.css">
-    <title>Topic: NodeJs</title>
-</head>
-<body>
-    <h1>Serving HTML Files</h1>
-    <h2>How to serve an html file with express and the security behind serving static files</h2>
-</body>
-</html>
+<div class="heading2" id="1">1. Client side rendering (CSR)</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Client-side rendering is the process of rendering the web page on the user's device using JavaScript after the initial HTML and CSS have been downloaded. This approach allows for dynamic, interactive web applications that can modify the page content without requiring a full refresh. Client-side rendering is commonly used in single-page applications (SPAs) and other modern web applications that require a high degree of interactivity.<br><br>
+        One of the primary benefits of client-side rendering is that it can help reduce server load and improve website performance. Since the server only needs to provide the initial HTML and CSS, subsequent interactions and updates can be handled on the client side. This improves the user experience by reducing the time required to load new content.<br><br>However, client-side rendering also has some drawbacks. One potential issue is that it can be slower to load initially, since the user's device needs to download JavaScript and other assets before rendering the page. Additionally, client-side rendering can be less SEO-friendly, since search engines may have difficulty indexing dynamic content created with JavaScript.<br>Following an example of code that does client side rendering
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>app.get("/", (req, res) => {</code>
+        <code>res.sendFile(__dirname + "/public/frontpage/frontpage.html")</code>
+    <code>});</code>
+        </pre>
+    </div>
+</div>
+<div class="heading2" id="2">2. Server side rendering (SSR)</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Server-side rendering, on the other hand, is the process of rendering the web page on the server before sending it to the user's device. This approach is often used for content-heavy websites where search engine optimization is important, or for websites that require quick rendering times for users with slower internet connections.<br><br>
+        One of the primary benefits of server-side rendering is that it can provide faster initial loading times, since the user's device receives pre-rendered HTML and CSS. This can improve the user experience, particularly for users with slower internet connections or older devices. Additionally, server-side rendering can be more SEO-friendly, since search engines can more easily index pre-rendered content.<br><br>
+        However, server-side rendering can also be less flexible than client-side rendering, since it requires more server resources to render each page. Additionally, server-side rendering may not be suitable for applications that require a high degree of interactivity, since each interaction would require a new server request.<br><br>
+        In order to do SSR we need to do some steps.<br><br>
+        First of all we need to deconstruct the html page in components. The term "component" generally refers to a modular, reusable, and independent piece of code that performs a specific task or provides a specific functionality. Components can be thought of as building blocks that can be combined and reused to create larger, more complex systems.<br>
+        In a normal web page elements that repeats are the navbar and footer (and many more). inside the folder 'public' we create a new folder called 'components' were inside we create html files for each component. In our case will be only the 'navbar.html' and 'footer.html'.
+    </p>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        After we need to create a new folder in the root folder called 'util'. Inside util we will create a new js file called 'templateEngine'. Template engines typically use a template file that contains placeholders for dynamic content. These placeholders can be filled in with data from a database or other data source, and the resulting HTML can then be sent to the user's browser.<br><br>
+        Inside the 'templateEngine.js' we need 'fs' package. The 'fs' module allows developers to interact with the file system on their computer. It supports interacting with files synchronously, asynchronously or via streams. The module offers a set of functionalities available as APIs for a consumer program to use.
+    </p>
+</div>
+
+<div class="code-snippet-wrapper">
+    <pre class="code-snippet-tab">
+    <code>npm install fs</code>
+    </pre>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        After we can start writing functions that will read an html and a render a page that will be served to the frontend ready.<br><br>
+        The first function will read the html file:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>function readPage(pagePath) {</code>
+        <code>return fs.readFileSync(pagePath).toString();</code>
+    <code>}</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        The second function will actualy construct the page before serving it to the client.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>function renderPage(page, config={}) {</code>
+        <code>const navbar = fs.readFileSync(</code>
+                <code>"./public/components/navbar/navbar.html").toString()</code>
+            <code>.replace("$TAB_TITLE", config.tabTitle || "Upper")</code>
+            <code>.replace("$CSS_LINK", config.cssLink || "");</code>
+
+        <code>const footer = fs.readFileSync(</code>
+            <code>"./public/components/footer/footer.html").toString()</code>
+                <code>.replace("$FOOTER_YEAR", `© / ${new Date().getFullYear()}`);</code>
+
+        <code>return navbar + page + footer;</code>
+    <code>}</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        This function takes to parameter: a page and an object with the configuration of the page.<br>
+        Inside the function we declare the navabar variable that uses 'fs' to read the 'navbar.html' file just created, converts wiht the 'toString()' methods and replaces all the variable (e.g. $CSS_LINK with the link to the css file, and so on).<br>
+        We do the same for the footer.<br><br>
+        Then last line of the function creates and returns the constructed webage by concatenating the navbar, the page (that we pass in as parameter when we use the function), and the footer.
+        At the end of the file we export the previous function so that we can use them in 'app.js'<br><br>
+        Inside 'app.js' we have to save each page in a variable. We can do so in two step
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>//Step 1</code>
+    <code>const frontpage = templateEngine.readPage(</code>
+        <code>"./public/pages/frontpage/frontpage.html");</code>
+
+    <code>//Step 2</code>
+    <code>const landingpagePage = templateEngine.renderPage(landingpage, {</code>
+                <code>tabtitle: "Mandatory I | Front Page",</code>
+                <code>cssPath: "/pages/landingpage/landingpage.css"</code>
+            <code>});</code>
+
+    <code>app.get("/", (req, res) => {</code>
+        <code>res.send(frontpage);</code>
+    <code>});</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">In this way we are rendering the page(s) only the first time that we boot the server, so that they are always ready to be served.</p>
+</div>
+<div class="heading2" id="3">3. SSR vs. CSR</div>
+<div class="paragraph-wrapper">
+    <div class="table-wrapper">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>SSR</th>
+                        <th>CSR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Pro</th>
+                        <td>Better initial page load time:<br> Since the HTML is generated on the server and sent to the client, the initial page load time is usually faster.<br><br>
+                        Better SEO:<br> Search engine crawlers can easily read the HTML generated on the server, which can improve search engine rankings.<br><br>
+                        Better accessibility:<br> Users with slow internet connections or disabled JavaScript can still access the content on the page.</td>
+                        <td>Better interactivity:<br> Since most of the HTML is generated on the client-side, there is more interactivity and a more engaging user experience.<br><br>
+                        Better performance on high-powered devices:<br> Since high-powered devices have faster processors and more memory, CSR can provide better performance since the client does most of the heavy lifting.<br><br>
+                        More flexibility:<br> CSR can be more flexible than SSR since it does not require a server-side environment and works well with JavaScript frameworks and libraries.</td>
+                    </tr>
+                    <tr>
+                        <th>Cons</th>
+                        <td>Higher server load:<br> Since the server has to generate the HTML, it can put a higher load on the server, which can affect scalability.<br><br>
+                        Limited interactivity:<br> Since most of the HTML is generated on the server, there is limited interactivity on the client-side, which can result in a less engaging user experience.<br><br>
+                        Limited flexibility:<br> SSR can be less flexible than CSR since it requires a server-side environment and may not work well with some JavaScript frameworks and libraries.</td>
+                        <td>Slower initial page load time:<br> Since the HTML is generated on the client-side, the initial page load time can be slower.<br><br>
+                        Poorer SEO:<br> Search engine crawlers may not be able to easily read the JavaScript-generated HTML, which can lead to poorer search engine rankings.<br><br>
+                        Poorer accessibility:<br> Users with slow internet connections or disabled JavaScript may not be able to access the content on the page.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
