@@ -1,101 +1,156 @@
+<div class="heading2" id="1">1. Module</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        In Node.js, a module is a self-contained unit of code that encapsulates related functionality. A module can be a single file or a collection of files that work together to provide a set of features or services.<br>Each module in Node.js has its own scope, which means that variables, functions, and classes defined in one module are not visible or accessible from other modules, unless explicitly exported.<br><br>Node.js provides a built-in module system that allows you to create, load, and manage modules in your application. You can create a module by defining a set of functions, classes, or variables and then exporting them using the module.exports object.<br>Here's an example of a simple module that exports a function:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>//In the file math.js</code>
+    <code>function add(a, b) {</code>
+        <code>return a + b;}</code>
 
-        <div class="documentation-section-wrapper">
-            <div class="title-wrapper">
-                <p class="title" id="title">Package Manager & Dependencies</p>
-            </div>
-            <div class="heading-wrapper">
-                <p class="heading1">Maven vs. npm. How to define and install dependencies.</p>
-            </div>
-            <hr>
-            <div class="heading2" id="1">1. Maven</div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">
-                    Maven is an open-source project that was initially created by Jason van Zyl in 2002. It is built using the Java programming language and is widely used by developers to manage and build their Java-based projects.One of the key features of Maven is its use of a Project Object Model (POM). The POM is an XML file that describes the project's configuration and dependencies. It includes information such as the project's name, version, and dependencies. The POM also specifies the build process for the project, including the build phases and goals.<br><br>
-                    One of the main benefits of using Maven is its dependency management system. Maven automatically downloads and manages dependencies for a project, ensuring that the correct versions are used and that conflicts are avoided. This makes it easier for developers to manage their projects and reduces the risk of errors caused by incompatible dependencies.
-                </p>
-            </div>
-            <div class="heading2" id="2">2. npm</div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">
-                    npm stands for Node Package Manager. It is a package manager for Node.js packages, modules, and libraries. It is free and open-source, and it is used to manage the installation, updating, and removal of Node.js packages.<br><br>
-                    npm was created in 2009 as a part of the Node.js project. One of the key features of npm is its ability to manage dependencies between packages. npm automatically installs any package dependencies that are required by a package, ensuring that the correct versions are used and that conflicts are avoided. It also provides a mechanism for developers to specify the required version of a package, making it easy to ensure compatibility with existing code.
-                </p>
-                <p class="paragraph">To install npm, you will need to first <a href="https://nodejs.org/" target=”_blank” style="color: #e7793e;">install Node.js</a>.</p>
-                <p class="paragraph">After, you can open the command line interface and type</p>
-                <div class="code-snippet-wrapper">
-                    <pre class="code-snippet-tab">
-        <code class="code">npm install</code>
-                    </pre>
-                </div>
-            </div>
-            <div class="paragraph-wrapper">
-    
-            </div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">As Maven has a specific file where all the dependencies are declared, npm has the 'package.json' file. It is a JSON file that contains information about the project, such as its name, version, author, license, and dependencies. The package.json file is located in the root directory of the project and is created automatically when you run <a class="inline-code">npm init</a> command in the terminal. The package.json file can also be created manually by adding the required fields as per the project's needs.</p>
-            </div>
-            <div class="heading2" id="3">3. Maven vs. npm</div>
-            <div class="paragraph-wrapper">
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Maven</th>
-                                <th>npm</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>File</th>
-                                <td>POM.xml</td>
-                                <td>package.json</td>
-                            </tr>
-                            <tr>
-                                <th>Contains</th>
-                                <td>Dependencies, Meta Information</td>
-                                <td>Dependencies, Meta Information</td>
-                            </tr>
-                            <tr>
-                                <th>Actions</th>
-                                <td>Lifecycle (pre hooks, post hooks)</td>
-                                <td>Scripts</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="heading2" id="4">4. How to install packages</div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">There are two options to install packages. In this case we will install Express<br><br> The first way to install express is to run the following command in the commandaline</p>
-            <div class="code-snippet-wrapper">
-                <pre class="code-snippet-tab">
-        <code class="code">npm install express</code>
-                </pre>
-            </div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">After running the command, we can see files and folders in the root folder that confirm the correct installation of Express. npm generates a folder called 'node_modules' with inside the packages required by Express and two other json files: 'package.json' and 'package-lock.json'.<br><br>
-                    'package.json' is a file that is used in Node.js projects to manage dependencies. It is essentially a manifest file that lists all the dependencies that the project requires to run. These dependencies can include other libraries or packages that are needed by the project. In this file, you can specify the version of the dependency that you want to use as well as other important information like the author, license, and description of the project.<br><br>
-                    'package-lock.json', on the other hand, is a file that was introduced in npm version 5 and it ensures that the exact version of each dependency is installed. It also locks the version of each dependency so that it does not change unexpectedly. This is important because it ensures that the project will work consistently across different machines and environments.
-                </p>
-            </div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">
-                    The second way to install Express is to declare manually the dependency in the 'package.json' file. <br><br>
-                    First, create the 'package.json' file in the root folder of the project and the declare the dependcy
-                </p>
-                <div class="code-snippet-wrapper">
-                    <pre class="code-snippet-tab">
-        <code class="code">{
-        "dependencies" : {
-            "express": "4.18.2"
-        }
-    }</code>
-                    </pre>
-                </div>
-            </div>
-            <div class="paragraph-wrapper">
-                <p class="paragraph">After we can simply run <a class="inline-code">npm install</a> and see the same results and consequences achieved beofore.</p>
-            </div>
-        </div>
-    
+    <code>module.exports = {</code>
+        <code>add: add</code>
+    <code>};</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">In the above example, we define a function add and export it using the module.exports object. This allows other modules to import and use the add function.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>//In the file app.js</code>
+    <code>const math = require('./math');</code>
+    <code>console.log(math.add(2, 3)); // Output: 5</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        In the above example, we import the math module using the require function and then use the add function from the math module to perform addition.
+        </p>
+</div>
+<div class="heading2" id="2">2. Commonjs vs. type module in Node.js</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">In the above section, we define a module using CommonJS syntax. We export the add function using module.exports and then import it in our app.js file using require().<br><br>
+    ES modules, on the other hand, use the import and export keywords to import and export modules.
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">      <code>//In the file math.js</code>
+    <code>function add(a, b) {</code>
+        <code>return a + b;}</code>
+
+    <code>module.exports = {</code>
+        <code>add: add</code>
+    <code>};</code>
+    <code>//In the file app.js</code>
+    <code>import { add } from './math.mjs';</code>
+        
+    <code>console.log(add(2, 3)); // Output: 5</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">One key difference between CommonJS and ES modules is that CommonJS modules are evaluated synchronously, while ES modules are evaluated asynchronously. This means that with CommonJS, all dependencies are loaded before any code is executed, while with ES modules, dependencies are loaded on demand.<br><br>
+    In the next section the command <a class="inline-code">import</a> in the next section</p>
+</div>
+<div class="heading2" id="3">3. Serving HTML Files</div>
+<div class="paragraph-wrapper">
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>//serve static files from the public directory</code>
+    <code>app.use(express.static('public'));</code>
+
+    <code>app.get('/', (req, res) => {</code>
+        <code>res.sendFile(__dirname + '/public/index.html');</code>
+    <code>});</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        In the example we define a route for the root path '/'' and use the <a class="inline-code">res.sendFile</a> method to send the index.html file.<br>Note that we use the __dirname global variable to get the current directory path and append the public/index.html file path to it.<br><br>
+        There are many ways to serve html files. Another way is to use 'path'.<br>
+        The path module is a built-in module in Node.js that provides utilities for working with file and directory paths. It has several useful methods for manipulating and constructing paths in a cross-platform manner.<br><br>To install the path module using npm, you can open your terminal or command prompt and navigate to your project directory. Then, run the following command:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>npm install path</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Instead of using the syntax we have used until now that is
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>const path = require('path')</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        We can use the <a class="inline-code">import</a> keyword and start importing modules. In order to do that, we need to declare <a class="inline-code">"type": "module"</a> in the package.json file. This is the current package.json:
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>{</code>
+        <code>"type": "module",</code>
+        <code>"dependencies": {</code>
+            <code>"express": "4.18.2"</code>
+        <code>}</code>
+    <code>}</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        So now can start import modules in our 'app.js' file like
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+            <code>import path from "path";</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        Finally we can see the second way of serving html file without <a class="inline-code">__dirname</a> but with the new imported module 'path'
+    </p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>//serve static files from the public directory</code>
+    <code>app.use(express.static('public'));</code>
+
+    <code>app.get('/', (req, res) => {</code>
+        <code>res.sendFile(path.resolve('/public/index.html'));</code>
+    <code>});</code>
+        </pre>
+    </div>
+</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        <a class="inline-code">path.resolve()</a> and <a class="inline-code">__dirname</a> both serve similar purposes of returning absolute paths, but they differ in how they achieve this.<br><br><a class="inline-code">__dirname</a> is a global variable in Node.js that returns the absolute path of the directory containing the currently executing file.<br><br>On the other hand, <a class="inline-code">path.resolve()</a> is a method in the Node.js path module that returns an absolute path by resolving any relative paths or symbolic links. It can take any number of arguments to join together into one absolute path.
+    </p>
+</div>
+<div class="heading2">4. XSS</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">XSS (Cross-Site Scripting) is a common security vulnerability that can affect Node.js web applications.XSS occurs when an attacker is able to inject malicious code (usually JavaScript) into a web page viewed by other users. This can happen when user input is not properly sanitized or validated before being displayed on the page. In Node.js, there are a few ways to prevent XSS attacks:<br><br>
+    • Sanitize user input<br>Before displaying user-generated content on a web page, it's important to sanitize the input to remove any potentially dangerous code. You can use libraries like DOMPurify or sanitize-html to sanitize user input.<br><br>• Use Content Security Policy (CSP)<br>CSP is a security standard that helps prevent XSS attacks by allowing you to specify which types of content are allowed to be loaded on a web page. You can implement CSP in Node.js using the helmet-csp middleware.<br><br>
+    Here's an example of how to use sanitize-html to sanitize user input in a Node.js application:</p>
+    <div class="code-snippet-wrapper">
+        <pre class="code-snippet-tab">
+    <code>const express = require('express');</code>
+    <code>const sanitizeHtml = require('sanitize-html');</code>
+    <code>const app = express();</code>
+
+    <code>app.get('/', (req, res) => {</code>
+        <code>const userInput = <scriptTag>alert("XSS attack!");</scriptTag>;</code>
+        <code>const sanitizedInput = sanitizeHtml(userInput);</code>
+        <code>res.send(sanitizedInput);</code>
+    <code>});</code>
+        </pre>
+    </div>
+</div>

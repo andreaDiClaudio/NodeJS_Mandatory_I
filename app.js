@@ -74,7 +74,9 @@ const restAPIPage = templateEngine.renderTopicPage(restAPI, {
 const exportAndImport = templateEngine.readPage("./public/pages/topic/exportAndImport.html")
 const exportAndImportPage = templateEngine.renderTopicPage(exportAndImport, {
     tabtitle: "Mandatory I | Export / Import",
-    indexContent: "exportAndImport"
+    indexContent: "exportAndImport",
+    topicTitle: "Export / Import",
+    topicDescription: "What is a module? How to export and import modules"
 });
 
 const clientAndServerRendering = templateEngine.readPage("./public/pages/topic/clientAndServerRendering.html");

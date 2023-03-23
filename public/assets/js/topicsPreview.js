@@ -22,7 +22,7 @@ const topicsPreview = [
     {
         id: 4,
         title: "Export / Import",
-        description: "TODO",
+        description: "What is a module? How to export and import modules",
         href: "/exportAndImport"
     },
     {
