@@ -36,8 +36,8 @@ function addParagraph() {
 
     const label = document.createElement("label");
     label.className="label";
-    label.id=`paragraph${++idHeadingCounter}`
-    label.innerText = `Paragraph ${idHeadingCounter}`;
+    label.id=`paragraph${++idParagraphCounter}`
+    label.innerText = `Paragraph ${idParagraphCounter}`;
     wrapper.appendChild(label);
 
     const text = document.createElement("textarea");
@@ -52,8 +52,8 @@ function addCode(){
 
     const label = document.createElement("label");
     label.className="label";
-    label.id=`code${++idHeadingCounter}`
-    label.innerText = `Code ${idHeadingCounter}`;
+    label.id=`code${++idCodeCounter}`
+    label.innerText = `Code ${idCodeCounter}`;
     wrapper.appendChild(label);
 
     const text = document.createElement("textarea");
