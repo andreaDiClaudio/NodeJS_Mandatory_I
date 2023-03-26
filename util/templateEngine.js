@@ -15,11 +15,36 @@ function renderTopicPage(page, config={}) {
         .replace("$TOPIC_DESCRIPTION", config.topicDescription);
 
     const footer = fs.readFileSync("./public/components/topic/footer/footer.html").toString()
-        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio`)
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`)
         .replace("$INDEX_CONTENT_LINK", `<script src="/assets/js/indexContent/${config.indexContent}.js"></script>`)
         .replace("$NAVBAR_LINK", `<script src="/assets/js/navbar.js"></script>`);
 
     return navbar + title +  page + footer;
+}
+
+function renderHomePage(page, config={}) {
+    const start = fs.readFileSync("./public/components/general/start/start.html").toString()
+        .replace("$TAB_TITLE", config.tabTitle || "NodeJs Mandatory")
+        .replace("$CSS_LINK", `<link rel="stylesheet" href="${config.cssPath}">`)
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);
+
+    const end = fs.readFileSync("./public/components/general/end/endWithScript.html").toString()
+        .replace("$SCRIPT", `<script src="/pages/home/home.js"></script>` || " ")
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);;
+
+    return start + page + end;
+}
+
+function renderAdminPage (page, config={}) {
+    const start = fs.readFileSync("./public/components/general/start/start.html").toString()
+        .replace("$TAB_TITLE", config.tabTitle || "NodeJs Mandatory")
+        .replace("$CSS_LINK", `<link rel="stylesheet" href="${config.cssPath}">`);
+
+    const end = fs.readFileSync("./public/components/general/end/endWithScript.html").toString()
+        .replace("$SCRIPT", `<script src="/pages/adminPanel/adminPanel.js"></script>` || " ")
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);
+
+    return start + page + end;
 }
 
 function renderPage(page, config={}) {
@@ -28,7 +53,7 @@ function renderPage(page, config={}) {
         .replace("$CSS_LINK", `<link rel="stylesheet" href="${config.cssPath}">`);
 
     const end = fs.readFileSync("./public/components/general/end/end.html").toString()
-        .replace("$HOME_SCRIPT", `<script src="/pages/home/home.js"></script>` || "");
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);
 
     return start + page + end;
 }
@@ -36,5 +61,7 @@ function renderPage(page, config={}) {
 export default {
     renderPage,
     readPage,
-    renderTopicPage
+    renderTopicPage,
+    renderHomePage,
+    renderAdminPage
 }

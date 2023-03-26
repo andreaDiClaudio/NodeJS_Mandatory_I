@@ -19,6 +19,7 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
 }
@@ -114,4 +115,11 @@ body {
     border: solid #ee9229 1px;
     cursor:pointer;
     margin:1em;
+}
+
+.copyright-year-wrapper {
+    display: flex;
+    justify-content: center;
+    color: #2a2a3f;
+    padding-top: 4rem;
 }

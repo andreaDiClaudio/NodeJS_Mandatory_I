@@ -105,3 +105,9 @@ textarea, textarea:hover {
 #topic-info-title {
     padding-bottom: 3px;
 }
+.copyright-year-wrapper {
+    display: flex;
+    justify-content: center;
+    color: #2a2a3f;
+    padding-bottom: 3rem;
+}

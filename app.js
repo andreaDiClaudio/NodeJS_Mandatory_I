@@ -32,26 +32,32 @@ const landingpageErrorPage = templateEngine.renderPage(landingpageError);
 
 const signup = templateEngine.readPage("./public/pages/signup/signup.html");
 const signupPage = templateEngine.renderPage(signup, {
-    tabtitle: "Sign up | Mandatory I",
+    tabtitle: "Mandatory I | Sign up",
     cssPath: "/pages/landingpage/landingpage.css"
 });
 
 const signupError = templateEngine.readPage("./public/pages/signup/error.html");
 const signupErrorPage = templateEngine.renderPage(signupError, {
-    tabtitle: "Error | Mandatory I"
+    tabtitle: "Mandatory I | Error"
 });
 
 const home = templateEngine.readPage("./public/pages/home/home.html");
-const homePage = templateEngine.renderPage(home, {
-    tabtitle: "Home | Mandatory I",
+const homePage = templateEngine.renderHomePage(home, {
+    tabtitle: "Mandatory I | Home",
     cssPath: "pages/home/home.css"
 });
 
+const adminPanel = templateEngine.readPage("./public/pages/adminPanel/adminPanel.html");
+const adminPanelPage = templateEngine.renderAdminPage(adminPanel, {
+    tabtitle:"Mandatory I | Private",
+    cssPath: "/pages/adminPanel/adminPanel.css"
+})
+
 const aboutJs = templateEngine.readPage("./public/pages/topic/aboutJs.html");
 const aboutJsPage = templateEngine.renderTopicPage(aboutJs, {
-    tabtitle: "About Js | Mandatory I",
+    tabtitle: "Mandatory I | Js",
     indexContent: "aboutJs",
-    topicTitle: "About JS",
+    topicTitle: "Js",
     topicDescription: "From data types to callback function and fetch."
 });
 
@@ -129,6 +135,10 @@ app.get("/signup/error", (req,res) => {
 
 app.get("/home", (req, res) => {
     res.send(homePage);
+});
+
+app.get("/adminPanel", (req,res) => {
+    res.send(adminPanelPage);
 });
 
 /*TOPICS*/
