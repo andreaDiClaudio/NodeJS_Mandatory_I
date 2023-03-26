@@ -82,12 +82,19 @@
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
     <code class="code">typeof false //boolean</code>
+
     <code class="code">typeOf 0.05 //Number</code>
+
     <code class="code">typeof function () {} //function</code>
+
     <code class="code">typeof ‘string’ //string</code>
+
     <code class="code">typeof {} //objects</code>
+
     <code class="code">typeOf 0.05 //Number</code>
-    <code class="code">typeof [ ] //object - in js arrays are objects</code>
+
+    <code class="code">//object - in js arrays are objects</code>
+    <code class="code">typeof [ ]</code>
         </pre>
     </div>
     <div class="heading2" id="3">
@@ -111,15 +118,17 @@
     <code class="code">const string = "";</code>
     <code class="code">const number = 40;</code>
     <code class="code">const boolean = true;</code>
-    <code class="code">console.log(!string)</code>
-    <code>//true - string is coerced to boolean `false`,
+    <code class="code">console.log(!string) //true</code>
+    <code>//string is coerced to boolean `false`,</code>
     <code>//then the NOT operator negates it</code>
+
     <code class="code">console.log(boolean + string)</code>
-    <code class="code">
-    <code>//"true" - boolean is coerced to string "true", and </code>
-    <code>//concatenated with the empty string</code>
+    <code>//"true" - boolean is coerced to string</code>
+    <code>//"true", and concatenated with the empty</code>
+    <code>string</code>
     <code class="code">console.log(40 + true)</code>
-    <code>// 41 - boolean is coerced to number 1, and summed with 40</code>
+    <code>//41 - boolean is coerced to number 1,</code>
+    <code>//and summed with 40</code>
         </pre>
     </div>
 </div>
@@ -136,7 +145,8 @@
     <code class="code">const variable1 = 20;</code>
     <code class="code">const variable2 = "20";</code>
 
-    <code class="code">console.log(variable1 == variable2);// true</code>
+    <code>// true</code>
+    <code class="code">console.log(variable1 == variable2);</code>
         </pre>
     </div>
     <p class="paragraph" style="padding-top: 20px;">
@@ -149,7 +159,8 @@
     <code class="code">const variable1 = 20;</code>
     <code class="code">const variable2 = "20";</code>
             
-    <code class="code">console.log(variable1 === variable2);// false</code>
+    <code class="code">// false</code>
+    <code class="code">console.log(variable1 === variable2);</code>
         </pre>
     </div>
 </div>
@@ -289,7 +300,8 @@
         <pre class="code-snippet-tab">
     <code class="code">let numbers = [1, 2, 3, 4, 5];</code>
 
-    <code>let doubledNumbers = numbers.map(function(number)  {</code>
+    <code>let doubledNumbers = numbers</code>
+    <code>.map(function(number) {</code>
         <code>return number * 2;</code>
     <code>});</code>
                 
@@ -303,7 +315,8 @@
         <pre class="code-snippet-tab">
     <code class="code">let numbers = [1, 2, 3, 4, 5];</code>
 
-    <code>let evenNumbers = numbers.filter(function(number) {</code>
+    <code>let evenNumbers = numbers</code>
+        <code>.filter(function(number) {</code>
         <code>return number % 2 === 0;</code>
     <code>});</code>
                 
@@ -325,7 +338,8 @@
     <code>console.log(currentDate);</code>
     
     <code>//ouptut</code>
-    <code>Wed Oct 06 2021 18:25:42 GMT-0400 (Eastern Daylight Time)</code>
+    <code>Wed Oct 06 2021 18:25:42 GMT-0400
+        (Eastern Daylight Time)</code>
             </pre>
         </div>
     </div>

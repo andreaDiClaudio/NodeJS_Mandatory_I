@@ -28,7 +28,8 @@
     <code>const bodyParser = require('body-parser');</code>
     <code>app.use(bodyParser.json());</code>
     <code>// Parses all the urlencoded bodies</code>
-    <code>app.use(bodyParser.urlencoded({extended: true}))</code>
+    <code>app.use(bodyParser.urlencoded({</code>
+        <code>extended: true}))</code>
   </pre>
 </div>
 <div class="paragraph-wrapper">
@@ -40,8 +41,11 @@
     <code>app.post("/birds", (req, res) => {</code>
         <code>const body = req.body;</code>
       
-        <code>let calculateId = ++currentId;//Prefix notation updates before</code>
-        <code>const newBird = {id: calculateId, ...body};</code>
+        <code>//Prefix notation updates before</code>
+        <code>let calculateId = ++currentId;</code>
+        <code>const newBird = {</code>
+            <code>calculateId,</code>
+            <code>...body};</code>
         <code>birds.push(newBird);</code>
       
         <code>res.send({data: newBird});</code>
@@ -102,7 +106,8 @@
                 <code>{message: `no bird found with id ${req.params.id}`})</code>
         <code>} else {</code>
             <code>const foundBird = birds[foundIndex];</code>
-            <code>const birdToCreate = {...foundBird, ...req.body, id: foundBird.id}</code>
+            <code>const birdToCreate = {</code>
+                <code>...foundBird, ...req.body, id: foundBird.id}</code>
             <code>birds[foundIndex] = birdToCreate;</code>
             
             <code>res.send({birdToCreate})}</code>
