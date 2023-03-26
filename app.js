@@ -2,7 +2,6 @@
 import express from "express";
 import bodyParser from "body-parser"
 import templateEngine from './util/templateEngine.js';
-import topicsPreviewArray from "./public/assets/js/topicsPreview.js"
 
 const app = express();
 app.use(express.json());
@@ -24,33 +23,38 @@ users.push(admin);
 const landingpage = templateEngine.readPage("./public/pages/landingpage/landingpage.html");
 const landingpagePage = templateEngine.renderPage(landingpage, {
     tabtitle: "Mandatory I | Login",
-    cssPath: "/pages/landingpage/landingpage.css"
+    cssPath: "/assets/css/landingpage.css",
+    script: " "
 });
 
-const landingpageError = templateEngine.readPage("./public/pages/landingpage/error.html");
+const landingpageError = templateEngine.readPage("./public/pages/error/loginError.html");
 const landingpageErrorPage = templateEngine.renderPage(landingpageError);
 
 const signup = templateEngine.readPage("./public/pages/signup/signup.html");
 const signupPage = templateEngine.renderPage(signup, {
     tabtitle: "Mandatory I | Sign up",
-    cssPath: "/pages/landingpage/landingpage.css"
+    cssPath: "/assets/css/landingpage.css",
+    script: " "
 });
 
-const signupError = templateEngine.readPage("./public/pages/signup/error.html");
+const signupError = templateEngine.readPage("./public/pages/error/signupError.html");
 const signupErrorPage = templateEngine.renderPage(signupError, {
-    tabtitle: "Mandatory I | Error"
+    tabtitle: "Mandatory I | Error",
+    script: " "
 });
 
 const home = templateEngine.readPage("./public/pages/home/home.html");
-const homePage = templateEngine.renderHomePage(home, {
+const homePage = templateEngine.renderPage(home, {
     tabtitle: "Mandatory I | Home",
-    cssPath: "pages/home/home.css"
+    cssPath: "pages/home/home.css",
+    script: " "
 });
 
 const adminPanel = templateEngine.readPage("./public/pages/adminPanel/adminPanel.html");
-const adminPanelPage = templateEngine.renderAdminPage(adminPanel, {
+const adminPanelPage = templateEngine.renderPage(adminPanel, {
     tabtitle:"Mandatory I | Private",
-    cssPath: "/pages/adminPanel/adminPanel.css"
+    cssPath: "/pages/adminPanel/adminPanel.css",
+    script: `<script src="/pages/adminPanel/adminPanel.js"></script>`
 })
 
 const aboutJs = templateEngine.readPage("./public/pages/topic/aboutJs.html");
@@ -142,7 +146,7 @@ app.get("/adminPanel", (req,res) => {
 });
 
 /*TOPICS*/
-app.get("/aboutJs", (req, res) => {
+app.get("/javascript", (req, res) => {
     res.send(aboutJsPage);
 });
 
@@ -161,11 +165,6 @@ app.get("/exportAndImport", (req, res) => {
 app.get("/clientAndServerRendering", (req,res) => {
     res.send(clientAndServerRenderingPage);
 });
-
-/*API*/
-app.get("/api/topicsPreview", (req, res) => {
-    res.send({data: topicsPreviewArray});
- });
 
  //PORT
 const PORT = 8080;

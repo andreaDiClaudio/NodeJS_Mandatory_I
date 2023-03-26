@@ -111,3 +111,7 @@ textarea, textarea:hover {
     color: #2a2a3f;
     padding-bottom: 3rem;
 }
+
+a {
+    text-decoration: none;
+}

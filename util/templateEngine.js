@@ -22,38 +22,14 @@ function renderTopicPage(page, config={}) {
     return navbar + title +  page + footer;
 }
 
-function renderHomePage(page, config={}) {
-    const start = fs.readFileSync("./public/components/general/start/start.html").toString()
-        .replace("$TAB_TITLE", config.tabTitle || "NodeJs Mandatory")
-        .replace("$CSS_LINK", `<link rel="stylesheet" href="${config.cssPath}">`)
-        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);
-
-    const end = fs.readFileSync("./public/components/general/end/endWithScript.html").toString()
-        .replace("$SCRIPT", `<script src="/pages/home/home.js"></script>` || " ")
-        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);;
-
-    return start + page + end;
-}
-
-function renderAdminPage (page, config={}) {
-    const start = fs.readFileSync("./public/components/general/start/start.html").toString()
-        .replace("$TAB_TITLE", config.tabTitle || "NodeJs Mandatory")
-        .replace("$CSS_LINK", `<link rel="stylesheet" href="${config.cssPath}">`);
-
-    const end = fs.readFileSync("./public/components/general/end/endWithScript.html").toString()
-        .replace("$SCRIPT", `<script src="/pages/adminPanel/adminPanel.js"></script>` || " ")
-        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);
-
-    return start + page + end;
-}
-
 function renderPage(page, config={}) {
     const start = fs.readFileSync("./public/components/general/start/start.html").toString()
         .replace("$TAB_TITLE", config.tabTitle || "NodeJs Mandatory")
         .replace("$CSS_LINK", `<link rel="stylesheet" href="${config.cssPath}">`);
 
-    const end = fs.readFileSync("./public/components/general/end/end.html").toString()
-        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`);
+    const end = fs.readFileSync(`./public/components/general/end/end.html`).toString()
+        .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}  /  Andrea Di Claudio / Mandatory I`)
+        .replace("$SCRIPT", `${config.script}` || " ");
 
     return start + page + end;
 }
@@ -62,6 +38,4 @@ export default {
     renderPage,
     readPage,
     renderTopicPage,
-    renderHomePage,
-    renderAdminPage
 }
