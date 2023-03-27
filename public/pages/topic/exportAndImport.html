@@ -1,7 +1,7 @@
 <div class="heading2" id="1">1. Module</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        In Node.js, <a class="bold">a module is a self-contained unit of code that encapsulates related functionality</a>. A module can be a <a class="bold">single file or a collection of files</a> that work together to provide a set of features or services.<br>Each module in Node.js has its own scope, which means that variables, functions, and classes defined in one module are not visible or accessible from other modules, unless explicitly exported.<br><br>Node.js provides a built-in module system that allows you to create, load, and manage modules in your application. You can create a module by defining a set of functions, classes, or variables and then exporting them using the module.exports object.<br>Here's an example of a simple module that exports a function:
+        In Node.js, <b>a module is a self-contained unit of code that encapsulates related functionality</b>. A module can be a <b>single file or a collection of files</b> that work together to provide a set of features or services.<br>Each module in Node.js has its own scope, which means that variables, functions, and classes defined in one module are not visible or accessible from other modules, unless explicitly exported.<br><br>Node.js provides a built-in module system that allows you to create, load, and manage modules in your application. You can create a module by defining a set of functions, classes, or variables and then exporting them using the module.exports object.<br>Here's an example of a simple module that exports a function:
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -33,8 +33,8 @@
 </div>
 <div class="heading2" id="2">2. Commonjs vs. type module in Node.js</div>
 <div class="paragraph-wrapper">
-    <p class="paragraph">In the above section, we define a module using <a class="bold">CommonJS syntax</a>. We export the add function using module.exports and then import it in our app.js file using <a class="inline-code">require()</a>.<br><br>
-    <a class="bold">ES modules</a>, on the other hand, use the <a class="inline-code">import</a> and <a class="inline-code">export</a> keywords to import and export modules.
+    <p class="paragraph">In the above section, we define a module using <b>CommonJS syntax</b>. We export the add function using module.exports and then import it in our app.js file using <b>require()</b>.<br><br>
+    <b>ES modules</b>, on the other hand, use the <b>import</b> and <b>export</b> keywords to import and export modules.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -53,8 +53,8 @@
     </div>
 </div>
 <div class="paragraph-wrapper">
-    <p class="paragraph">One key difference between CommonJS and ES modules is that CommonJS modules are evaluated synchronously, while ES modules are evaluated asynchronously. This means that <a class="bold">with CommonJS, all dependencies are loaded before any code is executed, while with ES modules, dependencies are loaded on demand.</a><br><br>
-    In the next section the command <a class="inline-code">import</a> in the next section</p>
+    <p class="paragraph">One key difference between CommonJS and ES modules is that CommonJS modules are evaluated synchronously, while ES modules are evaluated asynchronously. This means that <b>with CommonJS, all dependencies are loaded before any code is executed, while with ES modules, dependencies are loaded on demand.</b><br><br>
+    In the next section the command <b>import</b> in the next section</p>
 </div>
 <div class="heading2" id="3">3. Path module and serving HTML</div>
 <div class="paragraph-wrapper">
@@ -72,8 +72,8 @@
 <div class="paragraph-wrapper">
     <p class="paragraph">
         In the example we define a route for the root path '/'' and use the <a class="inline-code">res.sendFile</a> method to send the index.html file.<br>Note that we use the <a class="inline-code">__dirname</a> global variable to get the current directory path and append the public/index.html file path to it.<br><br>
-        There are many ways to serve html files. Another way is to use <a class="bold">'path'</a>.<br>
-        The path module is a built-in module in Node.js that <a class="bold">provides utilities for working with file and directory paths</a>. It has several useful methods for manipulating and constructing paths in a cross-platform manner.<br><br>To install the path module using npm, you can open your terminal or command prompt and navigate to your project directory. Then, run the following command:
+        There are many ways to serve html files. Another way is to use <b>'path'</b>.<br>
+        The path module is a built-in module in Node.js that <b>provides utilities for working with file and directory paths</b>. It has several useful methods for manipulating and constructing paths in a cross-platform manner.<br><br>To install the path module using npm, you can open your terminal or command prompt and navigate to your project directory. Then, run the following command:
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -93,7 +93,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        We can use the <a class="inline-code">import</a> keyword and start importing modules. In order to do that, we need to declare <a class="inline-code">"type": "module"</a> in the package.json file. This is the current package.json:
+        We can use the <b>import</b> keyword and start importing modules. In order to do that, we need to declare <b>"type": "module"</b> in the package.json file. This is the current package.json:
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -133,13 +133,13 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        <a class="inline-code">path.resolve()</a> and <a class="inline-code">__dirname</a> both serve similar purposes of <a class="bold">returning absolute paths</a>, but they differ in how they achieve this.<br><br><a class="inline-code">__dirname</a> is a global variable in Node.js that returns the absolute path of the directory containing the currently executing file.<br><br>On the other hand, <a class="inline-code">path.resolve()</a> is a method in the Node.js path module that returns an absolute path by resolving any relative paths or symbolic links. It can take any number of arguments to join together into one absolute path.
+        <a class="inline-code">path.resolve()</a> and <a class="inline-code">__dirname</a> both serve similar purposes of <b>returning absolute paths</b>, but they differ in how they achieve this.<br><br><a class="inline-code">__dirname</a> is a global variable in Node.js that returns the absolute path of the directory containing the currently executing file.<br><br>On the other hand, <a class="inline-code">path.resolve()</a> is a method in the Node.js path module that returns an absolute path by resolving any relative paths or symbolic links. It can take any number of arguments to join together into one absolute path.
     </p>
 </div>
 <div class="heading2">4. XSS</div>
 <div class="paragraph-wrapper">
-    <p class="paragraph">XSS (Cross-Site Scripting) is a common security vulnerability that can affect Node.js web applications.XSS occurs when an attacker is able to inject malicious code (usually JavaScript) into a web page viewed by other users. <a class="bold">This can happen when user input is not properly sanitized or validated before being displayed on the page.</a> In Node.js, there are a few ways to prevent XSS attacks:<br><br>
-    • <a class="bold">Sanitize user input</a><br>Before displaying user-generated content on a web page, it's important to sanitize the input to remove any potentially dangerous code. You can use libraries like DOMPurify or sanitize-html to sanitize user input.<br><br>• <a class="bold">Use Content Security Policy (CSP)</a><br>CSP is a security standard that helps prevent XSS attacks by allowing you to specify which types of content are allowed to be loaded on a web page. You can implement CSP in Node.js using the helmet-csp middleware.<br><br>
+    <p class="paragraph">XSS (Cross-Site Scripting) is a common security vulnerability that can affect Node.js web applications.XSS occurs when an attacker is able to inject malicious code (usually JavaScript) into a web page viewed by other users. <b>This can happen when user input is not properly sanitized or validated before being displayed on the page.</b> In Node.js, there are a few ways to prevent XSS attacks:<br><br>
+    • <b>Sanitize user input</b><br>Before displaying user-generated content on a web page, it's important to sanitize the input to remove any potentially dangerous code. You can use libraries like DOMPurify or sanitize-html to sanitize user input.<br><br>• <b>Use Content Security Policy (CSP)</b><br>CSP is a security standard that helps prevent XSS attacks by allowing you to specify which types of content are allowed to be loaded on a web page. You can implement CSP in Node.js using the helmet-csp middleware.<br><br>
     Here's an example of how to use sanitize-html to sanitize user input in a Node.js application:</p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -148,7 +148,7 @@
     <code>const app = express();</code>
 
     <code>app.get('/', (req, res) => {</code>
-        <code>const userInput = <scriptTag>alert("XSS attack!");</scriptTag>;</code>
+        <code>const userInput = <scriptTag class="code">alert("XSS attack!");</scriptTag></code>
         <code>const sanitizedInput = sanitizeHtml(userInput);</code>
         <code>res.send(sanitizedInput);</code>
     <code>});</code>

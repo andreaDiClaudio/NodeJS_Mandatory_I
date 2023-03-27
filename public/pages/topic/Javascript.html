@@ -12,10 +12,10 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        JavaScript is a <a class="bold">dynamic language with dynamic types</a>. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.<br><br>
-        In Javascript, datatypes are divided into two categories: <a class="bold">primitive</a> and <a class="bold">object</a>.<br>
-        <a class="bold">Primitive datatypes</a> are built-in to the language and include include <a class="bold">numbers, strings, booleans, null and undefined.</a><br>
-        <a class="bold">Objects</a> are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).<br><br>
+        JavaScript is a <b>dynamic language with dynamic types</b>. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.<br><br>
+        In Javascript, datatypes are divided into two categories: <b>primitive</b> and <b>object</b>.<br>
+        <b>Primitive datatypes</b> are built-in to the language and include include <b>numbers, strings, booleans, null and undefined.</b><br>
+        <b>Objects</b> are created using constructors and have properties that can be accessed using dot notation (e.g., myObject.propertyName).<br><br>
         Primitive Datatypes in JavaScript
     </p>
     <div class="table-wrapper">
@@ -103,8 +103,8 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        <a class="bold">Type coercion is the automatic or implicit conversion of values from one data type to another</a> (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — <a class="bold">type coercion is implicit whereas type conversion can be either implicit or explicit</a>.<br><br>
-        There are some <a class="bold">downsides</a> to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
+        <b>Type coercion is the automatic or implicit conversion of values from one data type to another</b> (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — <b>type coercion is implicit whereas type conversion can be either implicit or explicit</b>.<br><br>
+        There are some <b>downsides</b> to this type of coercion: It can lead to unexpected results in your code; It can cause performance issues if you use it improperly, since it involves extra work by the computer; It can introduce bugs into your code if you're not careful about which types are being coerced and how they should be handled.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -138,7 +138,7 @@
 <div class="paragraph-wrapper">
     <p class="paragraph">
         In JavaScript, there's both the double equality operator (== which is called the loose equality operator) and the triple equality operator (=== which is called the strict equality operator). You use both operators to compare values' equality.<br><br>
-        <a class="bold">The loose equality operator</a> does a loose check. It <a class="bold">checks if values are equal</a>. The types are not a focus for this operator - only the values are the major factor.
+        <b>The loose equality operator</b> does a loose check. It <b>checks if values are equal</b>. The types are not a focus for this operator - only the values are the major factor.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -152,7 +152,7 @@
     <p class="paragraph" style="padding-top: 20px;">
         When you use the loose equality operator with values of different types, what happens first is coercion. Again, this is where one value is converted to the type that fits the other, before the comparison occurs.<br>
         In this case, the string "20" is converted to a number type (which is 20) and then compared with the other value, and they are both equal.<br><br>
-        <a class="bold">The strict equality operator</a> does a strict check – that is, <a class="bold">it strictly checks the values compared, as well as the types</a>. Type coercion does not occur here, so there are no unexpected answers.
+        <b>The strict equality operator</b> does a strict check – that is, <b>it strictly checks the values compared, as well as the types</b>. Type coercion does not occur here, so there are no unexpected answers.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -169,7 +169,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Strict mode is a feature in JavaScript that <a class="bold">allows developers to opt-in to a stricter version of the language, which makes it easier to write secure and optimized code</a>. According to
+        Strict mode is a feature in JavaScript that <b>allows developers to opt-in to a stricter version of the language, which makes it easier to write secure and optimized code</b>. According to
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" style="color: #e7793e;">MDN Web Docs</a>, strict mode makes several changes to normal JavaScript semantics: it eliminates some JavaScript silent errors by changing them to throw errors, and it fixes mistakes that make it difficult for JavaScript engines to perform optimizations. This means that strict mode code can sometimes be made to run faster than identical code that's not in strict mode.
         <br>
         <br>To enable strict mode, you can add the string
@@ -182,7 +182,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Functions in JavaScript are treated as <a class="bold">first-class objects</a>, which means they can be passed around like any other value. <a class="bold">They can be assigned to variables, passed as arguments to other functions, and returned as values from function</a>s. In JavaScript, functions can be declared using the function keyword followed by the function name, or they can be expressed as anonymous functions.
+        Functions in JavaScript are treated as <b>first-class objects</b>, which means they can be passed around like any other value. <b>They can be assigned to variables, passed as arguments to other functions, and returned as values from functionx</b>. In JavaScript, functions can be declared using the function keyword followed by the function name, or they can be expressed as anonymous functions.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -220,7 +220,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        In JavaScript, a callback function is <a class="bold">a function that is passed as an argument to another function and is executed inside that function</a>.<br><br>
+        In JavaScript, a callback function is <b>a function that is passed as an argument to another function and is executed inside that function</b>.<br><br>
         One common use case for callback functions is handling asynchronous operations, such as making an API call or fetching data from a database. Instead of waiting for the operation to complete before moving on to the next line of code, we can pass a callback function to the asynchronous function which will be executed once the operation has completed.<br><br>Here's an example of a callback function being used with an asynchronous operation:
     </p>
     
@@ -240,7 +240,7 @@
     </div>
 </div>
 <div class="paragraph-wrapper">
-    <p class="paragraph">In this example, we have two functions greeting and sayGoodbye. greeting takes two parameters: name and callback. It logs a greeting message to the console using the provided name and then calls the callback function.<br><br>sayGoodbye is the callback function, it logs a goodbye message to the console.<br><br>We call greeting and pass in the arguments "John" and sayGoodbye. When greeting is called, it logs "Hello, John!" to the console and then calls the callback function, which in this case is sayGoodbye.<br><br>The output of this code will be:
+    <p class="paragraph">In this example, we have two functions greeting and sayGoodbye. greeting takes two parameters: name and callback. It logs a greeting message to the console using the provided name and then calls the callback function.<br><br><a class="inline-code">sayGoodbye( )</a> is the callback function, it logs a goodbye message to the console.<br><br>We call <a class="inline-code">greeting</a> and pass in the arguments "John" and <a class="inline-code">sayGoodbye</a>. When <a class="inline-code">greeting</a> is called, it logs "Hello, John!" to the console and then calls the callback function, which in this case is <a class="inline-code">sayGoodbye</a>.<br><br>The output of this code will be:
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -255,7 +255,7 @@
 <div class="paragraph-wrapper">
     <p class="paragraph">
         A loop is a programming construct that allows you to execute a block of code repeatedly until a certain condition is met. The most common types of loops in JavaScript are for loops, while loops, and do-while loops.<br><br>
-        A for loop is used when you know how many times you want to execute the loop. Here is an example:
+        A <b>for loop</b> is used when you know how many times you want to execute the loop. Here is an example:
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -266,7 +266,7 @@
     </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
-            A while loop is used when you want to execute a block of code while a certain condition is true. Here is an example:
+            A <b>while loop</b> is used when you want to execute a block of code while a certain condition is true. Here is an example:
         </p>
     </div>
     <div class="code-snippet-wrapper">
@@ -280,7 +280,7 @@
     </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
-            Now, in addition to these basic loops, JavaScript also has a number of <a class="bold">loop methods</a> that can be used with arrays. These methods include forEach(), map(), and filter().<br><br>• forEach()<br>This method is used to loop through the elements of an array and execute a function for each element
+            Now, in addition to these basic loops, JavaScript also has a number of <b>loop methods</b> that can be used with arrays. These methods include forEach(), map(), and filter().<br><br>• <b>forEach()</b><br>This method is used to loop through the elements of an array and execute a function for each element
         </p>
         <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -294,7 +294,7 @@
     </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
-            • map()<br> This method is used to <a class="bold">create a new array</a> with the results of calling a provided function on every element in the calling array
+            • <b>map()</b><br> This method is used to <b>create a new array</b> with the results of calling a provided function on every element in the calling array
         </p>
         <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -309,7 +309,7 @@
         </pre>
     <div class="paragraph-wrapper">
         <p class="paragraph">
-            • filter()<br> The filter() method creates a new array with all elements that pass the test implemented by the provided function
+            • <b>filter()</b><br> The filter() method creates a new array with all elements that pass the test implemented by the provided function
         </p>
         <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -415,6 +415,6 @@
     </div>
     <div class="paragraph-wrapper">
         <p class="paragraph">
-            The 'fetch()' function <a class="bold">returns a Promise</a>, which we can then use to retrieve the response data.<br><br><a class="bold">The first 'then()'</a> method is used to <a class="bold">convert the response object to JSON format</a>. <a class="bold">The second 'then()'</a> method <a class="bold">logs the JSON data to the console</a> (allows us to perform any action on the data. In this case is simply printning the data in the console).<br><br>You can also use 'fetch()' to make requests with different options, such as adding headers or sending a POST request with data.
+            The 'fetch()' function <b>returns a Promise</b>, which we can then use to retrieve the response data.<br><br><b>The first 'then()'</b> method is used to <b>convert the response object to JSON format</b>. <b>The second 'then()'</b> method <b>logs the JSON data to the console</b> (allows us to perform any action on the data. In this case is simply printning the data in the console).<br><br>You can also use 'fetch()' to make requests with different options, such as adding headers or sending a POST request with data.
     </div>
 </div>

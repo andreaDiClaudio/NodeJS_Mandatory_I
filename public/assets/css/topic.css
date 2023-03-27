@@ -221,7 +221,11 @@
     color: #e7793e;
   }
 
-  .bold {
-    font-weight: bold;
+  b {
     color: #e7793e;
+  }
+
+  .code {
+    color: #f7f7f7;
+    font-family: 'Courier New', Courier, monospace;
   }

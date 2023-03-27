@@ -1,25 +1,25 @@
 <p class="heading2" id="1">1. REST API</p>
 <div class="paragraph-wrapper">
   <p class="paragraph">
-    REST API, or Representational State Transfer Application Programming Interface, is a type of web API that <a class="bold">>uses HTTP requests to access and manipulate data</a>. It is a popular way for developers to create web services that can be accessed by other applications. REST APIs are known for their <a class="bold">simplicity, flexibility, and scalability</a>, and are widely used in building modern web and mobile applications.<br><br>
+    REST API, or Representational State Transfer Application Programming Interface, is a type of web API that <b>uses HTTP requests to access and manipulate data</b>. It is a popular way for developers to create web services that can be accessed by other applications. REST APIs are known for their <b>simplicity, flexibility, and scalability</b>, and are widely used in building modern web and mobile applications.<br><br>
     REST API is based on the REST architectural style, which is a set of principles and constraints for designing network-based software.<br>
     The main principles of the REST architectural style include:<br><br>
-    • <a class="bold">Client-server architecture</a><br>
+    • <b>Client-server architecture</b><br>
     This principle separates the user interface concerns from the data storage concerns, allowing them to evolve independently.<br><br>
-    • <a class="bold">Statelessness</a><br>
+    • <b>Statelessness</b><br>
     This principle ensures that each request from a client contains all the necessary information for the server to understand and process it. The server does not store any information about the client's state between requests.<br><br>
-    • <a class="bold">Cacheability</a><br>
+    • <b">Cacheability</b><br>
     This principle allows responses to be cached, improving performance and scalability.<br><br>
-    • <a class="bold">Uniform interface</a><br>
+    • <b>Uniform interface</b><br>
     This principle provides a consistent and standardized way for clients to interact with the server, using HTTP verbs like GET, POST, PUT, and DELETE.<br><br>
-    REST APIs use HTTP as the underlying protocol for communication. They typically use JSON or XML as the data format for requests and responses. <a class="bold">The best practice is to use JSON because</a> it is a light-weight data format, which means that it can be transmitted quickly over the network, it is easy to read and write, <a class="bold">it is not tied to any specific programming language or platform</a>, which means that it can be used by any application that supports JSON parsing and generation. <br>These make it a popular choice for creating APIs that can be used across different programming languages and platforms.
+    REST APIs use HTTP as the underlying protocol for communication. They typically use JSON or XML as the data format for requests and responses. <b>The best practice is to use JSON because</b> it is a light-weight data format, which means that it can be transmitted quickly over the network, it is easy to read and write, <b>it is not tied to any specific programming language or platform</b>, which means that it can be used by any application that supports JSON parsing and generation. <br>These make it a popular choice for creating APIs that can be used across different programming languages and platforms.
   </p>
 </div>
 <p class="heading2" id="2">2. CRUDable REST API</p>
 <div class="paragraph-wrapper">
   <p class="paragraph">
-    CRUDable REST API is a type of REST API that supports <a class="bold">Create, Read, Update and Delete (CRUD)</a> operations for resources. In a typical CRUDable REST API, each resource is identified by a unique URL, and clients can send HTTP requests to create, read, update, or delete the resource. Here's a brief overview of each operation.<br><br>
-    <a class="bold">Create (POST)</a> is the operation used to create a new resource. The client sends a POST request to the source's URL with the data for the new resource in the request body.<br><br>
+    CRUDable REST API is a type of REST API that supports <b>Create, Read, Update and Delete (CRUD)</b> operations for resources. In a typical CRUDable REST API, each resource is identified by a unique URL, and clients can send HTTP requests to create, read, update, or delete the resource. Here's a brief overview of each operation.<br><br>
+    <b>Create (POST)</b> is the operation used to create a new resource. The client sends a POST request to the source's URL with the data for the new resource in the request body.<br><br>
     In order to perform POST operation over a resource, we need a package called 'body-parser'. It is a Node.js body parsing middleware that parses incoming request bodies before they are handled by the handlers. It is available under the req.body property and allows for automatic inflation of gzip and deflate encodings. It provides four express middleware for parsing JSON, Text, URL-encoded, and raw data sets over an HTTP request body.<br>Install the package by running the command <a class="inline-code">npm install body-parser</a>. After, at the beginning of the app.js file, you have to write
   </p>
 </div>
@@ -54,7 +54,7 @@
     </div>
 </div>
 <div class="paragraph-wrapper">
-    <p class="paragraph"><a class="bold">Read (GET)</a>: This operation is used to retrieve a resource or a list of resources. The client sends a GET request to the resource's URL to retrieve the data.</p>
+    <p class="paragraph"><b>Read (GET)</b>: This operation is used to retrieve a resource or a list of resources. The client sends a GET request to the resource's URL to retrieve the data.</p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
     <code>app.get("/birds/:id", (req, res) => {</code>
@@ -70,9 +70,9 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        <a class="bold">Update (PUT or PATCH)</a>: This operation is used to update an existing resource. The client sends a   PUT or PATCH request to the resource's URL with the updated data in the request body.
+        <b>Update (PUT or PATCH)</b>: This operation is used to update an existing resource. The client sends a PUT or PATCH request to the resource's URL with the updated data in the request body.
         The main difference between PUT and PATCH HTTP methods is the level of modification they perform on a resource.<br><br>
-        <a class="bold">PUT</a> is used to completely replace an existing resource with a new version. This means that the server will replace the entire resource with the new data provided in the request. If part of the resource is missing in the request, it will be replaced with null or empty values.
+        <b>PUT</b> is used to completely replace an existing resource with a new version. This means that the server will replace the entire resource with the new data provided in the request. If part of the resource is missing in the request, it will be replaced with null or empty values.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -93,7 +93,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        <a class="bold">PATCH</a>, on the other hand, is used to update part of an existing resource with new data. This means that the server will modify only the fields or attributes specified in the request and leave the rest of the resource unchanged. This can be useful when you want to update a specific field or attribute without affecting the entire resource.
+        <b>PATCH</b>, on the other hand, is used to update part of an existing resource with new data. This means that the server will modify only the fields or attributes specified in the request and leave the rest of the resource unchanged. This can be useful when you want to update a specific field or attribute without affecting the entire resource.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -117,7 +117,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        <a class="bold">Delete (DELETE)</a>: This operation is used to delete a resource. The client sends a DELETE request to the resource's URL to delete it.
+        <b>Delete (DELETE)</b>: This operation is used to delete a resource. The client sends a DELETE request to the resource's URL to delete it.
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -139,8 +139,8 @@
 <div class="heading2" id="3">3. How to send data in a GET request</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        • <a class="bold">Query String Parameters</a><br>
-        You can send data in a GET request by including it in the URL as query string parameters. For example, you can send data to a server by appending it to the URL in the following format: ?key1=value1&key2=value2. The server can then extract the data from the query string parameters.<br><br>• <a class="bold">URL path parameters</a><br>
+        • <b>Query String Parameters</b><br>
+        You can send data in a GET request by including it in the URL as query string parameters. For example, you can send data to a server by appending it to the URL in the following format: ?key1=value1&key2=value2. The server can then extract the data from the query string parameters.<br><br>• <b>URL path parameters</b><br>
         You can also send data in a GET request by including it in the URL path. This is typically done when the data is used to identify a specific resource. For example, you can send data to a server by including it in the URL path in the following format: /resource/:id, where :id is a variable that represents the data being sent.
     </p>
 </div>
