@@ -1,8 +1,8 @@
 <div class="heading2" id="1">1. Client side rendering (CSR)</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Client-side rendering is the process of rendering the web page on the user's device using JavaScript after the initial HTML and CSS have been downloaded. This approach allows for dynamic, interactive web applications that can modify the page content without requiring a full refresh. Client-side rendering is commonly used in single-page applications (SPAs) and other modern web applications that require a high degree of interactivity.<br><br>
-        One of the primary benefits of client-side rendering is that it can help reduce server load and improve website performance. Since the server only needs to provide the initial HTML and CSS, subsequent interactions and updates can be handled on the client side. This improves the user experience by reducing the time required to load new content.<br><br>However, client-side rendering also has some drawbacks. One potential issue is that it can be slower to load initially, since the user's device needs to download JavaScript and other assets before rendering the page. Additionally, client-side rendering can be less SEO-friendly, since search engines may have difficulty indexing dynamic content created with JavaScript.<br>Following an example of code that does client side rendering
+        <b>Client-side rendering is the process of rendering the web page on the user's device using JavaScript after the initial HTML and CSS have been downloaded</b>. This approach allows for dynamic, interactive web applications that can modify the page content without requiring a full refresh. Client-side rendering is commonly used in single-page applications (SPAs) and other modern web applications that require a high degree of interactivity.<br><br>
+        One of the primary benefits of client-side rendering is that <b>it can help</b> reduce server load and improve website performance. Since the server only needs to provide the initial HTML and CSS, subsequent interactions and updates can be handled on the client side. This improves the user experience by reducing the time required to load new content.<br><br>However, client-side rendering also has some <b>drawbacks</b>. One potential issue is that it can be slower to load initially, since the user's device needs to download JavaScript and other assets before rendering the page. Additionally, client-side rendering can be less SEO-friendly, since search engines may have difficulty indexing dynamic content created with JavaScript.<br>Following an example of code that does client side rendering
     </p>
     <div class="code-snippet-wrapper">
         <pre class="code-snippet-tab">
@@ -15,17 +15,17 @@
 <div class="heading2" id="2">2. Server side rendering (SSR)</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        Server-side rendering, on the other hand, is the process of rendering the web page on the server before sending it to the user's device. This approach is often used for content-heavy websites where search engine optimization is important, or for websites that require quick rendering times for users with slower internet connections.<br><br>
-        One of the primary benefits of server-side rendering is that it can provide faster initial loading times, since the user's device receives pre-rendered HTML and CSS. This can improve the user experience, particularly for users with slower internet connections or older devices. Additionally, server-side rendering can be more SEO-friendly, since search engines can more easily index pre-rendered content.<br><br>
-        However, server-side rendering can also be less flexible than client-side rendering, since it requires more server resources to render each page. Additionally, server-side rendering may not be suitable for applications that require a high degree of interactivity, since each interaction would require a new server request.<br><br>
+        <b>Server-side rendering</b>, on the other hand, <b>is the process of rendering the web page on the server before sending it to the user's device</b>. This approach is often used for content-heavy websites where search engine optimization is important, or for websites that require quick rendering times for users with slower internet connections.<br><br>
+        One of the primary <b>benefits</b> of server-side rendering is that it can provide faster initial loading times, since the user's device receives pre-rendered HTML and CSS. This can improve the user experience, particularly for users with slower internet connections or older devices. Additionally, server-side rendering can be more SEO-friendly, since search engines can more easily index pre-rendered content.<br><br>
+        <b>However</b>, server-side rendering can also be less flexible than client-side rendering, since it requires more server resources to render each page. Additionally, server-side rendering may not be suitable for applications that require a high degree of interactivity, since each interaction would require a new server request.<br><br>
         In order to do SSR we need to do some steps.<br><br>
-        First of all we need to deconstruct the html page in components. The term "component" generally refers to a modular, reusable, and independent piece of code that performs a specific task or provides a specific functionality. Components can be thought of as building blocks that can be combined and reused to create larger, more complex systems.<br>
-        In a normal web page elements that repeats are the navbar and footer (and many more). inside the folder 'public' we create a new folder called 'components' were inside we create html files for each component. In our case will be only the 'navbar.html' and 'footer.html'.
+        First of all we need to deconstruct the html page in components. The term <b>"component"</b> generally refers to a modular, reusable, and independent piece of code that performs a specific task or provides a specific functionality. Components can be thought of as building blocks that can be combined and reused to create larger, more complex systems.<br>
+        In a normal web page elements that repeats are the navbar and footer (and many more). inside the folder < <b>'public'</b> we create a new folder called <b>'components'</b> were inside we create html files for each component. In our case will be only the 'navbar.html' and 'footer.html'.
     </p>
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        After we need to create a new folder in the root folder called 'util'. Inside util we will create a new js file called 'templateEngine'. Template engines typically use a template file that contains placeholders for dynamic content. These placeholders can be filled in with data from a database or other data source, and the resulting HTML can then be sent to the user's browser.<br><br>
+        After we need to create a new folder in the root folder called <b>'util'</b>. Inside util we will create a new js file called <b>'templateEngine'</b>. Template engines typically use a template file that contains placeholders for dynamic content. These placeholders can be filled in with data from a database or other data source, and the resulting HTML can then be sent to the user's browser.<br><br>
         Inside the 'templateEngine.js' we need 'fs' package. The 'fs' module allows developers to interact with the file system on their computer. It supports interacting with files synchronously, asynchronously or via streams. The module offers a set of functionalities available as APIs for a consumer program to use.
     </p>
 </div>
@@ -71,7 +71,7 @@
 </div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
-        This function takes to parameter: a page and an object with the configuration of the page.<br>
+        This function takes two parameter: a page and an object with the configuration of the page.<br>
         Inside the function we declare the navabar variable that uses 'fs' to read the 'navbar.html' file just created, converts wiht the 'toString()' methods and replaces all the variable (e.g. $CSS_LINK with the link to the css file, and so on).<br>
         We do the same for the footer.<br><br>
         Then last line of the function creates and returns the constructed webage by concatenating the navbar, the page (that we pass in as parameter when we use the function), and the footer.
@@ -113,7 +113,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Pro</th>
+                        <th><b>Pro</b></th>
                         <td>Better initial page load time:<br> Since the HTML is generated on the server and sent to the client, the initial page load time is usually faster.<br><br>
                         Better SEO:<br> Search engine crawlers can easily read the HTML generated on the server, which can improve search engine rankings.<br><br>
                         Better accessibility:<br> Users with slow internet connections or disabled JavaScript can still access the content on the page.</td>
@@ -122,7 +122,7 @@
                         More flexibility:<br> CSR can be more flexible than SSR since it does not require a server-side environment and works well with JavaScript frameworks and libraries.</td>
                     </tr>
                     <tr>
-                        <th>Cons</th>
+                        <th><b>Cons</b></th>
                         <td>Higher server load:<br> Since the server has to generate the HTML, it can put a higher load on the server, which can affect scalability.<br><br>
                         Limited interactivity:<br> Since most of the HTML is generated on the server, there is limited interactivity on the client-side, which can result in a less engaging user experience.<br><br>
                         Limited flexibility:<br> SSR can be less flexible than CSR since it requires a server-side environment and may not work well with some JavaScript frameworks and libraries.</td>
