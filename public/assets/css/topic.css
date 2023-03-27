@@ -220,3 +220,8 @@
   .quick-menu-topic {
     color: #e7793e;
   }
+
+  .bold {
+    font-weight: bold;
+    color: #e7793e;
+  }
