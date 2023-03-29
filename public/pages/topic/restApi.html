@@ -136,7 +136,63 @@
         </pre>
     </div>
 </div>
-<div class="heading2" id="3">3. How to send data in a GET request</div>
+<div class="heading2" id="3">3. Design and conventions</div>
+<div class="paragraph-wrapper">
+    <p class="paragraph">
+        • <b>Accept And Respond With JSON</b><br>
+        JSON is the standard for transferring data. Almost every networked technology<br>                  can use it<br><br>
+        • <b>Order of Endpoints</b><br>
+        Very important for the next person who is going to work on it.
+        For good documentation.<br><br>
+        • <b>Naming of Endpoints</b><br>
+        The name of the endpoint should represent the collection.
+    </p>
+    <p class="paragraph">Following an example of desing of an API that follows the conventions. </p>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>HTTP Method</th>
+                    <th>Endpoint</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>GET</b></td>
+                    <td>/songs</td>
+                    <td>Fetch all songs</td>
+                </tr>
+                <tr>
+                    <td><b>GET</b></td>
+                    <td>/songs/{id}</td>
+                    <td>Fetch a specific song</td>
+                </tr>
+                <tr>
+                    <td><b>POST</b></td>
+                    <td>/songs</td>
+                    <td>Creates a new song</td>
+                </tr>
+                <tr>
+                    <td><b>PUT</b></td>
+                    <td>/songs/{id}</td>
+                    <td>"Edit an existing song by id, changing all properties of the object"</td>
+                </tr>
+                <tr>
+                    <td><b>PATCH</b></td>
+                    <td>/songs/{id}</td>
+                    <td>Edit an existing song by id, changing only the requested proprties of the object</td>
+                </tr>
+                <tr>
+                    <td><b>DELETE</b></td>
+                    <td>songs/{id}</td>
+                    <td>Deletes the object</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="heading2" id="4">4. How to send data in a GET request</div>
 <div class="paragraph-wrapper">
     <p class="paragraph">
         • <b>Query String Parameters</b><br>

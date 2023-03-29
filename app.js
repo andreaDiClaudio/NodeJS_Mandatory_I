@@ -57,10 +57,10 @@ const adminPanelPage = templateEngine.renderPage(adminPanel, {
     script: `<script src="/pages/adminPanel/adminPanel.js"></script>`
 })
 
-const aboutJs = templateEngine.readPage("./public/pages/topic/Javascript.html");
+const aboutJs = templateEngine.readPage("./public/pages/topic/javascript.html");
 const aboutJsPage = templateEngine.renderTopicPage(aboutJs, {
     tabtitle: "Mandatory I | Js",
-    indexContent: "aboutJs",
+    indexContent: "javascript",
     topicTitle: "Javascript",
     topicDescription: "From data types to callback function and fetch."
 });
